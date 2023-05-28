@@ -11,3 +11,6 @@
 > * HTTP请求采用POST方式
 > * 登录用户名和密码校验
 > * 用户注册及多线程注册安全
+
+
+> * sudo apt install libmysqlclient-dev

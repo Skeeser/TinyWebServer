@@ -1,0 +1,3 @@
+mysql -u root -p mydatabase < /path/to/myfile.sql
+
+sudo apt-get install libjsoncpp-dev
