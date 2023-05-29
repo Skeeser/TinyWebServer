@@ -3,7 +3,7 @@
 #include <mysql/mysql.h>
 #include <string>
 #include <jwt-cpp/jwt.h>
-
+#include "../lock/locker.h"
 #include "../log/log.h"
 
 class Logic

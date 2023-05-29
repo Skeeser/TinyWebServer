@@ -19,32 +19,7 @@ map<string, string> users;
 
 void http_conn::initmysql_result(connection_pool *connPool)
 {
-    // 先从连接池中取一个连接
-    MYSQL *mysql = NULL;
-    connectionRAII mysqlcon(&mysql, connPool);
-
-    // 在user表中检索username，passwd数据，浏览器端输入
-    if (mysql_query(mysql, "SELECT mg_name,mg_pwd FROM sp_manager"))
-    {
-        LOG_ERROR("SELECT error:%s\n", mysql_error(mysql));
-    }
-
-    // 从表中检索完整的结果集
-    MYSQL_RES *result = mysql_store_result(mysql);
-
-    // 返回结果集中的列数
-    int num_fields = mysql_num_fields(result);
-
-    // 返回所有字段结构的数组
-    MYSQL_FIELD *fields = mysql_fetch_fields(result);
-
-    // 从结果集中获取下一行，将对应的用户名和密码，存入map中
-    while (MYSQL_ROW row = mysql_fetch_row(result))
-    {
-        string temp1(row[0]);
-        string temp2(row[1]);
-        users[temp1] = temp2;
-    }
+    // 废弃
 }
 
 // 对文件描述符设置非阻塞
@@ -400,8 +375,6 @@ http_conn::HTTP_CODE http_conn::do_request()
     strcpy(m_real_file, doc_root);
     int len = strlen(doc_root);
     Logic logic_func(mysql, m_close_log);
-
-  
     int json_len;
 
     // printf("m_url:%s\n", m_url);
@@ -413,70 +386,6 @@ http_conn::HTTP_CODE http_conn::do_request()
         m_mmap_flag = NULL_MMAP;
     }
 
-    // 处理cgi==>是post请求
-    if (cgi == 1 && (*(p + 1) == '2' || *(p + 1) == '3'))
-    {
-
-        // 根据标志判断是登录检测还是注册检测
-        char flag = m_url[1];
-
-        char *m_url_real = (char *)malloc(sizeof(char) * 200);
-        strcpy(m_url_real, "/");
-        strcat(m_url_real, m_url + 2);
-        strncpy(m_real_file + len, m_url_real, FILENAME_LEN - len - 1);
-        free(m_url_real);
-
-        // 将用户名和密码提取出来
-        // user=123&passwd=123
-        char name[100], password[100];
-        int i;
-        for (i = 5; m_string[i] != '&'; ++i)
-            name[i - 5] = m_string[i];
-        name[i - 5] = '\0';
-
-        int j = 0;
-        for (i = i + 10; m_string[i] != '\0'; ++i, ++j)
-            password[j] = m_string[i];
-        password[j] = '\0';
-
-        if (*(p + 1) == '3')
-        {
-            // 如果是注册，先检测数据库中是否有重名的
-            // 没有重名的，进行增加数据
-            char *sql_insert = (char *)malloc(sizeof(char) * 200);
-            strcpy(sql_insert, "INSERT INTO user(username, passwd) VALUES(");
-            strcat(sql_insert, "'");
-            strcat(sql_insert, name);
-            strcat(sql_insert, "', '");
-            strcat(sql_insert, password);
-            strcat(sql_insert, "')");
-
-            if (users.find(name) == users.end())
-            {
-                m_lock.lock();
-                int res = mysql_query(mysql, sql_insert);
-                users.insert(pair<string, string>(name, password));
-                m_lock.unlock();
-
-                if (!res)
-                    strcpy(m_url, "/log.html");
-                else
-                    strcpy(m_url, "/registerError.html");
-            }
-            else
-                strcpy(m_url, "/registerError.html");
-        }
-        // 如果是登录，直接判断
-        // 若浏览器端输入的用户名和密码在表中可以查找到，返回1，否则返回0
-        else if (*(p + 1) == '2')
-        {
-            if (users.find(name) != users.end() && users[name] == password)
-                strcpy(m_url, "/welcome.html");
-            else
-                strcpy(m_url, "/logError.html");
-        }
-    }
-
     if (*(p + 1) == '0')
     {
         char *m_url_real = (char *)malloc(sizeof(char) * 200);
@@ -485,47 +394,10 @@ http_conn::HTTP_CODE http_conn::do_request()
 
         free(m_url_real);
     }
-    else if (*(p + 1) == '1')
-    {
-        char *m_url_real = (char *)malloc(sizeof(char) * 200);
-        strcpy(m_url_real, "/log.html");
-        strncpy(m_real_file + len, m_url_real, strlen(m_url_real));
-
-        free(m_url_real);
-    }
-    else if (*(p + 1) == '5')
-    {
-        char *m_url_real = (char *)malloc(sizeof(char) * 200);
-        strcpy(m_url_real, "/picture.html");
-        strncpy(m_real_file + len, m_url_real, strlen(m_url_real));
-
-        free(m_url_real);
-    }
-    else if (*(p + 1) == '6')
-    {
-        char *m_url_real = (char *)malloc(sizeof(char) * 200);
-        strcpy(m_url_real, "/video.html");
-        strncpy(m_real_file + len, m_url_real, strlen(m_url_real));
-
-        free(m_url_real);
-    }
-    else if (*(p + 1) == '7')
-    {
-        char *m_url_real = (char *)malloc(sizeof(char) * 200);
-        strcpy(m_url_real, "/fans.html");
-        strncpy(m_real_file + len, m_url_real, strlen(m_url_real));
-
-        free(m_url_real);
-    }
-    else if (*(p + 1) == '8') // 测试返回json
-    {
-        m_mmap_flag = NOT_MMAP;
-
-       
-    }
     else if (cgi != 2 && strncasecmp(p - 4, "/api", 4) == 0 && strncasecmp(p + 1, "login", 5) == 0)
     {
         m_mmap_flag = NOT_MMAP;
+        logic_func.loginLogic(m_string, temp_buf, json_len);
        
     }
     else

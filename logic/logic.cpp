@@ -2,6 +2,7 @@
 
 #define WRITE_BUFFER_SIZE 1024
 #define SECRET_KEY "3MnJb57tW9TAvkYFQEDUgLdSRuBzmXcZ"
+locker m_lock;
 
 std::string Logic::getToken(int mg_id)
 {
@@ -53,7 +54,11 @@ void Logic::loginLogic(char *user_data, char *temp_buff, int &len)
     Json::Value data;
     Json::Value meta;
     int  mg_id = -1;
-    if (!mysql_query(mysql_, sql_string.c_str())) // 查询成功
+    m_lock.lock();
+    int ret = mysql_query(mysql_, sql_string.c_str());
+    m_lock.unlock();
+
+    if (!ret) // 查询成功
     {
         // 从表中检索完整的结果集
         MYSQL_RES *result = mysql_store_result(mysql_);
