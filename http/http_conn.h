@@ -35,6 +35,7 @@ public:
     static const int FILENAME_LEN = 200;
     static const int READ_BUFFER_SIZE = 2048;
     static const int WRITE_BUFFER_SIZE = 1024;
+    static const int TEMP_BUFFER_SIZE = 4096;
     enum METHOD
     {
         GET = 0,
@@ -150,7 +151,7 @@ private:
     IF_MMAP m_mmap_flag;
     size_t m_send_size;
 
-    char temp_buf[WRITE_BUFFER_SIZE]; // 测试用的临时数组
+    char temp_buf[TEMP_BUFFER_SIZE]; // TODO: 之后用专门的可扩展的buff类优化
 
     map<string, string>
         m_users;

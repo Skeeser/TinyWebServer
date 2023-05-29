@@ -1,8 +1,7 @@
 #include "logic.h"
 
-#define WRITE_BUFFER_SIZE 1024
+#define WRITE_BUFFER_SIZE 4096
 #define SECRET_KEY "3MnJb57tW9TAvkYFQEDUgLdSRuBzmXcZ"
-locker m_lock;
 
 std::string Logic::getToken(int mg_id)
 {
@@ -45,19 +44,23 @@ void Logic::loginLogic(char *user_data, char *temp_buff, int &len)
         LOG_INFO("sorry, json reader failed");
     }
 
-    std::string sql_string("SELECT * FROM sp_manager WHRER mg_name = ");
+    std::string sql_string("SELECT * FROM sp_manager WHERE mg_name = '");
     sql_string += root["username"].asString();
-    sql_string += "AND mg_pwd =";
-    sql_string += root["password"].asString() + ";";
+    sql_string += "' AND mg_pwd = '";
+    sql_string += root["password"].asString() + "';";
 
     Json::Value ret_root;
     Json::Value data;
     Json::Value meta;
-    int  mg_id = -1;
-    m_lock.lock();
-    int ret = mysql_query(mysql_, sql_string.c_str());
-    m_lock.unlock();
+    int mg_id = -1;
+    // m_lock.lock();
+    if (mysql_ == NULL)
+        LOG_INFO("mysql is NULL!");
 
+    LOG_INFO("sql_string=>%s", sql_string.c_str());
+    int ret = mysql_query(mysql_, sql_string.c_str());
+    // m_lock.unlock();
+    // LOG_DEBUG("ret=>%d", ret);
     if (!ret) // 查询成功
     {
         // 从表中检索完整的结果集
@@ -65,8 +68,9 @@ void Logic::loginLogic(char *user_data, char *temp_buff, int &len)
 
         while (MYSQL_ROW row = mysql_fetch_row(result))
         {
-            LOG_INFO("row=>%s", row);
+
             mg_id = std::stoi(row[0]);
+            LOG_INFO("row=>%d", mg_id);
         }
 
         data["username"] = root["username"].asString();
@@ -86,13 +90,16 @@ void Logic::loginLogic(char *user_data, char *temp_buff, int &len)
     }
 
     // 清空
-    memset(user_data, '\0', WRITE_BUFFER_SIZE);
+    memset(temp_buff, '\0', WRITE_BUFFER_SIZE);
 
     // 将 JSON 对象转换为字符串
     std::string jsonString = Json::writeString(writer, ret_root);
+
     len = jsonString.size();
+    // LOG_DEBUG("json_string = %s, len = %d", jsonString.c_str(), len);
     if (len <= WRITE_BUFFER_SIZE)
     {
-        strncpy(user_data, jsonString.c_str(), len);
+        strncpy(temp_buff, jsonString.c_str(), len);
+        // LOG_DEBUG("ret_json=>%s", temp_buff);
     }
 }

@@ -380,25 +380,29 @@ http_conn::HTTP_CODE http_conn::do_request()
     // printf("m_url:%s\n", m_url);
     const char *p = strrchr(m_url, '/');
     m_mmap_flag = IS_MMAP;
-    // 处理OPTIONS请求
-    if (cgi == 2)
+    // 先处理OPTIONS请求
+    if (m_method == OPTIONS)
     {
         m_mmap_flag = NULL_MMAP;
     }
+    // else if(*(p + 1) == '0')
+    // {
+    //     char *m_url_real = (char *)malloc(sizeof(char) * 200);
+    //     strcpy(m_url_real, "/register.html");
+    //     strncpy(m_real_file + len, m_url_real, strlen(m_url_real));
 
-    if (*(p + 1) == '0')
+    //     free(m_url_real);
+    // }
+    else if (strncasecmp(p - 4, "/api", 4) == 0)
     {
-        char *m_url_real = (char *)malloc(sizeof(char) * 200);
-        strcpy(m_url_real, "/register.html");
-        strncpy(m_real_file + len, m_url_real, strlen(m_url_real));
-
-        free(m_url_real);
-    }
-    else if (cgi != 2 && strncasecmp(p - 4, "/api", 4) == 0 && strncasecmp(p + 1, "login", 5) == 0)
-    {
-        m_mmap_flag = NOT_MMAP;
-        logic_func.loginLogic(m_string, temp_buf, json_len);
-       
+        // 登录选项
+        if (strncasecmp(p + 1, "login", 5) == 0)
+        {
+            m_mmap_flag = NOT_MMAP;
+            logic_func.loginLogic(m_string, temp_buf, json_len);
+            LOG_DEBUG("ret_json=>%s", temp_buf);
+        }
+        else if ()
     }
     else
         strncpy(m_real_file + len, m_url, FILENAME_LEN - len - 1);
@@ -574,6 +578,14 @@ bool http_conn::process_write(HTTP_CODE ret)
     case FILE_REQUEST:
     {
         add_status_line(200, ok_200_title);
+        add_content("Access-Control-Allow-Origin: *\r\n");
+        add_content("Access-Control-Allow-Headers: X-Requested-With, mytoken\r\n");
+        add_content("Access-Control-Allow-Headers: X-Requested-With, Authorization\r\n");
+        // add_content("Content-Type: application/json;charset=utf-8\r\n");
+        add_content("Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With\r\n");
+        add_content("Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS\r\n");
+        add_content("Access-Control-Max-Age: 3600\r\n");
+        // add_content("X-Powered-By: 3.2.1\r\n");
         if (m_send_size != 0)
         {
             add_headers(m_send_size);
@@ -590,14 +602,6 @@ bool http_conn::process_write(HTTP_CODE ret)
         {
             if (cgi == 2)
             {
-                add_content("Access-Control-Allow-Origin: *\r\n");
-                add_content("Access-Control-Allow-Headers: X-Requested-With, mytoken\r\n");
-                add_content("Access-Control-Allow-Headers: X-Requested-With, Authorization\r\n");
-                // add_content("Content-Type: application/json;charset=utf-8\r\n");
-                add_content("Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With\r\n");
-                add_content("Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS\r\n");
-                add_content("Access-Control-Max-Age: 3600\r\n");
-                // add_content("X-Powered-By: 3.2.1\r\n");
                 m_iv[0].iov_base = m_write_buf;
                 m_iv[0].iov_len = m_write_idx;
                 m_iv_count = 1;
