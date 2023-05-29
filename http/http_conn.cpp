@@ -338,12 +338,13 @@ http_conn::HTTP_CODE http_conn::parse_headers(char *text)
 // 判断http请求是否被完整读入
 http_conn::HTTP_CODE http_conn::parse_content(char *text)
 {
+    LOG_DEBUG("%d, %d, %d", m_read_idx, m_content_length, m_checked_idx);
     if (m_read_idx >= (m_content_length + m_checked_idx))
     {
         text[m_content_length] = '\0';
         // POST请求中最后为输入的用户名和密码
         m_string = text;
-        LOG_INFO("POST_CONTENT=>%S", text);
+        LOG_INFO("POST_CONTENT=>%s", text);
         return GET_REQUEST;
     }
     return NO_REQUEST;
@@ -543,22 +544,22 @@ http_conn::HTTP_CODE http_conn::do_request()
         m_mmap_flag = NOT_MMAP;
         // 创建 JSON 对象
         Json::Value root;
-        // 设置 JSON 对象的属性
-        root["name"] = "test";
-        root["isStudent"] = true;
-        // 清空
-        memset(temp_buf, '\0', WRITE_BUFFER_SIZE);
-
-        // 将 JSON 对象转换为字符串
-        // std::string jsonString = root.toStyledString();
-        Json::StreamWriterBuilder writer;
-        std::string jsonString = Json::writeString(writer, root);
-        json_len = jsonString.size();
-        LOG_INFO("LEN: %d", json_len);
-        if (json_len <= WRITE_BUFFER_SIZE)
+        Json::Reader reader;
+        std::string json_string(m_string);
+        if (!reader.parse(json_string, root))
         {
-            strncpy(temp_buf, jsonString.c_str(), json_len);
+            LOG_INFO("sorry, json reader failed");
         }
+
+        if (users.find(root["username"].asString()) != users.end() && users[root["username"].asString()] == root["password"].asString())
+            strcpy(m_url, "/welcome.html");
+        else
+            strcpy(m_url, "/logError.html");
+
+        // if (json_len <= WRITE_BUFFER_SIZE)
+        // {
+        //     strncpy(temp_buf, jsonString.c_str(), json_len);
+        // }
     }
     else
         strncpy(m_real_file + len, m_url, FILENAME_LEN - len - 1);
