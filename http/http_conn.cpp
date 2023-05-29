@@ -338,7 +338,6 @@ http_conn::HTTP_CODE http_conn::parse_headers(char *text)
 // 判断http请求是否被完整读入
 http_conn::HTTP_CODE http_conn::parse_content(char *text)
 {
-    LOG_DEBUG("%d, %d, %d", m_read_idx, m_content_length, m_checked_idx);
     if (m_read_idx >= (m_content_length + m_checked_idx))
     {
         text[m_content_length] = '\0';
@@ -400,8 +399,9 @@ http_conn::HTTP_CODE http_conn::do_request()
 {
     strcpy(m_real_file, doc_root);
     int len = strlen(doc_root);
-    // 创建 JSON 对象
-    Json::Value root;
+    Logic logic_func(mysql, m_close_log);
+
+  
     int json_len;
 
     // printf("m_url:%s\n", m_url);
@@ -521,45 +521,12 @@ http_conn::HTTP_CODE http_conn::do_request()
     {
         m_mmap_flag = NOT_MMAP;
 
-        // 设置 JSON 对象的属性
-        root["name"] = "John";
-        root["age"] = 30;
-        root["isStudent"] = true;
-        // 清空
-        memset(temp_buf, '\0', WRITE_BUFFER_SIZE);
-
-        // 将 JSON 对象转换为字符串
-        // std::string jsonString = root.toStyledString();
-        Json::StreamWriterBuilder writer;
-        std::string jsonString = Json::writeString(writer, root);
-        json_len = jsonString.size();
-        LOG_INFO("LEN: %d", json_len);
-        if (json_len <= WRITE_BUFFER_SIZE)
-        {
-            strncpy(temp_buf, jsonString.c_str(), json_len);
-        }
+       
     }
     else if (cgi != 2 && strncasecmp(p - 4, "/api", 4) == 0 && strncasecmp(p + 1, "login", 5) == 0)
     {
         m_mmap_flag = NOT_MMAP;
-        // 创建 JSON 对象
-        Json::Value root;
-        Json::Reader reader;
-        std::string json_string(m_string);
-        if (!reader.parse(json_string, root))
-        {
-            LOG_INFO("sorry, json reader failed");
-        }
-
-        if (users.find(root["username"].asString()) != users.end() && users[root["username"].asString()] == root["password"].asString())
-            strcpy(m_url, "/welcome.html");
-        else
-            strcpy(m_url, "/logError.html");
-
-        // if (json_len <= WRITE_BUFFER_SIZE)
-        // {
-        //     strncpy(temp_buf, jsonString.c_str(), json_len);
-        // }
+       
     }
     else
         strncpy(m_real_file + len, m_url, FILENAME_LEN - len - 1);
