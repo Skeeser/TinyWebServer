@@ -412,12 +412,12 @@ http_conn::HTTP_CODE http_conn::do_request()
         {
             Logic logic_func(mysql, m_close_log);
             logic_func.loginLogic(m_string, temp_buf, json_len);
-            LOG_DEBUG("ret_json=>%s", temp_buf);
+            // LOG_DEBUG("ret_json=>%s", temp_buf);
         }
         else if (strncasecmp(p + 1, "menus", 5) == 0)
         {
             Logic logic_func(mysql, m_close_log, token);
-            // 验证token
+            logic_func.menuLogic(temp_buf, json_len);
         }
     }
     else
@@ -530,7 +530,7 @@ bool http_conn::add_response(const char *format, ...)
     m_write_idx += len;
     va_end(arg_list);
 
-    LOG_INFO("request:%s", m_write_buf);
+    // LOG_INFO("request:%s", m_write_buf);
 
     return true;
 }

@@ -6,7 +6,7 @@
 std::string Logic::getToken(int mg_id)
 {
     return jwt::create()
-        .set_issuer("auth")
+        .set_issuer("auth0")
         .set_type("JWS")
         .set_payload_claim("mg_id", jwt::claim(std::to_string(mg_id)))
         .sign(jwt::algorithm::hs256{SECRET_KEY});
@@ -19,18 +19,22 @@ bool Logic::checkToken(std::string token, int &mg_id)
     mg_id = -1;
     auto verifier = jwt::verify()
                         .allow_algorithm(jwt::algorithm::hs256{SECRET_KEY})
-                        .with_issuer("auth");
+                        .with_issuer("auth0");
     try
     {
         verifier.verify(decoded);
-        auto id = decoded.get_payload_claim("mg_id");
-        mg_id = id.as_integer();
-
+        for (auto i : decoded.get_payload_json())
+        {
+            if (i.first == "mg_id")
+            {
+                mg_id = stoi(i.second.to_str());
+            }
+        }
         return true;
     }
     catch (const std::exception &e)
     {
-        LOG_INFO("%s", e.what());
+        LOG_INFO("tokken error for %s", e.what());
         return false;
     }
 }
