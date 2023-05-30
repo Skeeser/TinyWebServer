@@ -152,6 +152,7 @@ private:
     size_t m_send_size;
 
     char temp_buf[TEMP_BUFFER_SIZE]; // TODO: 之后用专门的可扩展的buff类优化
+    char *m_token_str;
 
     map<string, string>
         m_users;

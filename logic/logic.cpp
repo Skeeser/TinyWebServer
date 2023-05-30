@@ -30,6 +30,7 @@ bool Logic::checkToken(std::string token, int &mg_id)
     }
     catch (const std::exception &e)
     {
+        LOG_INFO("%s", e.what());
         return false;
     }
 }
@@ -157,7 +158,8 @@ void Logic::menuLogic(char *temp_buff, int &len)
             // 二级菜单
             else if (strncasecmp(row[indexOf("ps_level")], "1", 1) == 0)
             {
-                if(pid) (*level1_data)[pid].append(temp);
+                if (pid)
+                    (*level1_data)[pid].append(temp);
             }
             temp.clear();
         }
@@ -168,6 +170,7 @@ void Logic::menuLogic(char *temp_buff, int &len)
             auto pid_it = std::find(json_value.begin(), json_value.end(), "id");
             if (pid_it != json_value.end())
             {
+                LOG_DEBUG("pid=>%d", (*level1_data)[pid_it->asInt()]);
                 json_value["children"].append((*level1_data)[pid_it->asInt()]);
             }
         }
@@ -212,7 +215,7 @@ void Logic::getTableKey(std::vector<std::string> *key_vector, string table_name)
     int ret = mysql_query(mysql_, sql_string.c_str());
 
     // LOG_DEBUG("ret=>%d", ret);
-    if (!ret) // 查询成功
+    if (!ret) // 查询成功de
     {
         // 从表中检索完整的结果集
         MYSQL_RES *result = mysql_store_result(mysql_);

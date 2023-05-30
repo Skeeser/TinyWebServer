@@ -130,6 +130,7 @@ void http_conn::init()
     improv = 0;
     m_mmap_flag = IS_MMAP;
     m_send_size = 0;
+    m_token_str = 0;
 
     memset(m_read_buf, '\0', READ_BUFFER_SIZE);
     memset(m_write_buf, '\0', WRITE_BUFFER_SIZE);
@@ -263,8 +264,8 @@ http_conn::HTTP_CODE http_conn::parse_request_line(char *text)
     if (!m_url || m_url[0] != '/')
         return BAD_REQUEST;
     // 当url为/时，显示判断界面
-    if (strlen(m_url) == 1)
-        strcat(m_url, "judge.html");
+    // if (strlen(m_url) == 1)
+    //     strcat(m_url, "judge.html");
 
     m_check_state = CHECK_STATE_HEADER;
     return NO_REQUEST;
@@ -302,6 +303,13 @@ http_conn::HTTP_CODE http_conn::parse_headers(char *text)
         text += 5;
         text += strspn(text, " \t");
         m_host = text;
+    }
+    // 解析token
+    else if (strncasecmp(text, "Authorization:", 14) == 0)
+    {
+        text += 14;
+        text += strspn(text, " \t");
+        m_token_str = text;
     }
     else
     {
@@ -375,7 +383,9 @@ http_conn::HTTP_CODE http_conn::do_request()
     strcpy(m_real_file, doc_root);
     int len = strlen(doc_root);
     std::string token = "";
-    Logic logic_func(mysql, m_close_log, token);
+    if (m_token_str)
+        token = m_token_str;
+
     int json_len;
 
     // printf("m_url:%s\n", m_url);
@@ -400,10 +410,13 @@ http_conn::HTTP_CODE http_conn::do_request()
         // 登录选项
         if (strncasecmp(p + 1, "login", 5) == 0)
         {
+            Logic logic_func(mysql, m_close_log);
             logic_func.loginLogic(m_string, temp_buf, json_len);
             LOG_DEBUG("ret_json=>%s", temp_buf);
         }
-        else if (strncasecmp(p + 1, "menus", 5) == 0){
+        else if (strncasecmp(p + 1, "menus", 5) == 0)
+        {
+            Logic logic_func(mysql, m_close_log, token);
             // 验证token
         }
     }

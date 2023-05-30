@@ -1,0 +1,1527 @@
+2023-05-30 17:21:32.240989 [info]: timer tick
+2023-05-30 17:21:37.120002 [info]: deal with the client(127.0.0.1)
+2023-05-30 17:21:37.120180 [info]: adjust timer once
+2023-05-30 17:21:37.120281 [info]: parse_test=>OPTIONS /api/login HTTP/1.1
+2023-05-30 17:21:37.120360 [info]: url=> /api/login
+2023-05-30 17:21:37.120380 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-05-30 17:21:37.120387 [info]: parse_test=>Connection: keep-alive
+2023-05-30 17:21:37.120394 [info]: parse_test=>Accept: */*
+2023-05-30 17:21:37.120400 [info]: oop!unknow header: Accept: */*
+2023-05-30 17:21:37.120405 [info]: parse_test=>Access-Control-Request-Method: POST
+2023-05-30 17:21:37.120410 [info]: oop!unknow header: Access-Control-Request-Method: POST
+2023-05-30 17:21:37.120415 [info]: parse_test=>Access-Control-Request-Headers: content-type
+2023-05-30 17:21:37.120420 [info]: oop!unknow header: Access-Control-Request-Headers: content-type
+2023-05-30 17:21:37.120425 [info]: parse_test=>Origin: http://localhost:8080
+2023-05-30 17:21:37.120430 [info]: oop!unknow header: Origin: http://localhost:8080
+2023-05-30 17:21:37.120435 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:21:37.120442 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:21:37.120450 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-05-30 17:21:37.120455 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-05-30 17:21:37.120463 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-05-30 17:21:37.120508 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-05-30 17:21:37.120527 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-05-30 17:21:37.120535 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-05-30 17:21:37.120541 [info]: parse_test=>Referer: http://localhost:8080/
+2023-05-30 17:21:37.120548 [info]: oop!unknow header: Referer: http://localhost:8080/
+2023-05-30 17:21:37.120554 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-05-30 17:21:37.120560 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-05-30 17:21:37.120568 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:21:37.120615 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:21:37.120633 [info]: parse_test=>
+2023-05-30 17:21:37.120656 [info]: request:HTTP/1.1 200 OK
+
+2023-05-30 17:21:37.120682 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+
+2023-05-30 17:21:37.120691 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+
+2023-05-30 17:21:37.120703 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+
+2023-05-30 17:21:37.120716 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+
+2023-05-30 17:21:37.120728 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+
+2023-05-30 17:21:37.120734 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+
+2023-05-30 17:21:37.121048 [info]: send data to the client(127.0.0.1)
+2023-05-30 17:21:37.121158 [info]: adjust timer once
+2023-05-30 17:21:37.241130 [info]: timer tick
+2023-05-30 17:21:42.241271 [info]: timer tick
+2023-05-30 17:21:47.241715 [info]: timer tick
+2023-05-30 17:21:52.242339 [info]: timer tick
+2023-05-30 17:21:52.250220 [info]: deal with the client(127.0.0.1)
+2023-05-30 17:21:52.250352 [info]: adjust timer once
+2023-05-30 17:21:52.250490 [info]: parse_test=>POST /api/login HTTP/1.1
+2023-05-30 17:21:52.250660 [info]: url=> /api/login
+2023-05-30 17:21:52.250693 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-05-30 17:21:52.250707 [info]: parse_test=>Connection: keep-alive
+2023-05-30 17:21:52.250718 [info]: parse_test=>Content-Length: 40
+2023-05-30 17:21:52.250729 [info]: parse_test=>sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:21:52.250743 [info]: oop!unknow header: sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:21:52.250754 [info]: parse_test=>Accept: application/json, text/plain, */*
+2023-05-30 17:21:52.250765 [info]: oop!unknow header: Accept: application/json, text/plain, */*
+2023-05-30 17:21:52.250774 [info]: parse_test=>Content-Type: application/json
+2023-05-30 17:21:52.250784 [info]: oop!unknow header: Content-Type: application/json
+2023-05-30 17:21:52.250794 [info]: parse_test=>sec-ch-ua-mobile: ?0
+2023-05-30 17:21:52.250804 [info]: oop!unknow header: sec-ch-ua-mobile: ?0
+2023-05-30 17:21:52.250867 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:21:52.250898 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:21:52.250909 [info]: parse_test=>sec-ch-ua-platform: "Windows"
+2023-05-30 17:21:52.250919 [info]: oop!unknow header: sec-ch-ua-platform: "Windows"
+2023-05-30 17:21:52.250929 [info]: parse_test=>Origin: http://localhost:8080
+2023-05-30 17:21:52.250939 [info]: oop!unknow header: Origin: http://localhost:8080
+2023-05-30 17:21:52.250949 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-05-30 17:21:52.250958 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-05-30 17:21:52.250967 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-05-30 17:21:52.250978 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-05-30 17:21:52.250991 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-05-30 17:21:52.251001 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-05-30 17:21:52.251011 [info]: parse_test=>Referer: http://localhost:8080/
+2023-05-30 17:21:52.251020 [info]: oop!unknow header: Referer: http://localhost:8080/
+2023-05-30 17:21:52.251030 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-05-30 17:21:52.251039 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-05-30 17:21:52.251050 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:21:52.251060 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:21:52.251069 [info]: parse_test=>
+2023-05-30 17:21:52.251079 [info]: parse_test=>{"username":"admin","password":"123456"}
+2023-05-30 17:21:52.251088 [info]: POST_CONTENT=>{"username":"admin","password":"123456"}
+2023-05-30 17:21:52.265454 [info]: sql_string=>SELECT * FROM sp_manager WHERE mg_name = 'admin' AND mg_pwd = '123456';
+2023-05-30 17:21:52.744121 [info]: row=>500
+2023-05-30 17:21:52.776029 [debug]: ret_json=>{
+	"data" : 
+	{
+		"token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg",
+		"username" : "admin"
+	},
+	"meta" : 
+	{
+		"msg" : "登录成功",
+		"status" : 200
+	}
+}
+2023-05-30 17:21:52.776135 [info]: LEN: 239
+2023-05-30 17:21:52.776155 [info]: request:HTTP/1.1 200 OK
+
+2023-05-30 17:21:52.776161 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+
+2023-05-30 17:21:52.776180 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+
+2023-05-30 17:21:52.776186 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+
+2023-05-30 17:21:52.776194 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+
+2023-05-30 17:21:52.776199 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+
+2023-05-30 17:21:52.776204 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+
+2023-05-30 17:21:52.776209 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+
+2023-05-30 17:21:52.776214 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+Connection:keep-alive
+
+2023-05-30 17:21:52.776219 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+Connection:keep-alive
+
+
+2023-05-30 17:21:52.776570 [info]: send data to the client(127.0.0.1)
+2023-05-30 17:21:52.776707 [info]: adjust timer once
+2023-05-30 17:21:57.242580 [info]: timer tick
+2023-05-30 17:22:02.242808 [info]: timer tick
+2023-05-30 17:22:07.243178 [info]: timer tick
+2023-05-30 17:22:12.243451 [info]: timer tick
+2023-05-30 17:22:13.380489 [info]: deal with the client(127.0.0.1)
+2023-05-30 17:22:13.380626 [info]: adjust timer once
+2023-05-30 17:22:13.380677 [info]: parse_test=>POST /api/login HTTP/1.1
+2023-05-30 17:22:13.380706 [info]: url=> /api/login
+2023-05-30 17:22:13.380715 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-05-30 17:22:13.380722 [info]: parse_test=>Connection: keep-alive
+2023-05-30 17:22:13.380729 [info]: parse_test=>Content-Length: 40
+2023-05-30 17:22:13.380735 [info]: parse_test=>sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:22:13.380741 [info]: oop!unknow header: sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:22:13.380746 [info]: parse_test=>Accept: application/json, text/plain, */*
+2023-05-30 17:22:13.380751 [info]: oop!unknow header: Accept: application/json, text/plain, */*
+2023-05-30 17:22:13.380755 [info]: parse_test=>Content-Type: application/json
+2023-05-30 17:22:13.380760 [info]: oop!unknow header: Content-Type: application/json
+2023-05-30 17:22:13.380777 [info]: parse_test=>sec-ch-ua-mobile: ?0
+2023-05-30 17:22:13.380782 [info]: oop!unknow header: sec-ch-ua-mobile: ?0
+2023-05-30 17:22:13.380789 [info]: parse_test=>Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg
+2023-05-30 17:22:13.380794 [info]: oop!unknow header: Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg
+2023-05-30 17:22:13.380801 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:22:13.380807 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:22:13.380814 [info]: parse_test=>sec-ch-ua-platform: "Windows"
+2023-05-30 17:22:13.380822 [info]: oop!unknow header: sec-ch-ua-platform: "Windows"
+2023-05-30 17:22:13.380827 [info]: parse_test=>Origin: http://localhost:8080
+2023-05-30 17:22:13.380834 [info]: oop!unknow header: Origin: http://localhost:8080
+2023-05-30 17:22:13.380840 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-05-30 17:22:13.380844 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-05-30 17:22:13.380849 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-05-30 17:22:13.380854 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-05-30 17:22:13.380859 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-05-30 17:22:13.380863 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-05-30 17:22:13.380868 [info]: parse_test=>Referer: http://localhost:8080/
+2023-05-30 17:22:13.380873 [info]: oop!unknow header: Referer: http://localhost:8080/
+2023-05-30 17:22:13.380877 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-05-30 17:22:13.380882 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-05-30 17:22:13.380887 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:22:13.380892 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:22:13.380898 [info]: parse_test=>
+2023-05-30 17:22:13.380904 [info]: parse_test=>{"username":"admin","password":"123456"}
+2023-05-30 17:22:13.380910 [info]: POST_CONTENT=>{"username":"admin","password":"123456"}
+2023-05-30 17:22:13.380942 [info]: sql_string=>SELECT * FROM sp_manager WHERE mg_name = 'admin' AND mg_pwd = '123456';
+2023-05-30 17:22:13.384477 [info]: row=>500
+2023-05-30 17:22:13.384778 [debug]: ret_json=>{
+	"data" : 
+	{
+		"token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg",
+		"username" : "admin"
+	},
+	"meta" : 
+	{
+		"msg" : "登录成功",
+		"status" : 200
+	}
+}
+2023-05-30 17:22:13.384810 [info]: LEN: 239
+2023-05-30 17:22:13.384827 [info]: request:HTTP/1.1 200 OK
+
+2023-05-30 17:22:13.384837 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+
+2023-05-30 17:22:13.384851 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+
+2023-05-30 17:22:13.384860 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+
+2023-05-30 17:22:13.384871 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+
+2023-05-30 17:22:13.384882 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+
+2023-05-30 17:22:13.384963 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+
+2023-05-30 17:22:13.384996 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+
+2023-05-30 17:22:13.385007 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+Connection:keep-alive
+
+2023-05-30 17:22:13.385017 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+Connection:keep-alive
+
+
+2023-05-30 17:22:13.385204 [info]: send data to the client(127.0.0.1)
+2023-05-30 17:22:13.385257 [info]: adjust timer once
+2023-05-30 17:22:17.243893 [info]: timer tick
+2023-05-30 17:22:22.244179 [info]: timer tick
+2023-05-30 17:22:27.244310 [info]: timer tick
+2023-05-30 17:22:32.244881 [info]: timer tick
+2023-05-30 17:22:37.245057 [info]: timer tick
+2023-05-30 17:22:42.245566 [info]: timer tick
+2023-05-30 17:22:47.245771 [info]: timer tick
+2023-05-30 17:22:52.246050 [info]: timer tick
+2023-05-30 17:22:57.246196 [info]: timer tick
+2023-05-30 17:23:02.246640 [info]: timer tick
+2023-05-30 17:23:07.247052 [info]: timer tick
+2023-05-30 17:23:12.247499 [info]: timer tick
+2023-05-30 17:23:17.247815 [info]: timer tick
+2023-05-30 17:23:22.248237 [info]: timer tick
+2023-05-30 17:23:27.248365 [info]: timer tick
+2023-05-30 17:23:28.148703 [info]: deal with the client(127.0.0.1)
+2023-05-30 17:23:28.148835 [info]: adjust timer once
+2023-05-30 17:23:28.148919 [info]: parse_test=>POST /api/login HTTP/1.1
+2023-05-30 17:23:28.148980 [info]: url=> /api/login
+2023-05-30 17:23:28.148996 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-05-30 17:23:28.149003 [info]: parse_test=>Connection: keep-alive
+2023-05-30 17:23:28.149009 [info]: parse_test=>Content-Length: 40
+2023-05-30 17:23:28.149015 [info]: parse_test=>sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:23:28.149020 [info]: oop!unknow header: sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:23:28.149025 [info]: parse_test=>Accept: application/json, text/plain, */*
+2023-05-30 17:23:28.149030 [info]: oop!unknow header: Accept: application/json, text/plain, */*
+2023-05-30 17:23:28.149035 [info]: parse_test=>Content-Type: application/json
+2023-05-30 17:23:28.149044 [info]: oop!unknow header: Content-Type: application/json
+2023-05-30 17:23:28.149049 [info]: parse_test=>sec-ch-ua-mobile: ?0
+2023-05-30 17:23:28.149054 [info]: oop!unknow header: sec-ch-ua-mobile: ?0
+2023-05-30 17:23:28.149059 [info]: parse_test=>Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg
+2023-05-30 17:23:28.149064 [info]: oop!unknow header: Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg
+2023-05-30 17:23:28.149081 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:23:28.149086 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:23:28.149091 [info]: parse_test=>sec-ch-ua-platform: "Windows"
+2023-05-30 17:23:28.149099 [info]: oop!unknow header: sec-ch-ua-platform: "Windows"
+2023-05-30 17:23:28.149103 [info]: parse_test=>Origin: http://localhost:8080
+2023-05-30 17:23:28.149108 [info]: oop!unknow header: Origin: http://localhost:8080
+2023-05-30 17:23:28.149113 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-05-30 17:23:28.149118 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-05-30 17:23:28.149123 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-05-30 17:23:28.149127 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-05-30 17:23:28.149132 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-05-30 17:23:28.149137 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-05-30 17:23:28.149142 [info]: parse_test=>Referer: http://localhost:8080/
+2023-05-30 17:23:28.149147 [info]: oop!unknow header: Referer: http://localhost:8080/
+2023-05-30 17:23:28.149152 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-05-30 17:23:28.149156 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-05-30 17:23:28.149161 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:23:28.149166 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:23:28.149171 [info]: parse_test=>
+2023-05-30 17:23:28.149175 [info]: parse_test=>{"username":"admin","password":"123456"}
+2023-05-30 17:23:28.149180 [info]: POST_CONTENT=>{"username":"admin","password":"123456"}
+2023-05-30 17:23:28.149213 [info]: sql_string=>SELECT * FROM sp_manager WHERE mg_name = 'admin' AND mg_pwd = '123456';
+2023-05-30 17:23:28.156516 [info]: row=>500
+2023-05-30 17:23:28.156783 [debug]: ret_json=>{
+	"data" : 
+	{
+		"token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg",
+		"username" : "admin"
+	},
+	"meta" : 
+	{
+		"msg" : "登录成功",
+		"status" : 200
+	}
+}
+2023-05-30 17:23:28.156851 [info]: LEN: 239
+2023-05-30 17:23:28.156873 [info]: request:HTTP/1.1 200 OK
+
+2023-05-30 17:23:28.156879 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+
+2023-05-30 17:23:28.156888 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+
+2023-05-30 17:23:28.156893 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+
+2023-05-30 17:23:28.156899 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+
+2023-05-30 17:23:28.156904 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+
+2023-05-30 17:23:28.156908 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+
+2023-05-30 17:23:28.156954 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+
+2023-05-30 17:23:28.156970 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+Connection:keep-alive
+
+2023-05-30 17:23:28.156976 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+Connection:keep-alive
+
+
+2023-05-30 17:23:28.157263 [info]: send data to the client(127.0.0.1)
+2023-05-30 17:23:28.157382 [info]: adjust timer once
+2023-05-30 17:23:32.249003 [info]: timer tick
+2023-05-30 17:23:37.249129 [info]: timer tick
+2023-05-30 17:23:42.249575 [info]: timer tick
+2023-05-30 17:23:47.250131 [info]: timer tick
+2023-05-30 17:23:52.250298 [info]: timer tick
+2023-05-30 17:23:57.250723 [info]: timer tick
+2023-05-30 17:24:02.251072 [info]: timer tick
+2023-05-30 17:24:04.495377 [info]: deal with the client(127.0.0.1)
+2023-05-30 17:24:04.495507 [info]: adjust timer once
+2023-05-30 17:24:04.495579 [info]: parse_test=>POST /api/login HTTP/1.1
+2023-05-30 17:24:04.495636 [info]: url=> /api/login
+2023-05-30 17:24:04.495653 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-05-30 17:24:04.495660 [info]: parse_test=>Connection: keep-alive
+2023-05-30 17:24:04.495666 [info]: parse_test=>Content-Length: 40
+2023-05-30 17:24:04.495672 [info]: parse_test=>sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:24:04.495677 [info]: oop!unknow header: sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:24:04.495682 [info]: parse_test=>Accept: application/json, text/plain, */*
+2023-05-30 17:24:04.495687 [info]: oop!unknow header: Accept: application/json, text/plain, */*
+2023-05-30 17:24:04.495692 [info]: parse_test=>Content-Type: application/json
+2023-05-30 17:24:04.495701 [info]: oop!unknow header: Content-Type: application/json
+2023-05-30 17:24:04.495706 [info]: parse_test=>sec-ch-ua-mobile: ?0
+2023-05-30 17:24:04.495711 [info]: oop!unknow header: sec-ch-ua-mobile: ?0
+2023-05-30 17:24:04.495717 [info]: parse_test=>Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg
+2023-05-30 17:24:04.495722 [info]: oop!unknow header: Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg
+2023-05-30 17:24:04.495727 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:24:04.495732 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:24:04.495737 [info]: parse_test=>sec-ch-ua-platform: "Windows"
+2023-05-30 17:24:04.495741 [info]: oop!unknow header: sec-ch-ua-platform: "Windows"
+2023-05-30 17:24:04.495746 [info]: parse_test=>Origin: http://localhost:8080
+2023-05-30 17:24:04.495754 [info]: oop!unknow header: Origin: http://localhost:8080
+2023-05-30 17:24:04.495759 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-05-30 17:24:04.495776 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-05-30 17:24:04.495781 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-05-30 17:24:04.495786 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-05-30 17:24:04.495791 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-05-30 17:24:04.495795 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-05-30 17:24:04.495800 [info]: parse_test=>Referer: http://localhost:8080/
+2023-05-30 17:24:04.495805 [info]: oop!unknow header: Referer: http://localhost:8080/
+2023-05-30 17:24:04.495813 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-05-30 17:24:04.495818 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-05-30 17:24:04.495822 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:24:04.495827 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:24:04.495832 [info]: parse_test=>
+2023-05-30 17:24:04.495837 [info]: parse_test=>{"username":"admin","password":"123456"}
+2023-05-30 17:24:04.495841 [info]: POST_CONTENT=>{"username":"admin","password":"123456"}
+2023-05-30 17:24:04.495871 [info]: sql_string=>SELECT * FROM sp_manager WHERE mg_name = 'admin' AND mg_pwd = '123456';
+2023-05-30 17:24:04.500644 [info]: row=>500
+2023-05-30 17:24:04.500876 [debug]: ret_json=>{
+	"data" : 
+	{
+		"token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg",
+		"username" : "admin"
+	},
+	"meta" : 
+	{
+		"msg" : "登录成功",
+		"status" : 200
+	}
+}
+2023-05-30 17:24:04.500919 [info]: LEN: 239
+2023-05-30 17:24:04.500941 [info]: request:HTTP/1.1 200 OK
+
+2023-05-30 17:24:04.500948 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+
+2023-05-30 17:24:04.500957 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+
+2023-05-30 17:24:04.500962 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+
+2023-05-30 17:24:04.500968 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+
+2023-05-30 17:24:04.500973 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+
+2023-05-30 17:24:04.500979 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+
+2023-05-30 17:24:04.500984 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+
+2023-05-30 17:24:04.500989 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+Connection:keep-alive
+
+2023-05-30 17:24:04.501006 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+Connection:keep-alive
+
+
+2023-05-30 17:24:04.501184 [info]: send data to the client(127.0.0.1)
+2023-05-30 17:24:04.501232 [info]: adjust timer once
+2023-05-30 17:24:07.251511 [info]: timer tick
+2023-05-30 17:24:12.251803 [info]: timer tick
+2023-05-30 17:24:17.252249 [info]: timer tick
+2023-05-30 17:24:22.252910 [info]: timer tick
+2023-05-30 17:24:27.253338 [info]: timer tick
+2023-05-30 17:24:32.253765 [info]: timer tick
+2023-05-30 17:24:37.253930 [info]: timer tick
+2023-05-30 17:24:42.254085 [info]: timer tick
+2023-05-30 17:24:47.254254 [info]: timer tick
+2023-05-30 17:24:52.254622 [info]: timer tick
+2023-05-30 17:24:57.254809 [info]: timer tick
+2023-05-30 17:25:02.255239 [info]: timer tick
+2023-05-30 17:25:07.255387 [info]: timer tick
+2023-05-30 17:25:12.256033 [info]: timer tick
+2023-05-30 17:25:17.256251 [info]: timer tick
+2023-05-30 17:25:22.256665 [info]: timer tick
+2023-05-30 17:25:27.257158 [info]: timer tick
+2023-05-30 17:25:32.257601 [info]: timer tick
+2023-05-30 17:25:37.257808 [info]: timer tick
+2023-05-30 17:25:42.258245 [info]: timer tick
+2023-05-30 17:25:47.258691 [info]: timer tick
+2023-05-30 17:25:52.259175 [info]: timer tick
+2023-05-30 17:25:57.259255 [info]: timer tick
+2023-05-30 17:26:02.259444 [info]: timer tick
+2023-05-30 17:26:07.259831 [info]: timer tick
+2023-05-30 17:26:12.259912 [info]: timer tick
+2023-05-30 17:26:17.260045 [info]: timer tick
+2023-05-30 17:26:22.260138 [info]: timer tick
+2023-05-30 17:26:27.260248 [info]: timer tick
+2023-05-30 17:26:32.260687 [info]: timer tick
+2023-05-30 17:26:37.260826 [info]: timer tick
+2023-05-30 17:26:42.260953 [info]: timer tick
+2023-05-30 17:26:46.065758 [info]: deal with the client(127.0.0.1)
+2023-05-30 17:26:46.065887 [info]: adjust timer once
+2023-05-30 17:26:46.066038 [info]: parse_test=>POST /api/login HTTP/1.1
+2023-05-30 17:26:46.066203 [info]: url=> /api/login
+2023-05-30 17:26:46.066236 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-05-30 17:26:46.066250 [info]: parse_test=>Connection: keep-alive
+2023-05-30 17:26:46.066261 [info]: parse_test=>Content-Length: 40
+2023-05-30 17:26:46.066276 [info]: parse_test=>sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:26:46.066288 [info]: oop!unknow header: sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:26:46.066298 [info]: parse_test=>Accept: application/json, text/plain, */*
+2023-05-30 17:26:46.066308 [info]: oop!unknow header: Accept: application/json, text/plain, */*
+2023-05-30 17:26:46.066317 [info]: parse_test=>Content-Type: application/json
+2023-05-30 17:26:46.066327 [info]: oop!unknow header: Content-Type: application/json
+2023-05-30 17:26:46.066339 [info]: parse_test=>sec-ch-ua-mobile: ?0
+2023-05-30 17:26:46.066350 [info]: oop!unknow header: sec-ch-ua-mobile: ?0
+2023-05-30 17:26:46.066361 [info]: parse_test=>Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg
+2023-05-30 17:26:46.066371 [info]: oop!unknow header: Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg
+2023-05-30 17:26:46.066382 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:26:46.066443 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:26:46.066473 [info]: parse_test=>sec-ch-ua-platform: "Windows"
+2023-05-30 17:26:46.066552 [info]: oop!unknow header: sec-ch-ua-platform: "Windows"
+2023-05-30 17:26:46.066583 [info]: parse_test=>Origin: http://localhost:8080
+2023-05-30 17:26:46.066593 [info]: oop!unknow header: Origin: http://localhost:8080
+2023-05-30 17:26:46.066604 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-05-30 17:26:46.066617 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-05-30 17:26:46.066627 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-05-30 17:26:46.066686 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-05-30 17:26:46.066716 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-05-30 17:26:46.066727 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-05-30 17:26:46.066738 [info]: parse_test=>Referer: http://localhost:8080/
+2023-05-30 17:26:46.066795 [info]: oop!unknow header: Referer: http://localhost:8080/
+2023-05-30 17:26:46.066811 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-05-30 17:26:46.066818 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-05-30 17:26:46.066823 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:26:46.066828 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:26:46.066834 [info]: parse_test=>
+2023-05-30 17:26:46.066839 [info]: parse_test=>{"username":"admin","password":"123456"}
+2023-05-30 17:26:46.066845 [info]: POST_CONTENT=>{"username":"admin","password":"123456"}
+2023-05-30 17:26:46.066881 [info]: sql_string=>SELECT * FROM sp_manager WHERE mg_name = 'admin' AND mg_pwd = '123456';
+2023-05-30 17:26:46.073434 [info]: row=>500
+2023-05-30 17:26:46.073692 [debug]: ret_json=>{
+	"data" : 
+	{
+		"token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg",
+		"username" : "admin"
+	},
+	"meta" : 
+	{
+		"msg" : "登录成功",
+		"status" : 200
+	}
+}
+2023-05-30 17:26:46.073709 [info]: LEN: 239
+2023-05-30 17:26:46.073719 [info]: request:HTTP/1.1 200 OK
+
+2023-05-30 17:26:46.073724 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+
+2023-05-30 17:26:46.073732 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+
+2023-05-30 17:26:46.073736 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+
+2023-05-30 17:26:46.073742 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+
+2023-05-30 17:26:46.073747 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+
+2023-05-30 17:26:46.073752 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+
+2023-05-30 17:26:46.073757 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+
+2023-05-30 17:26:46.073763 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+Connection:keep-alive
+
+2023-05-30 17:26:46.073812 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+Connection:keep-alive
+
+
+2023-05-30 17:26:46.074048 [info]: send data to the client(127.0.0.1)
+2023-05-30 17:26:46.074193 [info]: adjust timer once
+2023-05-30 17:26:47.261307 [info]: timer tick
+2023-05-30 17:26:52.261442 [info]: timer tick
+2023-05-30 17:26:57.261669 [info]: timer tick
+2023-05-30 17:27:02.261874 [info]: timer tick
+2023-05-30 17:27:07.262393 [info]: timer tick
+2023-05-30 17:27:12.262886 [info]: timer tick
+2023-05-30 17:27:17.263048 [info]: timer tick
+2023-05-30 17:27:22.263470 [info]: timer tick
+2023-05-30 17:27:27.263980 [info]: timer tick
+2023-05-30 17:27:32.264430 [info]: timer tick
+2023-05-30 17:27:37.264593 [info]: timer tick
+2023-05-30 17:27:42.264736 [info]: timer tick
+2023-05-30 17:27:47.264885 [info]: timer tick
+2023-05-30 17:27:52.265062 [info]: timer tick
+2023-05-30 17:27:57.265273 [info]: timer tick
+2023-05-30 17:28:02.265441 [info]: timer tick
+2023-05-30 17:28:07.265751 [info]: timer tick
+2023-05-30 17:28:12.265914 [info]: timer tick
+2023-05-30 17:28:17.266356 [info]: timer tick
+2023-05-30 17:28:22.266666 [info]: timer tick
+2023-05-30 17:28:27.267137 [info]: timer tick
+2023-05-30 17:28:32.267484 [info]: timer tick
+2023-05-30 17:28:37.267692 [info]: timer tick
+2023-05-30 17:28:42.267815 [info]: timer tick
+2023-05-30 17:28:47.268246 [info]: timer tick
+2023-05-30 17:28:52.268788 [info]: timer tick
+2023-05-30 17:28:57.269288 [info]: timer tick
+2023-05-30 17:29:02.269499 [info]: timer tick
+2023-05-30 17:29:07.269588 [info]: timer tick
+2023-05-30 17:29:12.269679 [info]: timer tick
+2023-05-30 17:29:17.269795 [info]: timer tick
+2023-05-30 17:29:22.269904 [info]: timer tick
+2023-05-30 17:29:27.270351 [info]: timer tick
+2023-05-30 17:29:32.270854 [info]: timer tick
+2023-05-30 17:29:37.271087 [info]: timer tick
+2023-05-30 17:29:42.271539 [info]: timer tick
+2023-05-30 17:29:47.271709 [info]: timer tick
+2023-05-30 17:29:52.272213 [info]: timer tick
+2023-05-30 17:29:57.272371 [info]: timer tick
+2023-05-30 17:30:02.272675 [info]: timer tick
+2023-05-30 17:30:04.726384 [info]: deal with the client(127.0.0.1)
+2023-05-30 17:30:04.727312 [info]: adjust timer once
+2023-05-30 17:30:04.729375 [info]: parse_test=>OPTIONS /api/login HTTP/1.1
+2023-05-30 17:30:04.729513 [info]: url=> /api/login
+2023-05-30 17:30:04.729532 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-05-30 17:30:04.729540 [info]: parse_test=>Connection: keep-alive
+2023-05-30 17:30:04.729547 [info]: parse_test=>Accept: */*
+2023-05-30 17:30:04.729552 [info]: oop!unknow header: Accept: */*
+2023-05-30 17:30:04.729557 [info]: parse_test=>Access-Control-Request-Method: POST
+2023-05-30 17:30:04.729561 [info]: oop!unknow header: Access-Control-Request-Method: POST
+2023-05-30 17:30:04.729566 [info]: parse_test=>Access-Control-Request-Headers: content-type
+2023-05-30 17:30:04.729571 [info]: oop!unknow header: Access-Control-Request-Headers: content-type
+2023-05-30 17:30:04.729576 [info]: parse_test=>Origin: http://localhost:8082
+2023-05-30 17:30:04.729581 [info]: oop!unknow header: Origin: http://localhost:8082
+2023-05-30 17:30:04.729586 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:30:04.729591 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:30:04.729618 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-05-30 17:30:04.729623 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-05-30 17:30:04.729628 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-05-30 17:30:04.729633 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-05-30 17:30:04.729637 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-05-30 17:30:04.729642 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-05-30 17:30:04.729647 [info]: parse_test=>Referer: http://localhost:8082/
+2023-05-30 17:30:04.729652 [info]: oop!unknow header: Referer: http://localhost:8082/
+2023-05-30 17:30:04.729657 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-05-30 17:30:04.729663 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-05-30 17:30:04.729669 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:30:04.729674 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:30:04.729679 [info]: parse_test=>
+2023-05-30 17:30:04.742733 [info]: request:HTTP/1.1 200 OK
+
+2023-05-30 17:30:04.742840 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+
+2023-05-30 17:30:04.742856 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+
+2023-05-30 17:30:04.742862 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+
+2023-05-30 17:30:04.742867 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+
+2023-05-30 17:30:04.742876 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+
+2023-05-30 17:30:04.742881 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+
+2023-05-30 17:30:04.743093 [info]: send data to the client(127.0.0.1)
+2023-05-30 17:30:04.743182 [info]: adjust timer once
+2023-05-30 17:30:07.273084 [info]: timer tick
+2023-05-30 17:30:12.273514 [info]: timer tick
+2023-05-30 17:30:17.273839 [info]: timer tick
+2023-05-30 17:30:22.274427 [info]: timer tick
+2023-05-30 17:30:22.283192 [info]: deal with the client(127.0.0.1)
+2023-05-30 17:30:22.283388 [info]: adjust timer once
+2023-05-30 17:30:22.285428 [info]: parse_test=>POST /api/login HTTP/1.1
+2023-05-30 17:30:22.285550 [info]: url=> /api/login
+2023-05-30 17:30:22.285568 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-05-30 17:30:22.285575 [info]: parse_test=>Connection: keep-alive
+2023-05-30 17:30:22.285581 [info]: parse_test=>Content-Length: 40
+2023-05-30 17:30:22.285597 [info]: parse_test=>sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:30:22.285603 [info]: oop!unknow header: sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:30:22.285608 [info]: parse_test=>Accept: application/json, text/plain, */*
+2023-05-30 17:30:22.285613 [info]: oop!unknow header: Accept: application/json, text/plain, */*
+2023-05-30 17:30:22.285618 [info]: parse_test=>Content-Type: application/json
+2023-05-30 17:30:22.285622 [info]: oop!unknow header: Content-Type: application/json
+2023-05-30 17:30:22.285639 [info]: parse_test=>sec-ch-ua-mobile: ?0
+2023-05-30 17:30:22.285644 [info]: oop!unknow header: sec-ch-ua-mobile: ?0
+2023-05-30 17:30:22.285649 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:30:22.285654 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:30:22.285659 [info]: parse_test=>sec-ch-ua-platform: "Windows"
+2023-05-30 17:30:22.285664 [info]: oop!unknow header: sec-ch-ua-platform: "Windows"
+2023-05-30 17:30:22.285668 [info]: parse_test=>Origin: http://localhost:8082
+2023-05-30 17:30:22.285674 [info]: oop!unknow header: Origin: http://localhost:8082
+2023-05-30 17:30:22.285683 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-05-30 17:30:22.285687 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-05-30 17:30:22.285692 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-05-30 17:30:22.285697 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-05-30 17:30:22.285726 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-05-30 17:30:22.285741 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-05-30 17:30:22.285746 [info]: parse_test=>Referer: http://localhost:8082/
+2023-05-30 17:30:22.285751 [info]: oop!unknow header: Referer: http://localhost:8082/
+2023-05-30 17:30:22.285756 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-05-30 17:30:22.285761 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-05-30 17:30:22.285766 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:30:22.285771 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:30:22.285776 [info]: parse_test=>
+2023-05-30 17:30:22.285780 [info]: parse_test=>{"username":"admin","password":"123456"}
+2023-05-30 17:30:22.285785 [info]: POST_CONTENT=>{"username":"admin","password":"123456"}
+2023-05-30 17:30:22.298398 [info]: sql_string=>SELECT * FROM sp_manager WHERE mg_name = 'admin' AND mg_pwd = '123456';
+2023-05-30 17:30:22.978088 [info]: row=>500
+2023-05-30 17:30:23.066935 [debug]: ret_json=>{
+	"data" : 
+	{
+		"token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg",
+		"username" : "admin"
+	},
+	"meta" : 
+	{
+		"msg" : "登录成功",
+		"status" : 200
+	}
+}
+2023-05-30 17:30:23.067186 [info]: LEN: 239
+2023-05-30 17:30:23.067250 [info]: request:HTTP/1.1 200 OK
+
+2023-05-30 17:30:23.067272 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+
+2023-05-30 17:30:23.067284 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+
+2023-05-30 17:30:23.067295 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+
+2023-05-30 17:30:23.067333 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+
+2023-05-30 17:30:23.067340 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+
+2023-05-30 17:30:23.067345 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+
+2023-05-30 17:30:23.067367 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+
+2023-05-30 17:30:23.067372 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+Connection:keep-alive
+
+2023-05-30 17:30:23.067377 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+Connection:keep-alive
+
+
+2023-05-30 17:30:23.067565 [info]: send data to the client(127.0.0.1)
+2023-05-30 17:30:23.067625 [info]: adjust timer once
+2023-05-30 17:30:23.555985 [info]: deal with the client(127.0.0.1)
+2023-05-30 17:30:23.556133 [info]: adjust timer once
+2023-05-30 17:30:23.556174 [info]: parse_test=>OPTIONS /api/menus HTTP/1.1
+2023-05-30 17:30:23.556304 [info]: url=> /api/menus
+2023-05-30 17:30:23.556321 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-05-30 17:30:23.556328 [info]: parse_test=>Connection: keep-alive
+2023-05-30 17:30:23.556335 [info]: parse_test=>Accept: */*
+2023-05-30 17:30:23.556341 [info]: oop!unknow header: Accept: */*
+2023-05-30 17:30:23.556347 [info]: parse_test=>Access-Control-Request-Method: GET
+2023-05-30 17:30:23.556351 [info]: oop!unknow header: Access-Control-Request-Method: GET
+2023-05-30 17:30:23.556357 [info]: parse_test=>Access-Control-Request-Headers: authorization
+2023-05-30 17:30:23.556362 [info]: oop!unknow header: Access-Control-Request-Headers: authorization
+2023-05-30 17:30:23.556369 [info]: parse_test=>Origin: http://localhost:8082
+2023-05-30 17:30:23.556377 [info]: oop!unknow header: Origin: http://localhost:8082
+2023-05-30 17:30:23.556385 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:30:23.556391 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:30:23.556397 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-05-30 17:30:23.556435 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-05-30 17:30:23.556568 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-05-30 17:30:23.556591 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-05-30 17:30:23.556599 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-05-30 17:30:23.556605 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-05-30 17:30:23.556613 [info]: parse_test=>Referer: http://localhost:8082/
+2023-05-30 17:30:23.556623 [info]: oop!unknow header: Referer: http://localhost:8082/
+2023-05-30 17:30:23.556630 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-05-30 17:30:23.556639 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-05-30 17:30:23.556647 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:30:23.556660 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:30:23.556706 [info]: parse_test=>
+2023-05-30 17:30:23.556736 [info]: request:HTTP/1.1 200 OK
+
+2023-05-30 17:30:23.556763 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+
+2023-05-30 17:30:23.556769 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+
+2023-05-30 17:30:23.556774 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+
+2023-05-30 17:30:23.556780 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+
+2023-05-30 17:30:23.556789 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+
+2023-05-30 17:30:23.556794 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+
+2023-05-30 17:30:23.556997 [info]: send data to the client(127.0.0.1)
+2023-05-30 17:30:23.557127 [info]: adjust timer once
+2023-05-30 17:30:27.275046 [info]: timer tick
+2023-05-30 17:30:32.275482 [info]: timer tick
+2023-05-30 17:30:37.275583 [info]: timer tick
+2023-05-30 17:30:42.275945 [info]: timer tick
+2023-05-30 17:30:42.286151 [info]: deal with the client(127.0.0.1)
+2023-05-30 17:30:42.286329 [info]: adjust timer once
+2023-05-30 17:30:42.286362 [info]: parse_test=>GET /api/menus HTTP/1.1
+2023-05-30 17:30:42.286413 [info]: url=> /api/menus
+2023-05-30 17:30:42.286439 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-05-30 17:30:42.286447 [info]: parse_test=>Connection: keep-alive
+2023-05-30 17:30:42.286453 [info]: parse_test=>sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:30:42.286459 [info]: oop!unknow header: sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:30:42.286464 [info]: parse_test=>Accept: application/json, text/plain, */*
+2023-05-30 17:30:42.286470 [info]: oop!unknow header: Accept: application/json, text/plain, */*
+2023-05-30 17:30:42.286475 [info]: parse_test=>sec-ch-ua-mobile: ?0
+2023-05-30 17:30:42.286479 [info]: oop!unknow header: sec-ch-ua-mobile: ?0
+2023-05-30 17:30:42.286485 [info]: parse_test=>Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg
+2023-05-30 17:30:42.286492 [info]: oop!unknow header: Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg
+2023-05-30 17:30:42.286498 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:30:42.286503 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:30:42.286508 [info]: parse_test=>sec-ch-ua-platform: "Windows"
+2023-05-30 17:30:42.286512 [info]: oop!unknow header: sec-ch-ua-platform: "Windows"
+2023-05-30 17:30:42.286517 [info]: parse_test=>Origin: http://localhost:8082
+2023-05-30 17:30:42.286522 [info]: oop!unknow header: Origin: http://localhost:8082
+2023-05-30 17:30:42.286527 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-05-30 17:30:42.286531 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-05-30 17:30:42.286536 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-05-30 17:30:42.286577 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-05-30 17:30:42.286596 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-05-30 17:30:42.286601 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-05-30 17:30:42.286606 [info]: parse_test=>Referer: http://localhost:8082/
+2023-05-30 17:30:42.286611 [info]: oop!unknow header: Referer: http://localhost:8082/
+2023-05-30 17:30:42.286616 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-05-30 17:30:42.286621 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-05-30 17:30:42.286626 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:30:42.286631 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:30:42.286636 [info]: parse_test=>
+2023-05-30 17:30:42.286649 [info]: LEN: 32570
+2023-05-30 17:30:42.286655 [info]: request:HTTP/1.1 200 OK
+
+2023-05-30 17:30:42.286661 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+
+2023-05-30 17:30:42.286665 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+
+2023-05-30 17:30:42.286670 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+
+2023-05-30 17:30:42.286675 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+
+2023-05-30 17:30:42.286680 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+
+2023-05-30 17:30:42.286685 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+
+2023-05-30 17:30:42.286691 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:32570
+
+2023-05-30 17:30:42.286698 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:32570
+Connection:keep-alive
+
+2023-05-30 17:30:42.286703 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:32570
+Connection:keep-alive
+
+
+2023-05-30 17:30:42.286889 [info]: send data to the client(127.0.0.1)
+2023-05-30 17:30:42.286971 [info]: adjust timer once
+2023-05-30 17:30:47.276394 [info]: timer tick
+2023-05-30 17:30:49.789417 [info]: deal with the client(127.0.0.1)
+2023-05-30 17:30:49.789582 [info]: adjust timer once
+2023-05-30 17:30:49.789633 [info]: parse_test=>POST /api/login HTTP/1.1
+2023-05-30 17:30:49.789785 [info]: url=> /api/login
+2023-05-30 17:30:49.789802 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-05-30 17:30:49.789810 [info]: parse_test=>Connection: keep-alive
+2023-05-30 17:30:49.789817 [info]: parse_test=>Content-Length: 40
+2023-05-30 17:30:49.789823 [info]: parse_test=>sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:30:49.789829 [info]: oop!unknow header: sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:30:49.789834 [info]: parse_test=>Accept: application/json, text/plain, */*
+2023-05-30 17:30:49.789840 [info]: oop!unknow header: Accept: application/json, text/plain, */*
+2023-05-30 17:30:49.789846 [info]: parse_test=>Content-Type: application/json
+2023-05-30 17:30:49.789852 [info]: oop!unknow header: Content-Type: application/json
+2023-05-30 17:30:49.789860 [info]: parse_test=>sec-ch-ua-mobile: ?0
+2023-05-30 17:30:49.789865 [info]: oop!unknow header: sec-ch-ua-mobile: ?0
+2023-05-30 17:30:49.789904 [info]: parse_test=>Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg
+2023-05-30 17:30:49.789920 [info]: oop!unknow header: Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg
+2023-05-30 17:30:49.789927 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:30:49.789933 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:30:49.789938 [info]: parse_test=>sec-ch-ua-platform: "Windows"
+2023-05-30 17:30:49.789943 [info]: oop!unknow header: sec-ch-ua-platform: "Windows"
+2023-05-30 17:30:49.789948 [info]: parse_test=>Origin: http://localhost:8082
+2023-05-30 17:30:49.789953 [info]: oop!unknow header: Origin: http://localhost:8082
+2023-05-30 17:30:49.789957 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-05-30 17:30:49.789963 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-05-30 17:30:49.789968 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-05-30 17:30:49.789974 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-05-30 17:30:49.789983 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-05-30 17:30:49.789988 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-05-30 17:30:49.789994 [info]: parse_test=>Referer: http://localhost:8082/
+2023-05-30 17:30:49.789998 [info]: oop!unknow header: Referer: http://localhost:8082/
+2023-05-30 17:30:49.790003 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-05-30 17:30:49.790008 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-05-30 17:30:49.790013 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:30:49.790018 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:30:49.790022 [info]: parse_test=>
+2023-05-30 17:30:49.790027 [info]: parse_test=>{"username":"admin","password":"123456"}
+2023-05-30 17:30:49.790033 [info]: POST_CONTENT=>{"username":"admin","password":"123456"}
+2023-05-30 17:30:49.790080 [info]: sql_string=>SELECT * FROM sp_manager WHERE mg_name = 'admin' AND mg_pwd = '123456';
+2023-05-30 17:30:49.790871 [info]: row=>500
+2023-05-30 17:30:49.791022 [debug]: ret_json=>{
+	"data" : 
+	{
+		"token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg",
+		"username" : "admin"
+	},
+	"meta" : 
+	{
+		"msg" : "登录成功",
+		"status" : 200
+	}
+}
+2023-05-30 17:30:49.791038 [info]: LEN: 239
+2023-05-30 17:30:49.791047 [info]: request:HTTP/1.1 200 OK
+
+2023-05-30 17:30:49.791055 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+
+2023-05-30 17:30:49.791060 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+
+2023-05-30 17:30:49.791114 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+
+2023-05-30 17:30:49.791130 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+
+2023-05-30 17:30:49.791136 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+
+2023-05-30 17:30:49.791142 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+
+2023-05-30 17:30:49.791149 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+
+2023-05-30 17:30:49.791154 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+Connection:keep-alive
+
+2023-05-30 17:30:49.791159 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:239
+Connection:keep-alive
+
+
+2023-05-30 17:30:49.791347 [info]: send data to the client(127.0.0.1)
+2023-05-30 17:30:49.791444 [info]: adjust timer once
+2023-05-30 17:30:49.865673 [info]: deal with the client(127.0.0.1)
+2023-05-30 17:30:49.865867 [info]: adjust timer once
+2023-05-30 17:30:49.865896 [info]: parse_test=>GET /api/menus HTTP/1.1
+2023-05-30 17:30:49.865929 [info]: url=> /api/menus
+2023-05-30 17:30:49.865938 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-05-30 17:30:49.865946 [info]: parse_test=>Connection: keep-alive
+2023-05-30 17:30:49.865954 [info]: parse_test=>sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:30:49.865961 [info]: oop!unknow header: sec-ch-ua: "Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+2023-05-30 17:30:49.865968 [info]: parse_test=>Accept: application/json, text/plain, */*
+2023-05-30 17:30:49.865974 [info]: oop!unknow header: Accept: application/json, text/plain, */*
+2023-05-30 17:30:49.865981 [info]: parse_test=>sec-ch-ua-mobile: ?0
+2023-05-30 17:30:49.865989 [info]: oop!unknow header: sec-ch-ua-mobile: ?0
+2023-05-30 17:30:49.865996 [info]: parse_test=>Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg
+2023-05-30 17:30:49.866004 [info]: oop!unknow header: Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoIiwibWdfaWQiOiI1MDAifQ.PYJRtuRNYcE2sta6WvVd0TGepHCjGFzAMLUwAJY17Gg
+2023-05-30 17:30:49.866041 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:30:49.866048 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+2023-05-30 17:30:49.866054 [info]: parse_test=>sec-ch-ua-platform: "Windows"
+2023-05-30 17:30:49.866060 [info]: oop!unknow header: sec-ch-ua-platform: "Windows"
+2023-05-30 17:30:49.866066 [info]: parse_test=>Origin: http://localhost:8082
+2023-05-30 17:30:49.866072 [info]: oop!unknow header: Origin: http://localhost:8082
+2023-05-30 17:30:49.866079 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-05-30 17:30:49.866086 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-05-30 17:30:49.866096 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-05-30 17:30:49.866102 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-05-30 17:30:49.866110 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-05-30 17:30:49.866117 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-05-30 17:30:49.866124 [info]: parse_test=>Referer: http://localhost:8082/
+2023-05-30 17:30:49.866130 [info]: oop!unknow header: Referer: http://localhost:8082/
+2023-05-30 17:30:49.866136 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-05-30 17:30:49.866142 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-05-30 17:30:49.866148 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:30:49.866155 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-05-30 17:30:49.866161 [info]: parse_test=>
+2023-05-30 17:30:49.866179 [info]: LEN: 32570
+2023-05-30 17:30:49.866192 [info]: request:HTTP/1.1 200 OK
+
+2023-05-30 17:30:49.866199 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+
+2023-05-30 17:30:49.866207 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+
+2023-05-30 17:30:49.866215 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+
+2023-05-30 17:30:49.866222 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+
+2023-05-30 17:30:49.866228 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+
+2023-05-30 17:30:49.866235 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+
+2023-05-30 17:30:49.866241 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:32570
+
+2023-05-30 17:30:49.866247 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:32570
+Connection:keep-alive
+
+2023-05-30 17:30:49.866263 [info]: request:HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Requested-With, mytoken
+Access-Control-Allow-Headers: X-Requested-With, Authorization
+Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With
+Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS
+Access-Control-Max-Age: 3600
+Content-Length:32570
+Connection:keep-alive
+
+
+2023-05-30 17:30:49.866473 [info]: send data to the client(127.0.0.1)
+2023-05-30 17:30:49.866551 [info]: adjust timer once
+2023-05-30 17:30:52.277069 [info]: timer tick
+2023-05-30 17:30:57.277501 [info]: timer tick
+2023-05-30 17:31:02.277614 [info]: timer tick
+2023-05-30 17:31:07.277914 [info]: timer tick
+2023-05-30 17:31:12.278236 [info]: timer tick
+2023-05-30 17:31:17.278393 [info]: timer tick
+2023-05-30 17:31:22.278838 [info]: timer tick
+2023-05-30 17:31:27.278983 [info]: timer tick
+2023-05-30 17:31:32.279140 [info]: timer tick
+2023-05-30 17:31:37.507852 [info]: timer tick
+2023-05-30 17:31:42.508285 [info]: timer tick
+2023-05-30 17:31:47.508731 [info]: timer tick
+2023-05-30 17:31:52.764901 [info]: timer tick
+2023-05-30 17:31:57.965043 [info]: timer tick
+2023-05-30 17:32:03.065622 [info]: timer tick
+2023-05-30 17:32:08.120980 [info]: timer tick
+2023-05-30 17:32:13.254846 [info]: timer tick
+2023-05-30 17:32:18.464969 [info]: timer tick
+2023-05-30 17:32:23.666528 [info]: timer tick
+2023-05-30 17:32:28.755654 [info]: timer tick
+2023-05-30 17:32:33.892139 [info]: timer tick
+2023-05-30 17:32:38.955917 [info]: timer tick
+2023-05-30 17:32:43.956475 [info]: timer tick
+2023-05-30 17:32:48.956630 [info]: timer tick
+2023-05-30 17:32:53.956785 [info]: timer tick
+2023-05-30 17:32:58.956883 [info]: timer tick
+2023-05-30 17:33:03.956999 [info]: timer tick
+2023-05-30 17:33:08.957541 [info]: timer tick
+2023-05-30 17:33:13.957709 [info]: timer tick
+2023-05-30 17:33:18.957834 [info]: timer tick
+2023-05-30 17:33:23.957987 [info]: timer tick
+2023-05-30 17:33:28.958126 [info]: timer tick
+2023-05-30 17:33:33.958199 [info]: timer tick
+2023-05-30 17:33:38.958335 [info]: timer tick
+2023-05-30 17:33:43.958842 [info]: timer tick
+2023-05-30 17:33:48.959273 [info]: timer tick
+2023-05-30 17:33:53.959478 [info]: timer tick
+2023-05-30 17:33:58.959719 [info]: timer tick
+2023-05-30 17:34:03.960225 [info]: timer tick
+2023-05-30 17:34:08.960667 [info]: timer tick
+2023-05-30 17:34:13.961024 [info]: timer tick
+2023-05-30 17:34:19.090885 [info]: timer tick
+2023-05-30 17:34:24.142672 [info]: timer tick
+2023-05-30 17:34:29.203888 [info]: timer tick
+2023-05-30 17:34:34.328359 [info]: timer tick
+2023-05-30 17:34:39.365769 [info]: timer tick
+2023-05-30 17:34:44.498751 [info]: timer tick
+2023-05-30 17:34:49.524657 [info]: timer tick
+2023-05-30 17:34:54.600277 [info]: timer tick
+2023-05-30 17:34:59.676924 [info]: timer tick
+2023-05-30 17:35:04.690028 [info]: timer tick
+2023-05-30 17:35:09.924585 [info]: timer tick
+2023-05-30 17:35:15.021915 [info]: timer tick
+2023-05-30 17:35:24.263143 [info]: timer tick
+2023-05-30 17:35:38.672576 [info]: timer tick
+2023-05-30 17:35:49.836897 [info]: timer tick
+2023-05-30 17:36:00.581824 [info]: timer tick
+2023-05-30 17:36:11.146945 [info]: timer tick
+2023-05-30 17:36:18.066114 [info]: timer tick
+2023-05-30 17:36:28.376753 [info]: timer tick
+2023-05-30 17:36:38.110440 [info]: timer tick
+2023-05-30 17:36:46.711373 [info]: timer tick
+2023-05-30 17:37:01.830327 [info]: timer tick
+2023-05-30 17:37:19.229521 [info]: timer tick
+2023-05-30 17:37:36.055007 [info]: timer tick
+2023-05-30 17:37:51.836755 [info]: timer tick
+2023-05-30 17:38:04.312699 [info]: timer tick
+2023-05-30 17:38:12.923160 [info]: timer tick
+2023-05-30 17:38:17.923383 [info]: timer tick
+2023-05-30 17:38:22.923486 [info]: timer tick
+2023-05-30 17:38:27.923955 [info]: timer tick
+2023-05-30 17:38:32.924390 [info]: timer tick
+2023-05-30 17:38:37.924813 [info]: timer tick
+2023-05-30 17:38:42.924925 [info]: timer tick
+2023-05-30 17:38:47.925364 [info]: timer tick
+2023-05-30 17:38:52.925505 [info]: timer tick
+2023-05-30 17:38:57.925631 [info]: timer tick
+2023-05-30 17:39:02.925792 [info]: timer tick
+2023-05-30 17:39:07.925931 [info]: timer tick
+2023-05-30 17:39:12.926229 [info]: timer tick
+2023-05-30 17:39:17.926367 [info]: timer tick
+2023-05-30 17:39:22.926871 [info]: timer tick
+2023-05-30 17:39:27.927372 [info]: timer tick
+2023-05-30 17:39:32.927750 [info]: timer tick
+2023-05-30 17:39:37.928145 [info]: timer tick
+2023-05-30 17:39:42.928355 [info]: timer tick
+2023-05-30 17:39:47.928683 [info]: timer tick
+2023-05-30 17:39:52.929165 [info]: timer tick
+2023-05-30 17:39:57.929315 [info]: timer tick
+2023-05-30 17:40:02.929750 [info]: timer tick
+2023-05-30 17:40:07.929836 [info]: timer tick
+2023-05-30 17:40:12.929953 [info]: timer tick
+2023-05-30 17:40:17.930158 [info]: timer tick
+2023-05-30 17:40:22.930750 [info]: timer tick
+2023-05-30 17:40:27.931379 [info]: timer tick
+2023-05-30 17:40:32.931582 [info]: timer tick
+2023-05-30 17:40:37.931704 [info]: timer tick
+2023-05-30 17:40:42.931829 [info]: timer tick
+2023-05-30 17:40:47.932407 [info]: timer tick
+2023-05-30 17:40:52.932824 [info]: timer tick
+2023-05-30 17:40:57.932999 [info]: timer tick
+2023-05-30 17:41:02.933428 [info]: timer tick
+2023-05-30 17:41:07.933605 [info]: timer tick
+2023-05-30 17:41:12.934301 [info]: timer tick
+2023-05-30 17:41:17.934666 [info]: timer tick
+2023-05-30 17:41:22.934919 [info]: timer tick
+2023-05-30 17:41:27.935453 [info]: timer tick
+2023-05-30 17:41:32.935929 [info]: timer tick
+2023-05-30 17:41:37.936097 [info]: timer tick
+2023-05-30 17:41:42.936247 [info]: timer tick
+2023-05-30 17:41:47.936380 [info]: timer tick
+2023-05-30 17:41:52.936485 [info]: timer tick
+2023-05-30 17:41:57.937042 [info]: timer tick
+2023-05-30 17:42:02.937555 [info]: timer tick
+2023-05-30 17:42:07.938003 [info]: timer tick
+2023-05-30 17:42:12.938160 [info]: timer tick
+2023-05-30 17:42:17.938551 [info]: timer tick
+2023-05-30 17:42:22.938710 [info]: timer tick
+2023-05-30 17:42:27.938854 [info]: timer tick
+2023-05-30 17:42:32.939387 [info]: timer tick
+2023-05-30 17:42:37.939662 [info]: timer tick
+2023-05-30 17:42:42.939823 [info]: timer tick
+2023-05-30 17:42:47.940269 [info]: timer tick
+2023-05-30 17:42:52.940432 [info]: timer tick
+2023-05-30 17:42:57.940812 [info]: timer tick
+2023-05-30 17:43:02.940932 [info]: timer tick
+2023-05-30 17:43:07.941181 [info]: timer tick
+2023-05-30 17:43:12.941300 [info]: timer tick
+2023-05-30 17:43:17.941507 [info]: timer tick
+2023-05-30 17:43:22.941656 [info]: timer tick
+2023-05-30 17:43:27.942095 [info]: timer tick
+2023-05-30 17:43:32.942478 [info]: timer tick
+2023-05-30 17:43:37.942601 [info]: timer tick
+2023-05-30 17:43:42.943267 [info]: timer tick
+2023-05-30 17:43:47.943473 [info]: timer tick
+2023-05-30 17:43:52.943664 [info]: timer tick
+2023-05-30 17:43:57.943888 [info]: timer tick
+2023-05-30 17:44:02.944051 [info]: timer tick
+2023-05-30 17:44:07.944172 [info]: timer tick
+2023-05-30 17:44:12.944662 [info]: timer tick
+2023-05-30 17:44:17.945224 [info]: timer tick
+2023-05-30 17:44:22.945670 [info]: timer tick
+2023-05-30 17:44:27.946107 [info]: timer tick
+2023-05-30 17:44:32.946593 [info]: timer tick
+2023-05-30 17:44:37.947009 [info]: timer tick
+2023-05-30 17:44:42.947448 [info]: timer tick
+2023-05-30 17:44:47.947640 [info]: timer tick
+2023-05-30 17:44:52.948121 [info]: timer tick
+2023-05-30 17:44:57.948561 [info]: timer tick
+2023-05-30 17:45:02.949274 [info]: timer tick
+2023-05-30 17:45:07.949457 [info]: timer tick
+2023-05-30 17:45:12.949976 [info]: timer tick
+2023-05-30 17:45:17.950195 [info]: timer tick
+2023-05-30 17:45:22.950632 [info]: timer tick
+2023-05-30 17:45:27.951079 [info]: timer tick
+2023-05-30 17:45:32.951442 [info]: timer tick
+2023-05-30 17:45:37.951533 [info]: timer tick
+2023-05-30 17:45:42.951710 [info]: timer tick
+2023-05-30 17:45:47.952005 [info]: timer tick
+2023-05-30 17:45:52.952405 [info]: timer tick
+2023-05-30 17:45:57.952825 [info]: timer tick
+2023-05-30 17:46:02.952982 [info]: timer tick
+2023-05-30 17:46:07.953364 [info]: timer tick
+2023-05-30 17:46:12.953524 [info]: timer tick
+2023-05-30 17:46:17.953956 [info]: timer tick
+2023-05-30 17:46:22.954375 [info]: timer tick
+2023-05-30 17:46:27.954587 [info]: timer tick
+2023-05-30 17:46:32.955024 [info]: timer tick
+2023-05-30 17:46:37.955662 [info]: timer tick
+2023-05-30 17:46:42.956151 [info]: timer tick
+2023-05-30 17:46:47.956586 [info]: timer tick
+2023-05-30 17:46:52.957029 [info]: timer tick
+2023-05-30 17:46:57.957129 [info]: timer tick
+2023-05-30 17:47:02.957329 [info]: timer tick
+2023-05-30 17:47:07.957681 [info]: timer tick
+2023-05-30 17:47:12.957837 [info]: timer tick
+2023-05-30 17:47:17.958010 [info]: timer tick
+2023-05-30 17:47:22.958340 [info]: timer tick
+2023-05-30 17:47:27.958486 [info]: timer tick

@@ -12,9 +12,14 @@
 class Logic
 {
 public:
+    Logic(MYSQL *mysql, int close_log) : mysql_(mysql), m_close_log(close_log) {}
+
     Logic(MYSQL *mysql, int close_log, std::string token) : mysql_(mysql), m_close_log(close_log)
     {
-        is_token_vaild_ = checkToken(token, user_id_);
+        // is_token_vaild_ = checkToken(token, user_id_);
+        is_token_vaild_ = true;
+        user_id_ = 500;
+
         key_vector_ = std::make_shared<std::vector<std::string>>();
     }
     ~Logic() = default;
