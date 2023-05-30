@@ -11,8 +11,10 @@
 class Logic
 {
 public:
-    Logic(MYSQL *mysql, int close_log, std::string token) : mysql_(mysql), m_close_log(close_log){
+    Logic(MYSQL *mysql, int close_log, std::string token) : mysql_(mysql), m_close_log(close_log)
+    {
         is_token_vaild_ = checkToken(token, user_id_);
+        key_vector_ = std::make_shared<std::vector<std::string>>();
     }
     ~Logic() = default;
     std::string getToken(int mg_id);
@@ -26,6 +28,8 @@ private:
     int m_close_log;
     int user_id_;
     bool is_token_vaild_;
+    std::shared_ptr<std::vector<std::string>> key_vector_;
     void getTableKey(std::vector<std::string> *key_vector, string table_name);
     void tokenUnvaildLogic(char *temp_buff, int &len);
+    int indexOf(string key_name);
 };

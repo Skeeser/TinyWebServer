@@ -111,7 +111,8 @@ void Logic::loginLogic(char *user_data, char *temp_buff, int &len)
 void Logic::menuLogic(char *temp_buff, int &len)
 {
     // 先验证token
-    if(!is_token_vaild_) {
+    if (!is_token_vaild_)
+    {
         tokenUnvaildLogic(temp_buff, len);
         return;
     }
@@ -120,16 +121,18 @@ void Logic::menuLogic(char *temp_buff, int &len)
 
     Json::Value ret_root;
     Json::Value data;
+    Json::Value temp;
     Json::Value meta;
+    Json::StreamWriterBuilder writer;
 
     int mg_id = -1;
     // m_lock.lock();
     if (mysql_ == NULL)
         LOG_INFO("mysql is NULL!");
 
-    std::unique_ptr<std::vector<std::string>> key_vector = std::make_unique<std::vector<std::string>>();
-    getTableKey(key_vector.get(), "sp_permission_api");
-    getTableKey(key_vector.get(), "sp_permission");
+    std::unique_ptr<std::vector<Json::Value>> level1_data = std::make_unique<std::vector<Json::Value>>();
+    getTableKey(key_vector_.get(), "sp_permission_api");
+    getTableKey(key_vector_.get(), "sp_permission");
 
     int ret = mysql_query(mysql_, sql_string.c_str());
     if (!ret) // 查询成功
@@ -139,15 +142,19 @@ void Logic::menuLogic(char *temp_buff, int &len)
 
         while (MYSQL_ROW row = mysql_fetch_row(result))
         {
-
-            row[0];
+            temp["id"] = row[indexOf("ps_id")];
+            temp["authName"] = row[indexOf("ps_name")];
+            temp["path"] = row[indexOf("ps_api_path")];
+            temp["children"] = {}; // debug: 要用[]?
+            // temp["order"] = permission.ps_api_order
+            // 根据 level判断
+            if() 
+            ret_root["data"].append(temp);
+            temp.clear();
         }
 
-        data["username"] = ret_root["username"].asString();
-        data["token"] = getToken(mg_id);
         meta["msg"] = "登录成功";
         meta["status"] = 200;
-        ret_root["data"] = data;
         ret_root["meta"] = meta;
     }
     else
@@ -231,3 +238,13 @@ void Logic::tokenUnvaildLogic(char *temp_buff, int &len)
         // LOG_DEBUG("ret_json=>%s", temp_buff);
     }
 }
+
+int Logic::indexOf(string key_name)
+{
+    for (int i = 0; i < key_vector_->size(); i++)
+    {
+        if (key_vector_->at(i) == key_name)
+        {
+            return i;
+        }
+    }
