@@ -129,7 +129,7 @@ void Logic::menuLogic(char *temp_buff, int &len)
     Json::Value temp;
     Json::Value meta;
     Json::StreamWriterBuilder writer;
-
+    int level0_num = 0;
     int mg_id = -1;
     // m_lock.lock();
     if (mysql_ == NULL)
@@ -150,14 +150,16 @@ void Logic::menuLogic(char *temp_buff, int &len)
             temp["id"] = row[indexOf("ps_id")];
             temp["authName"] = row[indexOf("ps_name")];
             temp["path"] = row[indexOf("ps_api_path")];
-            temp["children"] = {}; // debug: 要用[]?
+            // temp["children"] = {}; // debug: 要用[]?
             int pid = stoi(row[indexOf("ps_pid")]);
             // temp["order"] = permission.ps_api_order
             // 根据 level判断
             // 一级菜单
             if (strncasecmp(row[indexOf("ps_level")], "0", 1) == 0)
             {
-                ret_root["data"].append(temp);
+                level0_num++;
+                ret_root["data"]
+                    .append(temp);
             }
             // 二级菜单
             else if (strncasecmp(row[indexOf("ps_level")], "1", 1) == 0)
@@ -169,14 +171,11 @@ void Logic::menuLogic(char *temp_buff, int &len)
         }
 
         // 遍历ret_root中data
+
         for (Json::Value &json_value : ret_root["data"])
         {
-            auto pid_it = std::find(json_value.begin(), json_value.end(), "id");
-            if (pid_it != json_value.end())
-            {
-                LOG_DEBUG("pid=>%d", (*level1_data)[pid_it->asInt()]);
-                json_value["children"].append((*level1_data)[pid_it->asInt()]);
-            }
+            LOG_DEBUG("pid = %s", json_value["id"].asString().c_str());
+            json_value["children"] = (*level1_data)[stoi(json_value["id"].asString().c_str())];
         }
 
         meta["msg"] = "登录成功";
@@ -199,7 +198,7 @@ void Logic::menuLogic(char *temp_buff, int &len)
     std::string jsonString = Json::writeString(writer, ret_root);
 
     len = jsonString.size();
-    LOG_DEBUG("json_string = %s, len = %d", jsonString.c_str(), len);
+    // LOG_DEBUG("json_string = %s, len = %d", jsonString.c_str(), len);
     if (len <= WRITE_BUFFER_SIZE)
     {
         strncpy(temp_buff, jsonString.c_str(), len);
