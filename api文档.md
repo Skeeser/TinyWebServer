@@ -34,7 +34,7 @@
 | 204      | DELETED               | 删除成功                                            |
 | 400      | BAD REQUEST           | 请求的地址不存在或者包含不支持的参数                |
 | 401      | UNAUTHORIZED          | 未授权                                              |
-| 403      | FORBIDDEN             | 被禁止访问                                          |
+| 403      | FORBIDDEN             | 被禁止访问,token可能验证不通过                        |
 | 404      | NOT FOUND             | 请求的资源不存在                                    |
 | 422      | Unprocesable entity   | [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误 |
 | 500      | INTERNAL SERVER ERROR | 内部错误                                            |

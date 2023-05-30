@@ -374,7 +374,8 @@ http_conn::HTTP_CODE http_conn::do_request()
 {
     strcpy(m_real_file, doc_root);
     int len = strlen(doc_root);
-    Logic logic_func(mysql, m_close_log);
+    std::string token = "";
+    Logic logic_func(mysql, m_close_log, token);
     int json_len;
 
     // printf("m_url:%s\n", m_url);

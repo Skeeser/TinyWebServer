@@ -110,13 +110,18 @@ void Logic::loginLogic(char *user_data, char *temp_buff, int &len)
 
 void Logic::menuLogic(char *temp_buff, int &len)
 {
+    // 先验证token
+    if(!is_token_vaild_) {
+        tokenUnvaildLogic(temp_buff, len);
+        return;
+    }
 
     std::string sql_string("SELECT * FROM sp_permission_api as api LEFT JOIN sp_permission as main ON main.ps_id = api.ps_id WHERE main.ps_id is not null;");
 
     Json::Value ret_root;
     Json::Value data;
     Json::Value meta;
-  
+
     int mg_id = -1;
     // m_lock.lock();
     if (mysql_ == NULL)
@@ -136,7 +141,6 @@ void Logic::menuLogic(char *temp_buff, int &len)
         {
 
             row[0];
-           
         }
 
         data["username"] = ret_root["username"].asString();
@@ -148,7 +152,7 @@ void Logic::menuLogic(char *temp_buff, int &len)
     }
     else
     {
-        data["username"] = root["username"].asString();
+        data["userid"] = user_id_;
         meta["msg"] = "获取目录列表失败";
         meta["status"] = 404;
         ret_root["data"] = data;
@@ -197,5 +201,33 @@ void Logic::getTableKey(std::vector<std::string> *key_vector, string table_name)
     else
     {
         return;
+    }
+}
+
+void Logic::tokenUnvaildLogic(char *temp_buff, int &len)
+{
+    Json::Value ret_root;
+    Json::Value data;
+    Json::Value meta;
+    Json::StreamWriterBuilder writer;
+
+    data["userid"] = user_id_;
+    meta["msg"] = "token验证不通过";
+    meta["status"] = 403;
+    ret_root["data"] = data;
+    ret_root["meta"] = meta;
+
+    // 清空
+    memset(temp_buff, '\0', WRITE_BUFFER_SIZE);
+
+    // 将 JSON 对象转换为字符串
+    std::string jsonString = Json::writeString(writer, ret_root);
+
+    len = jsonString.size();
+    // LOG_DEBUG("json_string = %s, len = %d", jsonString.c_str(), len);
+    if (len <= WRITE_BUFFER_SIZE)
+    {
+        strncpy(temp_buff, jsonString.c_str(), len);
+        // LOG_DEBUG("ret_json=>%s", temp_buff);
     }
 }
