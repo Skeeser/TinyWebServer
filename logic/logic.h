@@ -4,6 +4,7 @@
 #include <string>
 #include <jwt-cpp/jwt.h>
 #include <vector>
+#include <memory>
 #include "../lock/locker.h"
 #include "../log/log.h"
 
@@ -13,7 +14,7 @@ public:
     Logic(MYSQL *mysql, int close_log) : mysql_(mysql), m_close_log(close_log){};
     ~Logic() = default;
     std::string getToken(int mg_id);
-    bool checkToken(std::string token);
+    bool checkToken(std::string token, int &mg_id);
 
     void loginLogic(char *user_data, char *temp_buff, int &len);
     void menuLogic(char *temp_buff, int &len);

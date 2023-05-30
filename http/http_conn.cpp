@@ -379,7 +379,7 @@ http_conn::HTTP_CODE http_conn::do_request()
 
     // printf("m_url:%s\n", m_url);
     const char *p = strrchr(m_url, '/');
-    m_mmap_flag = IS_MMAP;
+    m_mmap_flag = NOT_MMAP;
     // 先处理OPTIONS请求
     if (m_method == OPTIONS)
     {
@@ -387,6 +387,7 @@ http_conn::HTTP_CODE http_conn::do_request()
     }
     // else if(*(p + 1) == '0')
     // {
+    //     IS_MMAP
     //     char *m_url_real = (char *)malloc(sizeof(char) * 200);
     //     strcpy(m_url_real, "/register.html");
     //     strncpy(m_real_file + len, m_url_real, strlen(m_url_real));
@@ -398,11 +399,12 @@ http_conn::HTTP_CODE http_conn::do_request()
         // 登录选项
         if (strncasecmp(p + 1, "login", 5) == 0)
         {
-            m_mmap_flag = NOT_MMAP;
             logic_func.loginLogic(m_string, temp_buf, json_len);
             LOG_DEBUG("ret_json=>%s", temp_buf);
         }
-        else if ()
+        else if (strncasecmp(p + 1, "menus", 5) == 0){
+            // 验证token
+        }
     }
     else
         strncpy(m_real_file + len, m_url, FILENAME_LEN - len - 1);

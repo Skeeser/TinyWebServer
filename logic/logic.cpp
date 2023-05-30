@@ -12,15 +12,19 @@ std::string Logic::getToken(int mg_id)
         .sign(jwt::algorithm::hs256{SECRET_KEY});
 }
 
-bool Logic::checkToken(std::string token)
+// 验证token并且解析其中的用户id
+bool Logic::checkToken(std::string token, int &mg_id)
 {
     auto decoded = jwt::decode(token);
+    mg_id = -1;
     auto verifier = jwt::verify()
                         .allow_algorithm(jwt::algorithm::hs256{SECRET_KEY})
                         .with_issuer("auth");
     try
     {
         verifier.verify(decoded);
+        auto id = decoded.get_payload_claim("mg_id");
+        mg_id = id.as_integer();
 
         return true;
     }
@@ -112,10 +116,15 @@ void Logic::menuLogic(char *temp_buff, int &len)
     Json::Value ret_root;
     Json::Value data;
     Json::Value meta;
+  
     int mg_id = -1;
     // m_lock.lock();
     if (mysql_ == NULL)
         LOG_INFO("mysql is NULL!");
+
+    std::unique_ptr<std::vector<std::string>> key_vector = std::make_unique<std::vector<std::string>>();
+    getTableKey(key_vector.get(), "sp_permission_api");
+    getTableKey(key_vector.get(), "sp_permission");
 
     int ret = mysql_query(mysql_, sql_string.c_str());
     if (!ret) // 查询成功
@@ -126,11 +135,11 @@ void Logic::menuLogic(char *temp_buff, int &len)
         while (MYSQL_ROW row = mysql_fetch_row(result))
         {
 
-            mg_id = std::stoi(row[0]);
-            // LOG_INFO("row=>%d", mg_id);
+            row[0];
+           
         }
 
-        data["username"] = root["username"].asString();
+        data["username"] = ret_root["username"].asString();
         data["token"] = getToken(mg_id);
         meta["msg"] = "登录成功";
         meta["status"] = 200;
@@ -140,7 +149,7 @@ void Logic::menuLogic(char *temp_buff, int &len)
     else
     {
         data["username"] = root["username"].asString();
-        meta["msg"] = "登录失败";
+        meta["msg"] = "获取目录列表失败";
         meta["status"] = 404;
         ret_root["data"] = data;
         ret_root["meta"] = meta;
