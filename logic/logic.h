@@ -4,6 +4,7 @@
 #include <string>
 #include <jwt-cpp/jwt.h>
 #include <vector>
+#include <map>
 #include <memory>
 #include "../lock/locker.h"
 #include "../log/log.h"

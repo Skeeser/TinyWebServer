@@ -130,7 +130,7 @@ void Logic::menuLogic(char *temp_buff, int &len)
     if (mysql_ == NULL)
         LOG_INFO("mysql is NULL!");
 
-    std::unique_ptr<std::vector<Json::Value>> level1_data = std::make_unique<std::vector<Json::Value>>();
+    std::shared_ptr<std::map<int, Json::Value>> level1_data = std::make_shared<std::map<int, Json::Value>>();
     getTableKey(key_vector_.get(), "sp_permission_api");
     getTableKey(key_vector_.get(), "sp_permission");
 
@@ -146,11 +146,30 @@ void Logic::menuLogic(char *temp_buff, int &len)
             temp["authName"] = row[indexOf("ps_name")];
             temp["path"] = row[indexOf("ps_api_path")];
             temp["children"] = {}; // debug: 要用[]?
+            int pid = stoi(row[indexOf("ps_pid")]);
             // temp["order"] = permission.ps_api_order
             // 根据 level判断
-            if() 
-            ret_root["data"].append(temp);
+            // 一级菜单
+            if (strncasecmp(row[indexOf("ps_level")], "0", 1) == 0)
+            {
+                ret_root["data"].append(temp);
+            }
+            // 二级菜单
+            else if (strncasecmp(row[indexOf("ps_level")], "1", 1) == 0)
+            {
+                if(pid) (*level1_data)[pid].append(temp);
+            }
             temp.clear();
+        }
+
+        // 遍历ret_root中data
+        for (Json::Value &json_value : ret_root["data"])
+        {
+            auto pid_it = std::find(json_value.begin(), json_value.end(), "id");
+            if (pid_it != json_value.end())
+            {
+                json_value["children"].append((*level1_data)[pid_it->asInt()]);
+            }
         }
 
         meta["msg"] = "登录成功";
@@ -173,7 +192,7 @@ void Logic::menuLogic(char *temp_buff, int &len)
     std::string jsonString = Json::writeString(writer, ret_root);
 
     len = jsonString.size();
-    // LOG_DEBUG("json_string = %s, len = %d", jsonString.c_str(), len);
+    LOG_DEBUG("json_string = %s, len = %d", jsonString.c_str(), len);
     if (len <= WRITE_BUFFER_SIZE)
     {
         strncpy(temp_buff, jsonString.c_str(), len);
@@ -248,3 +267,4 @@ int Logic::indexOf(string key_name)
             return i;
         }
     }
+}
