@@ -3,6 +3,7 @@
 #define WRITE_BUFFER_SIZE 4096
 #define SECRET_KEY "3MnJb57tW9TAvkYFQEDUgLdSRuBzmXcZ"
 
+// 获取索引值
 std::string Logic::getToken(int mg_id)
 {
     return jwt::create()
@@ -39,7 +40,8 @@ bool Logic::checkToken(std::string token, int &mg_id)
     }
 }
 
-void Logic::loginLogic(char *user_data, char *temp_buff, int &len)
+// 登录
+void Logic::loginLogic(char *user_data)
 {
 
     // 创建 JSON 对象
@@ -91,34 +93,20 @@ void Logic::loginLogic(char *user_data, char *temp_buff, int &len)
     }
     else
     {
-        data["username"] = root["username"].asString();
-        meta["msg"] = "登录失败";
-        meta["status"] = 404;
-        ret_root["data"] = data;
-        ret_root["meta"] = meta;
+        errorLogic(404, "登录失败");
+        return;
     }
 
-    // 清空
-    memset(temp_buff, '\0', WRITE_BUFFER_SIZE);
-
-    // 将 JSON 对象转换为字符串
-    std::string jsonString = Json::writeString(writer, ret_root);
-
-    len = jsonString.size();
-    // LOG_DEBUG("json_string = %s, len = %d", jsonString.c_str(), len);
-    if (len <= WRITE_BUFFER_SIZE)
-    {
-        strncpy(temp_buff, jsonString.c_str(), len);
-        // LOG_DEBUG("ret_json=>%s", temp_buff);
-    }
+   cpyJson2Buff(&ret_root);
 }
 
-void Logic::menuLogic(char *temp_buff, int &len)
+// 菜单
+void Logic::menuLogic()
 {
     // 先验证token
     if (!is_token_vaild_)
     {
-        tokenUnvaildLogic(temp_buff, len);
+        errorLogic(403, "token验证不通过");
         return;
     }
 
@@ -128,7 +116,7 @@ void Logic::menuLogic(char *temp_buff, int &len)
     Json::Value data;
     Json::Value temp;
     Json::Value meta;
-    Json::StreamWriterBuilder writer;
+   
     int level0_num = 0;
     int mg_id = -1;
     // m_lock.lock();
@@ -136,8 +124,11 @@ void Logic::menuLogic(char *temp_buff, int &len)
         LOG_INFO("mysql is NULL!");
 
     std::shared_ptr<std::map<int, Json::Value>> level1_data = std::make_shared<std::map<int, Json::Value>>();
-    getTableKey(key_vector_.get(), "sp_permission_api");
-    getTableKey(key_vector_.get(), "sp_permission");
+    
+    // 在获取前先清除
+    clearTableKey();
+    getTableKey("sp_permission_api");
+    getTableKey("sp_permission");
 
     int ret = mysql_query(mysql_, sql_string.c_str());
     if (!ret) // 查询成功
@@ -184,29 +175,15 @@ void Logic::menuLogic(char *temp_buff, int &len)
     }
     else
     {
-        data["userid"] = user_id_;
-        meta["msg"] = "获取目录列表失败";
-        meta["status"] = 404;
-        ret_root["data"] = data;
-        ret_root["meta"] = meta;
+        errorLogic(404, "获取目录列表失败");
+        return;
     }
 
-    // 清空
-    memset(temp_buff, '\0', WRITE_BUFFER_SIZE);
-
-    // 将 JSON 对象转换为字符串
-    std::string jsonString = Json::writeString(writer, ret_root);
-
-    len = jsonString.size();
-    // LOG_DEBUG("json_string = %s, len = %d", jsonString.c_str(), len);
-    if (len <= WRITE_BUFFER_SIZE)
-    {
-        strncpy(temp_buff, jsonString.c_str(), len);
-        // LOG_DEBUG("ret_json=>%s", temp_buff);
-    }
+    cpyJson2Buff(&ret_root);
 }
 
-void Logic::getTableKey(std::vector<std::string> *key_vector, string table_name)
+// 获取表的所有键的名字
+void Logic::getTableKey(string table_name)
 {
 
     std::string sql_string("SHOW COLUMNS from ");
@@ -226,7 +203,7 @@ void Logic::getTableKey(std::vector<std::string> *key_vector, string table_name)
         while (MYSQL_ROW row = mysql_fetch_row(result))
         {
 
-            key_vector->push_back(row[0]);
+            key_vector_->push_back(row[0]);
             // LOG_INFO("row=>%d", mg_id);
         }
     }
@@ -236,34 +213,48 @@ void Logic::getTableKey(std::vector<std::string> *key_vector, string table_name)
     }
 }
 
-void Logic::tokenUnvaildLogic(char *temp_buff, int &len)
+// 清除存储键名的容器
+void Logic::clearTableKey(){
+    key_vector_->clear();
+}
+
+// 错误处理
+void Logic::errorLogic(int status, std::string msg)
 {
     Json::Value ret_root;
     Json::Value data;
     Json::Value meta;
-    Json::StreamWriterBuilder writer;
+    
 
     data["userid"] = user_id_;
-    meta["msg"] = "token验证不通过";
-    meta["status"] = 403;
+    meta["msg"] = msg;
+    meta["status"] = status;
     ret_root["data"] = data;
     ret_root["meta"] = meta;
 
-    // 清空
-    memset(temp_buff, '\0', WRITE_BUFFER_SIZE);
+    cpyJson2Buff(&ret_root);
+}
+
+// 将结果的json对象写入到暂存数组中
+void Logic::cpyJson2Buff(Json::Value* ret_root){
+    Json::StreamWriterBuilder writer;
+
+      // 清空
+    memset(temp_buff_, '\0', WRITE_BUFFER_SIZE);
 
     // 将 JSON 对象转换为字符串
     std::string jsonString = Json::writeString(writer, ret_root);
 
-    len = jsonString.size();
+    *len_ = jsonString.size();
     // LOG_DEBUG("json_string = %s, len = %d", jsonString.c_str(), len);
-    if (len <= WRITE_BUFFER_SIZE)
+    if (*len_ <= WRITE_BUFFER_SIZE)
     {
-        strncpy(temp_buff, jsonString.c_str(), len);
+        strncpy(temp_buff_, jsonString.c_str(), *len_);
         // LOG_DEBUG("ret_json=>%s", temp_buff);
     }
 }
 
+// 获取键名对应的索引值
 int Logic::indexOf(string key_name)
 {
     for (int i = 0; i < key_vector_->size(); i++)
