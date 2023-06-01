@@ -182,13 +182,43 @@ void Logic::menuLogic()
     cpyJson2Buff(&ret_root);
 }
 
+// 模糊查询用户数量
+int Logic::getUsersCountByKey(std::string key)
+{
+    std::string sql_string("SHOW COLUMNS from ");
+    sql_string += table_name + " ;";
+
+    if (mysql_ == NULL)
+        LOG_INFO("mysql is NULL!");
+
+    int ret = mysql_query(mysql_, sql_string.c_str());
+
+    // LOG_DEBUG("ret=>%d", ret);
+    if (!ret) // 查询成功de
+    {
+        // 从表中检索完整的结果集
+        MYSQL_RES *result = mysql_store_result(mysql_);
+
+        while (MYSQL_ROW row = mysql_fetch_row(result))
+        {
+
+            key_vector_->push_back(row[0]);
+            // LOG_INFO("row=>%d", mg_id);
+        }
+    }
+    else
+    {
+        return;
+    }
+}
+
 // 用户管理
 void Logic::usersLogic(char *input_data)
 {
     std::string query = "";
     int page_num = -1;
     int page_size = -1;
-
+    int off_set = -1;
     // 解析查询参数
     char *parameter = strtok(input_data, "&");
     while (parameter != NULL)
@@ -222,6 +252,14 @@ void Logic::usersLogic(char *input_data)
 
         parameter = strtok(NULL, "&");
     }
+
+    int pageCount = ceil(count / page_size);
+    offset = (pagenum - 1) * pagesize;
+    if (offset >= count)
+    {
+        offset = count;
+    }
+    limit = pagesize;
 }
 
 // 获取表的所有键的名字

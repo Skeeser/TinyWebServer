@@ -6,6 +6,8 @@
 #include <vector>
 #include <map>
 #include <memory>
+#include <cmath>
+
 #include "../lock/locker.h"
 #include "../log/log.h"
 
@@ -34,6 +36,8 @@ public:
     std::string getToken(int mg_id);
     void loginLogic(char *user_data);
     void menuLogic();
+
+    int getUsersCountByKey(std::string key);
     void usersLogic(char *input_data);
 
 private:
