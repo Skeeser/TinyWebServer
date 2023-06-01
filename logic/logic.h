@@ -34,6 +34,7 @@ public:
     std::string getToken(int mg_id);
     void loginLogic(char *user_data);
     void menuLogic();
+    void usersLogic(char *input_data);
 
 private:
     MYSQL *mysql_;
@@ -48,6 +49,6 @@ private:
     void getTableKey(string table_name);
     void clearTableKey();
     void errorLogic(int status, std::string msg);
-    void cpyJson2Buff(Json::Value* ret_root);
+    void cpyJson2Buff(Json::Value *ret_root);
     int indexOf(string key_name);
 };

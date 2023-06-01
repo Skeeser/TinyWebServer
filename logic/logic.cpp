@@ -97,7 +97,7 @@ void Logic::loginLogic(char *user_data)
         return;
     }
 
-   cpyJson2Buff(&ret_root);
+    cpyJson2Buff(&ret_root);
 }
 
 // 菜单
@@ -116,7 +116,7 @@ void Logic::menuLogic()
     Json::Value data;
     Json::Value temp;
     Json::Value meta;
-   
+
     int level0_num = 0;
     int mg_id = -1;
     // m_lock.lock();
@@ -124,7 +124,7 @@ void Logic::menuLogic()
         LOG_INFO("mysql is NULL!");
 
     std::shared_ptr<std::map<int, Json::Value>> level1_data = std::make_shared<std::map<int, Json::Value>>();
-    
+
     // 在获取前先清除
     clearTableKey();
     getTableKey("sp_permission_api");
@@ -182,6 +182,48 @@ void Logic::menuLogic()
     cpyJson2Buff(&ret_root);
 }
 
+// 用户管理
+void Logic::usersLogic(char *input_data)
+{
+    std::string query = "";
+    int page_num = -1;
+    int page_size = -1;
+
+    // 解析查询参数
+    char *parameter = strtok(input_data, "&");
+    while (parameter != NULL)
+    {
+        char *key = strtok(parameter, "=");
+        char *value = strtok(NULL, "=");
+
+        if (key != NULL && (value != NULL || strcmp(key, "query") == 0))
+        {
+            if (strcmp(key, "query") == 0)
+            {
+                if (value == NULL)
+                    query = "";
+                else
+                    query = value;
+                LOG_DEBUG("query %s", query);
+            }
+            else if (strcmp(key, "pagenum") == 0)
+            {
+                page_num = atoi(value);
+            }
+            else if (strcmp(key, "pagesize") == 0)
+            {
+                page_size = atoi(value);
+            }
+        }
+        else
+        {
+            errorLogic(400, "参数错误");
+        }
+
+        parameter = strtok(NULL, "&");
+    }
+}
+
 // 获取表的所有键的名字
 void Logic::getTableKey(string table_name)
 {
@@ -214,7 +256,8 @@ void Logic::getTableKey(string table_name)
 }
 
 // 清除存储键名的容器
-void Logic::clearTableKey(){
+void Logic::clearTableKey()
+{
     key_vector_->clear();
 }
 
@@ -224,7 +267,6 @@ void Logic::errorLogic(int status, std::string msg)
     Json::Value ret_root;
     Json::Value data;
     Json::Value meta;
-    
 
     data["userid"] = user_id_;
     meta["msg"] = msg;
@@ -236,21 +278,22 @@ void Logic::errorLogic(int status, std::string msg)
 }
 
 // 将结果的json对象写入到暂存数组中
-void Logic::cpyJson2Buff(Json::Value* ret_root){
+void Logic::cpyJson2Buff(Json::Value *ret_root)
+{
     Json::StreamWriterBuilder writer;
 
-      // 清空
+    // 清空
     memset(temp_buff_, '\0', WRITE_BUFFER_SIZE);
 
     // 将 JSON 对象转换为字符串
-    std::string jsonString = Json::writeString(writer, ret_root);
+    std::string jsonString = Json::writeString(writer, *ret_root);
 
     *len_ = jsonString.size();
-    // LOG_DEBUG("json_string = %s, len = %d", jsonString.c_str(), len);
+    // LOG_DEBUG("json_string = %s, len = %d", jsonString.c_str(), *len_);
     if (*len_ <= WRITE_BUFFER_SIZE)
     {
         strncpy(temp_buff_, jsonString.c_str(), *len_);
-        // LOG_DEBUG("ret_json=>%s", temp_buff);
+        // LOG_DEBUG("ret_json=>%s", temp_buff_);
     }
 }
 

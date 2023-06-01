@@ -286,32 +286,6 @@ http_conn::HTTP_CODE http_conn::parse_request_line(char *text)
         }
     }
 
-    // // 解析查询参数
-    // char *parameter = strtok(delimiter + 1, "&");
-    // while (parameter != NULL)
-    // {
-    //     char *key = strtok(parameter, "=");
-    //     char *value = strtok(NULL, "=");
-
-    //     if (key != NULL && value != NULL)
-    //     {
-    //         if (strcmp(key, "query") == 0)
-    //         {
-    //             strcpy(query, value);
-    //         }
-    //         else if (strcmp(key, "pagenum") == 0)
-    //         {
-    //             *pageNum = atoi(value);
-    //         }
-    //         else if (strcmp(key, "pagesize") == 0)
-    //         {
-    //             *pageSize = atoi(value);
-    //         }
-    //     }
-
-    //     parameter = strtok(NULL, "&");
-    // }
-
     m_check_state = CHECK_STATE_HEADER;
     return NO_REQUEST;
 }
@@ -452,17 +426,25 @@ http_conn::HTTP_CODE http_conn::do_request()
     // }
     else if (strncasecmp(p - 4, "/api", 4) == 0)
     {
+        std::shared_ptr<Logic> logic_func;
         // 登录选项
         if (strncasecmp(p + 1, "login", 5) == 0)
         {
-            Logic logic_func(mysql, m_close_log);
-            logic_func.loginLogic(m_string, temp_buf, json_len);
-            // LOG_DEBUG("ret_json=>%s", temp_buf);
+            logic_func = std::make_shared<Logic>(mysql, m_close_log, temp_buf, &json_len);
+            logic_func->loginLogic(m_string);
+            // LOG_DEBUG("ret_json, len=>%s, %d", temp_buf, len);
         }
-        else if (strncasecmp(p + 1, "menus", 5) == 0)
+        else
+            logic_func = std::make_shared<Logic>(mysql, m_close_log, temp_buf, &json_len, token);
+
+        if (strncasecmp(p + 1, "menus", 5) == 0)
         {
-            Logic logic_func(mysql, m_close_log, token);
-            logic_func.menuLogic(temp_buf, json_len);
+
+            logic_func->menuLogic();
+        }
+        else if (strncasecmp(p + 1, "users", 5) == 0)
+        {
+            logic_func->usersLogic(m_string);
         }
     }
     else
