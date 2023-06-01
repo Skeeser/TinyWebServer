@@ -183,10 +183,10 @@ void Logic::menuLogic()
 }
 
 // 模糊查询用户数量
-int Logic::getUsersCountByKey(std::string key)
+int Logic::getUsersCountByKey(std::string table_name, std::string key)
 {
-    std::string sql_string("SHOW COLUMNS from ");
-    sql_string += table_name + " ;";
+    std::string sql_string("SELECT count(*) as count FROM sp_manager ");
+    sql_string += "WHERE mg_name LIKE " + key + " ;";
 
     if (mysql_ == NULL)
         LOG_INFO("mysql is NULL!");
