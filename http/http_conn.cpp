@@ -267,6 +267,51 @@ http_conn::HTTP_CODE http_conn::parse_request_line(char *text)
     // if (strlen(m_url) == 1)
     //     strcat(m_url, "judge.html");
 
+    // 解析Get请求的参数
+    if (m_method == GET)
+    {
+
+        // 检查是否存在'?'
+        // char *delimiter = strchr(m_url, '?');
+        m_string = strpbrk(m_url, "?");
+        if (m_string != NULL)
+        {
+
+            *m_string++ = '\0';
+            // 复制'?'之前的部分到query
+            int length = m_string - m_url;
+            strncpy(m_url, m_url, length - 2);
+            // LOG_INFO("url=> %s", m_url);
+            // LOG_INFO("string=> %s", m_string);
+        }
+    }
+
+    // // 解析查询参数
+    // char *parameter = strtok(delimiter + 1, "&");
+    // while (parameter != NULL)
+    // {
+    //     char *key = strtok(parameter, "=");
+    //     char *value = strtok(NULL, "=");
+
+    //     if (key != NULL && value != NULL)
+    //     {
+    //         if (strcmp(key, "query") == 0)
+    //         {
+    //             strcpy(query, value);
+    //         }
+    //         else if (strcmp(key, "pagenum") == 0)
+    //         {
+    //             *pageNum = atoi(value);
+    //         }
+    //         else if (strcmp(key, "pagesize") == 0)
+    //         {
+    //             *pageSize = atoi(value);
+    //         }
+    //     }
+
+    //     parameter = strtok(NULL, "&");
+    // }
+
     m_check_state = CHECK_STATE_HEADER;
     return NO_REQUEST;
 }
