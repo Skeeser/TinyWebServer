@@ -268,7 +268,7 @@ http_conn::HTTP_CODE http_conn::parse_request_line(char *text)
     //     strcat(m_url, "judge.html");
 
     // 解析Get请求的参数
-    if (m_method == GET)
+    if (m_method == GET || m_method == OPTIONS)
     {
 
         // 检查是否存在'?'
@@ -329,6 +329,19 @@ http_conn::HTTP_CODE http_conn::parse_headers(char *text)
         text += 14;
         text += strspn(text, " \t");
         m_token_str = text;
+    }
+    // 解析当OPTIONS时具体的请求
+    else if (strncasecmp(text, "Access-Control-Request-Method:", 30) == 0)
+    {
+        text += 30;
+        text += strspn(text, " \t");
+        if (strcasecmp(text, "GET") == 0)
+            m_method = GET;
+        else if (strcasecmp(text, "POST") == 0)
+        {
+            m_method = POST;
+            cgi = 1;
+        }
     }
     else
     {
