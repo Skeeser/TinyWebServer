@@ -56,5 +56,5 @@ private:
     void cpyJson2Buff(Json::Value *ret_root);
     int indexOf(string key_name);
     std::shared_ptr<std::unordered_map<std::string, std::string>> parseGetData(char *input_data);
-    int getUsersCountByKey(std::string table_name, std::string key);
+    int getUsersCountByKey(std::string table_name, std::string col_name, std::string key);
 };

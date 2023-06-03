@@ -445,6 +445,7 @@ http_conn::HTTP_CODE http_conn::do_request()
         else if (strncasecmp(p + 1, "users", 5) == 0)
         {
             logic_func->usersLogic(m_string);
+            LOG_DEBUG("ret_json, len=>%s, %d", temp_buf, len);
         }
     }
     else

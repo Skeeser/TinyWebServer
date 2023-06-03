@@ -221,7 +221,7 @@ type=tree
 ```json
 {
     "data": {
-        "totalpage": 5,
+        "total": 5,
         "pagenum": 4,
         "users": [
             {

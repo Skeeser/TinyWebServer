@@ -183,10 +183,10 @@ void Logic::menuLogic()
 }
 
 // 模糊查询用户数量
-int Logic::getUsersCountByKey(std::string table_name, std::string key)
+int Logic::getUsersCountByKey(std::string table_name, std::string col_name, std::string key)
 {
-    std::string sql_string("SELECT count(*) as count FROM sp_manager ");
-    sql_string += "WHERE mg_name LIKE '%" + key + "%' ;";
+    std::string sql_string("SELECT count(*) as count FROM " + table_name);
+    sql_string += " WHERE " + col_name + " LIKE '%" + key + "%' ;";
     int ret_count = -1;
     if (mysql_ == NULL)
         LOG_INFO("mysql is NULL!");
@@ -208,28 +208,41 @@ int Logic::getUsersCountByKey(std::string table_name, std::string key)
 // 解析Get 请求数据。 todo 用了哈希表，怎么优化
 std::shared_ptr<std::unordered_map<std::string, std::string>> Logic::parseGetData(char *input_data)
 {
-    std::shared_ptr<std::unordered_map<std::string, std::string>> param_hash;
-    // 解析查询参数
-    char *parameter = strtok(input_data, "&");
-    while (parameter != NULL)
-    {
-        char *key = strtok(parameter, "=");
-        char *value = strtok(NULL, "=");
+    std::shared_ptr<std::unordered_map<std::string, std::string>> param_hash = std::make_shared<std::unordered_map<std::string, std::string>>();
 
-        if (key != NULL)
-        {
-            if (value != NULL)
-                (*param_hash)[std::string(key)] = value;
-            else
-                (*param_hash)[std::string(key)] = "";
-        }
+    LOG_DEBUG("%s", input_data);
+    int limit = 0;
+    // 解析查询参数
+    std::string prase_str = std::string(input_data) + "&";
+    std::string temp_str = "";
+    std::string key = "";
+    std::string value = "";
+
+    while (prase_str != "")
+    {
+        auto temp_pos = prase_str.find_first_of("&");
+        if (temp_pos == std::string::npos)
+            break;
+        temp_str = prase_str.substr(0, temp_pos);
+        prase_str.erase(0, temp_pos + 1);
+        limit++;
+        // 防止死循环
+        if (limit >= 500)
+            break;
+        auto kv_pos = temp_str.find("=");
+        if (kv_pos == std::string::npos)
+            break;
+        key = temp_str.substr(0, kv_pos);
+        value = temp_str.substr(kv_pos + 1, temp_str.size());
+
+        LOG_DEBUG("%s, %s, %s", temp_str.c_str(), key.c_str(), value.c_str());
+        if (key != "")
+            (*param_hash)[key] = value;
         else
         {
             errorLogic(400, "参数错误");
             return nullptr;
         }
-
-        parameter = strtok(NULL, "&");
     }
     return param_hash;
 }
@@ -237,15 +250,15 @@ std::shared_ptr<std::unordered_map<std::string, std::string>> Logic::parseGetDat
 // 用户管理
 void Logic::usersLogic(char *input_data)
 {
-    int offset = -1;
+    LOG_DEBUG("In this user manager");
     int page_num = -1;
     int page_size = -1;
     std::string query = "";
+    // 获取请求的数据
     auto ret_hash_ptr = parseGetData(input_data);
     if (ret_hash_ptr != nullptr)
     {
-        auto param_hash = *parseGetData(input_data);
-        query = param_hash["query"];
+        auto param_hash = *ret_hash_ptr;
         // 验证参数
         if (param_hash["pagenum"] != "" && param_hash["pagesize"] != "")
         {
@@ -261,14 +274,71 @@ void Logic::usersLogic(char *input_data)
     else
         return;
 
-    int count = getUsersCountByKey(query);
+    LOG_DEBUG("%d, %d, %s", page_num, page_size, query.c_str());
+    // 计算页的范围
+    int count = getUsersCountByKey("sp_manager", "mg_name", query);
     int pageCount = ceil(count / page_size);
     int offset = (page_num - 1) * page_size;
     if (offset >= count)
     {
         offset = count;
     }
-    int limit = page_size;
+
+    // 执行sql语句
+    Json::Value root;
+    Json::Value temp;
+    Json::Value data;
+    Json::Value meta;
+
+    std::string sql_string = "SELECT * FROM sp_manager as mgr LEFT JOIN sp_role as role ON mgr.role_id = role.role_id";
+    sql_string += " WHERE mg_name LIKE '%" + query + "%' LIMIT " + std::to_string(offset) + "," + std::to_string(page_size) + " ;";
+
+    if (mysql_ == NULL)
+    {
+        LOG_INFO("mysql is NULL!");
+        return;
+    }
+    // 在获取前先清除
+    clearTableKey();
+    getTableKey("sp_manager");
+    getTableKey("sp_role");
+    LOG_DEBUG("SQL=>%s", sql_string.c_str());
+    int ret = mysql_query(mysql_, sql_string.c_str());
+
+    LOG_DEBUG("ret=>%d", ret);
+    if (!ret) // 查询成功de
+    {
+        data["total"] = count;
+        data["pagenum"] = page_num;
+
+        // 从表中检索完整的结果集
+        MYSQL_RES *result = mysql_store_result(mysql_);
+        while (MYSQL_ROW row = mysql_fetch_row(result))
+        {
+            temp["id"] = row[indexOf("mg_id")];
+            temp["role_name"] = row[indexOf("role_name")];
+            temp["username"] = row[indexOf("mg_name")];
+            temp["create_time"] = row[indexOf("mg_time")];
+            temp["mobile"] = row[indexOf("mg_mobile")];
+            temp["email"] = row[indexOf("mg_email")];
+            temp["mg_state"] = row[indexOf("mg_state")];
+
+            data["users"].append(temp);
+            temp.clear();
+        }
+
+        meta["msg"] = "查询用户列表成功";
+        meta["status"] = 200;
+        root["data"] = data;
+        root["meta"] = meta;
+    }
+    else
+    {
+        errorLogic(404, "获取用户列表失败");
+        return;
+    }
+
+    cpyJson2Buff(&root);
 }
 
 // 获取表的所有键的名字
@@ -354,4 +424,6 @@ int Logic::indexOf(string key_name)
             return i;
         }
     }
+    // 默认返回第一个
+    return 0;
 }
