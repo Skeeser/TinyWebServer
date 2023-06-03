@@ -186,8 +186,8 @@ void Logic::menuLogic()
 int Logic::getUsersCountByKey(std::string table_name, std::string key)
 {
     std::string sql_string("SELECT count(*) as count FROM sp_manager ");
-    sql_string += "WHERE mg_name LIKE " + key + " ;";
-
+    sql_string += "WHERE mg_name LIKE '%" + key + "%' ;";
+    int ret_count = -1;
     if (mysql_ == NULL)
         LOG_INFO("mysql is NULL!");
 
@@ -198,27 +198,17 @@ int Logic::getUsersCountByKey(std::string table_name, std::string key)
     {
         // 从表中检索完整的结果集
         MYSQL_RES *result = mysql_store_result(mysql_);
-
-        while (MYSQL_ROW row = mysql_fetch_row(result))
-        {
-
-            key_vector_->push_back(row[0]);
-            // LOG_INFO("row=>%d", mg_id);
-        }
+        MYSQL_ROW row = mysql_fetch_row(result);
+        ret_count = std::stoi(row[0]);
     }
-    else
-    {
-        return;
-    }
+
+    return ret_count;
 }
 
-// 用户管理
-void Logic::usersLogic(char *input_data)
+// 解析Get 请求数据。 todo 用了哈希表，怎么优化
+std::shared_ptr<std::unordered_map<std::string, std::string>> Logic::parseGetData(char *input_data)
 {
-    std::string query = "";
-    int page_num = -1;
-    int page_size = -1;
-    int off_set = -1;
+    std::shared_ptr<std::unordered_map<std::string, std::string>> param_hash;
     // 解析查询参数
     char *parameter = strtok(input_data, "&");
     while (parameter != NULL)
@@ -226,40 +216,59 @@ void Logic::usersLogic(char *input_data)
         char *key = strtok(parameter, "=");
         char *value = strtok(NULL, "=");
 
-        if (key != NULL && (value != NULL || strcmp(key, "query") == 0))
+        if (key != NULL)
         {
-            if (strcmp(key, "query") == 0)
-            {
-                if (value == NULL)
-                    query = "";
-                else
-                    query = value;
-                LOG_DEBUG("query %s", query);
-            }
-            else if (strcmp(key, "pagenum") == 0)
-            {
-                page_num = atoi(value);
-            }
-            else if (strcmp(key, "pagesize") == 0)
-            {
-                page_size = atoi(value);
-            }
+            if (value != NULL)
+                (*param_hash)[std::string(key)] = value;
+            else
+                (*param_hash)[std::string(key)] = "";
         }
         else
         {
             errorLogic(400, "参数错误");
+            return nullptr;
         }
 
         parameter = strtok(NULL, "&");
     }
+    return param_hash;
+}
 
+// 用户管理
+void Logic::usersLogic(char *input_data)
+{
+    int offset = -1;
+    int page_num = -1;
+    int page_size = -1;
+    std::string query = "";
+    auto ret_hash_ptr = parseGetData(input_data);
+    if (ret_hash_ptr != nullptr)
+    {
+        auto param_hash = *parseGetData(input_data);
+        query = param_hash["query"];
+        // 验证参数
+        if (param_hash["pagenum"] != "" && param_hash["pagesize"] != "")
+        {
+            page_num = std::stoi(param_hash["pagenum"]);
+            page_size = std::stoi(param_hash["pagesize"]);
+        }
+        else
+        {
+            errorLogic(400, "参数错误");
+            return;
+        }
+    }
+    else
+        return;
+
+    int count = getUsersCountByKey(query);
     int pageCount = ceil(count / page_size);
-    offset = (pagenum - 1) * pagesize;
+    int offset = (page_num - 1) * page_size;
     if (offset >= count)
     {
         offset = count;
     }
-    limit = pagesize;
+    int limit = page_size;
 }
 
 // 获取表的所有键的名字

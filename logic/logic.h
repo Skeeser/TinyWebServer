@@ -5,6 +5,7 @@
 #include <jwt-cpp/jwt.h>
 #include <vector>
 #include <map>
+#include <unordered_map>
 #include <memory>
 #include <cmath>
 
@@ -37,7 +38,7 @@ public:
     void loginLogic(char *user_data);
     void menuLogic();
 
-        void usersLogic(char *input_data);
+    void usersLogic(char *input_data);
 
 private:
     MYSQL *mysql_;
@@ -54,5 +55,6 @@ private:
     void errorLogic(int status, std::string msg);
     void cpyJson2Buff(Json::Value *ret_root);
     int indexOf(string key_name);
+    std::shared_ptr<std::unordered_map<std::string, std::string>> parseGetData(char *input_data);
     int getUsersCountByKey(std::string table_name, std::string key);
 };
