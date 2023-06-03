@@ -76,7 +76,11 @@ void Logic::loginLogic(char *user_data)
     {
         // 从表中检索完整的结果集
         MYSQL_RES *result = mysql_store_result(mysql_);
-
+        if (result == NULL || mysql_num_rows(result) == 0)
+        {
+            errorLogic(404, "用户名或密码错误");
+            return;
+        }
         while (MYSQL_ROW row = mysql_fetch_row(result))
         {
 
