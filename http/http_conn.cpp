@@ -268,7 +268,7 @@ http_conn::HTTP_CODE http_conn::parse_request_line(char *text)
     //     strcat(m_url, "judge.html");
 
     // 解析Get请求的参数
-    if (m_method == GET || m_method == OPTIONS)
+    if (m_method == GET)
     {
 
         // 检查是否存在'?'
@@ -329,19 +329,6 @@ http_conn::HTTP_CODE http_conn::parse_headers(char *text)
         text += 14;
         text += strspn(text, " \t");
         m_token_str = text;
-    }
-    // 解析当OPTIONS时具体的请求
-    else if (strncasecmp(text, "Access-Control-Request-Method:", 30) == 0)
-    {
-        text += 30;
-        text += strspn(text, " \t");
-        if (strcasecmp(text, "GET") == 0)
-            m_method = GET;
-        else if (strcasecmp(text, "POST") == 0)
-        {
-            m_method = POST;
-            cgi = 1;
-        }
     }
     else
     {
@@ -412,6 +399,7 @@ http_conn::HTTP_CODE http_conn::process_read()
 
 http_conn::HTTP_CODE http_conn::do_request()
 {
+    // LOG_DEBUG("in do request");
     strcpy(m_real_file, doc_root);
     int len = strlen(doc_root);
     std::string token = "";
@@ -444,7 +432,8 @@ http_conn::HTTP_CODE http_conn::do_request()
         if (strncasecmp(p + 1, "login", 5) == 0)
         {
             logic_func = std::make_shared<Logic>(mysql, m_close_log, temp_buf, &json_len);
-            logic_func->loginLogic(m_string);
+            if (m_string)
+                logic_func->loginLogic(m_string);
             // LOG_DEBUG("ret_json, len=>%s, %d", temp_buf, len);
         }
         else
@@ -457,7 +446,17 @@ http_conn::HTTP_CODE http_conn::do_request()
         }
         else if (strncasecmp(p + 1, "users", 5) == 0)
         {
-            logic_func->usersLogic(m_string);
+            if (m_method == GET)
+            {
+                if (m_string)
+                    logic_func->getUsersLogic(m_string);
+            }
+            else if (m_method == POST)
+            {
+                if (m_string)
+                    logic_func->addUserLogic(m_string);
+            }
+
             LOG_DEBUG("ret_json, len=>%s, %d", temp_buf, len);
         }
     }

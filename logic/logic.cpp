@@ -40,6 +40,28 @@ bool Logic::checkToken(std::string token, int &mg_id)
     }
 }
 
+// sql查询
+std::string Logic::findByKey(std::string table_name, std::string ret_name, std::string col_name, std::string key)
+{
+    std::string sql_string("SELECT " + ret_name + " FROM " + table_name);
+    sql_string += " WHERE " + col_name + " = '" + key + "';";
+    int ret_count = -1;
+    if (mysql_ == NULL)
+        LOG_INFO("mysql is NULL!");
+    // LOG_DEBUG("str=>%s", sql_string.c_str());
+    int ret = mysql_query(mysql_, sql_string.c_str());
+
+    if (!ret) // 查询成功
+    {
+        // 从表中检索完整的结果集
+        MYSQL_RES *result = mysql_store_result(mysql_);
+        MYSQL_ROW row = mysql_fetch_row(result);
+        return row[0];
+    }
+    // LOG_DEBUG("ret_count=>%d", ret_count);
+    return "";
+}
+
 // 登录
 void Logic::loginLogic(char *user_data)
 {
@@ -343,6 +365,66 @@ void Logic::getUsersLogic(char *input_data)
     }
 
     cpyJson2Buff(&root);
+}
+
+void Logic::addUserLogic(char *input_data)
+{
+    // 创建 JSON 对象
+    Json::Value root;
+    Json::Reader reader;
+    Json::StreamWriterBuilder writer;
+    std::string json_string(input_data);
+    // 获取当前时间的时间戳
+    std::time_t currentTime = std::time(nullptr);
+    // 使用字符串流构建时间字符串
+    std::stringstream ss;
+    ss << std::put_time(std::localtime(&currentTime), "%Y-%m-%d %H:%M:%S");
+
+    if (!reader.parse(json_string, root))
+    {
+        LOG_INFO("sorry, json reader failed");
+    }
+    std::string role_id = findByKey("sp_role", "role_id", "role_name", "学生");
+
+    std::string sql_string("INSERT INTO sp_manager (mg_name, mg_pwd, mg_mobile, mg_email, mg_time, role_id)");
+    sql_string += " VALUES ('" + root["username"].asString();
+    sql_string += "','" + root["password"].asString();
+    sql_string += "','" + root["mobile"].asString();
+    sql_string += "','" + root["email"].asString();
+    sql_string += "','" + ss.str();
+    // 默认为学生
+    sql_string += "','" + role_id + "');";
+
+    Json::Value ret_root;
+    Json::Value data;
+    Json::Value meta;
+    int mg_id = -1;
+    // m_lock.lock();
+    if (mysql_ == NULL)
+        LOG_INFO("mysql is NULL!");
+
+    LOG_INFO("sql_string=>%s", sql_string.c_str());
+    int ret = mysql_query(mysql_, sql_string.c_str());
+    // m_lock.unlock();
+    // LOG_DEBUG("ret=>%d", ret);
+    if (!ret)
+    {
+        std::string id = findByKey("sp_manager", "mg_id", "mg_name", root["username"].asString());
+        root["id"] = id;
+        root["role_id"] = role_id;
+        root["create_time"] = ss.str();
+        meta["msg"] = "用户创建成功";
+        meta["status"] = 201;
+        ret_root["data"] = root;
+        ret_root["meta"] = meta;
+    }
+    else
+    {
+        errorLogic(404, "用户创建失败");
+        return;
+    }
+
+    cpyJson2Buff(&ret_root);
 }
 
 // 获取表的所有键的名字

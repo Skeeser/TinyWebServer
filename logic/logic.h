@@ -8,7 +8,9 @@
 #include <unordered_map>
 #include <memory>
 #include <cmath>
-
+#include <ctime>
+#include <sstream>
+#include <iomanip>
 #include "../lock/locker.h"
 #include "../log/log.h"
 
@@ -37,8 +39,8 @@ public:
     std::string getToken(int mg_id);
     void loginLogic(char *user_data);
     void menuLogic();
-
-    void usersLogic(char *input_data);
+    void getUsersLogic(char *input_data);
+    void addUserLogic(char *input_data);
 
 private:
     MYSQL *mysql_;
@@ -47,6 +49,9 @@ private:
     bool is_token_vaild_;
     char *temp_buff_;
     int *len_;
+
+    // 常见sql操作
+    std::string findByKey(std::string table_name, std::string ret_name, std::string col_name, std::string key);
 
     bool checkToken(std::string token, int &mg_id);
     std::shared_ptr<std::vector<std::string>> key_vector_;

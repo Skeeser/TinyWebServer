@@ -274,13 +274,9 @@ type=tree
         "id": 28,
         "username": "tige1200",
         "mobile": "test",
-        "type": 1,
-        "openid": "",
+        "role_id": 1,
         "email": "test@test.com",
         "create_time": "2017-11-10T03:47:13.533Z",
-        "modify_time": null,
-        "is_delete": false,
-        "is_active": false
     },
     "meta": {
         "msg": "用户创建成功",
