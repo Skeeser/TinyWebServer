@@ -194,10 +194,9 @@ int Logic::getUsersCountByKey(std::string table_name, std::string col_name, std:
     int ret_count = -1;
     if (mysql_ == NULL)
         LOG_INFO("mysql is NULL!");
-
+    // LOG_DEBUG("str=>%s", sql_string.c_str());
     int ret = mysql_query(mysql_, sql_string.c_str());
 
-    // LOG_DEBUG("ret=>%d", ret);
     if (!ret) // 查询成功de
     {
         // 从表中检索完整的结果集
@@ -205,7 +204,7 @@ int Logic::getUsersCountByKey(std::string table_name, std::string col_name, std:
         MYSQL_ROW row = mysql_fetch_row(result);
         ret_count = std::stoi(row[0]);
     }
-
+    // LOG_DEBUG("ret_count=>%d", ret_count);
     return ret_count;
 }
 
@@ -252,7 +251,7 @@ std::shared_ptr<std::unordered_map<std::string, std::string>> Logic::parseGetDat
 }
 
 // 用户管理
-void Logic::usersLogic(char *input_data)
+void Logic::getUsersLogic(char *input_data)
 {
     LOG_DEBUG("In this user manager");
     int page_num = -1;
@@ -274,6 +273,7 @@ void Logic::usersLogic(char *input_data)
             errorLogic(400, "参数错误");
             return;
         }
+        query = param_hash["query"];
     }
     else
         return;
