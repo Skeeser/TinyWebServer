@@ -409,7 +409,7 @@ http_conn::HTTP_CODE http_conn::do_request()
     int json_len;
 
     // printf("m_url:%s\n", m_url);
-    const char *p = strrchr(m_url, '/');
+    // const char *p = strchr(m_url, '/');
     m_mmap_flag = NOT_MMAP;
     // 先处理OPTIONS请求
     if (m_method == OPTIONS)
@@ -425,11 +425,12 @@ http_conn::HTTP_CODE http_conn::do_request()
 
     //     free(m_url_real);
     // }
-    else if (strncasecmp(p - 4, "/api", 4) == 0)
+    else if (strncasecmp(m_url, "/api", 4) == 0)
     {
+        m_url += 4;
         std::shared_ptr<Logic> logic_func;
         // 登录选项
-        if (strncasecmp(p + 1, "login", 5) == 0)
+        if (strncasecmp(m_url, "/login", 6) == 0)
         {
             logic_func = std::make_shared<Logic>(mysql, m_close_log, temp_buf, &json_len);
             if (m_string)
@@ -439,25 +440,36 @@ http_conn::HTTP_CODE http_conn::do_request()
         else
             logic_func = std::make_shared<Logic>(mysql, m_close_log, temp_buf, &json_len, token);
 
-        if (strncasecmp(p + 1, "menus", 5) == 0)
+        if (strncasecmp(m_url, "/menus", 6) == 0)
         {
 
             logic_func->menuLogic();
         }
-        else if (strncasecmp(p + 1, "users", 5) == 0)
+        else if (strncasecmp(m_url, "/users", 6) == 0)
         {
-            if (m_method == GET)
+            m_url += 6;
+            // 如果是 /:id的情况
+            if (*m_url != '\0')
             {
-                if (m_string)
-                    logic_func->getUsersLogic(m_string);
+                LOG_DEBUG("url1=>%s", m_url);
+                auto *p = strchr(m_url, '/');
+                // 如果后面没有别的数字
+                if (p == nullptr)
+                {
+                }
             }
-            else if (m_method == POST)
+            else
             {
-                if (m_string)
+                if (m_method == GET && m_string)
+
+                    logic_func->getUsersLogic(m_string);
+
+                else if (m_method == POST && m_string)
+
                     logic_func->addUserLogic(m_string);
             }
 
-            LOG_DEBUG("ret_json, len=>%s, %d", temp_buf, len);
+            // LOG_DEBUG("ret_json, len=>%s, %d", temp_buf, len);
         }
     }
     else
@@ -635,10 +647,10 @@ bool http_conn::process_write(HTTP_CODE ret)
     {
         add_status_line(200, ok_200_title);
         add_content("Access-Control-Allow-Origin: *\r\n");
-        add_content("Access-Control-Allow-Headers: X-Requested-With, mytoken\r\n");
-        add_content("Access-Control-Allow-Headers: X-Requested-With, Authorization\r\n");
+        add_content("Access-Control-Allow-Headers:Authorization, mytoken\r\n"); // X-Requested-With,
+        // add_content("Access-Control-Allow-Headers:  \r\n");// X-Requested-With,
         // add_content("Content-Type: application/json;charset=utf-8\r\n");
-        add_content("Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept,X-Requested-With\r\n");
+        add_content("Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept\r\n"); // ,X-Requested-With
         add_content("Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS\r\n");
         add_content("Access-Control-Max-Age: 3600\r\n");
         // add_content("X-Powered-By: 3.2.1\r\n");

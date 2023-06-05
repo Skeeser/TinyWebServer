@@ -39,8 +39,11 @@ public:
     std::string getToken(int mg_id);
     void loginLogic(char *user_data);
     void menuLogic();
+
+    // 用户管理
     void getUsersLogic(char *input_data);
     void addUserLogic(char *input_data);
+    void getUserByIdLogic(char *id);
 
 private:
     MYSQL *mysql_;

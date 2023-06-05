@@ -191,7 +191,6 @@ void Logic::menuLogic()
 
         for (Json::Value &json_value : ret_root["data"])
         {
-            LOG_DEBUG("pid = %s", json_value["id"].asString().c_str());
             json_value["children"] = (*level1_data)[stoi(json_value["id"].asString().c_str())];
         }
 
@@ -235,7 +234,7 @@ std::shared_ptr<std::unordered_map<std::string, std::string>> Logic::parseGetDat
 {
     std::shared_ptr<std::unordered_map<std::string, std::string>> param_hash = std::make_shared<std::unordered_map<std::string, std::string>>();
 
-    LOG_DEBUG("%s", input_data);
+    // LOG_DEBUG("%s", input_data);
     int limit = 0;
     // 解析查询参数
     std::string prase_str = std::string(input_data) + "&";
@@ -260,7 +259,6 @@ std::shared_ptr<std::unordered_map<std::string, std::string>> Logic::parseGetDat
         key = temp_str.substr(0, kv_pos);
         value = temp_str.substr(kv_pos + 1, temp_str.size());
 
-        LOG_DEBUG("%s, %s, %s", temp_str.c_str(), key.c_str(), value.c_str());
         if (key != "")
             (*param_hash)[key] = value;
         else
@@ -275,7 +273,6 @@ std::shared_ptr<std::unordered_map<std::string, std::string>> Logic::parseGetDat
 // 用户管理
 void Logic::getUsersLogic(char *input_data)
 {
-    LOG_DEBUG("In this user manager");
     int page_num = -1;
     int page_size = -1;
     std::string query = "";
@@ -300,7 +297,6 @@ void Logic::getUsersLogic(char *input_data)
     else
         return;
 
-    LOG_DEBUG("%d, %d, %s", page_num, page_size, query.c_str());
     // 计算页的范围
     int count = getUsersCountByKey("sp_manager", "mg_name", query);
     int pageCount = ceil(count / page_size);
@@ -328,10 +324,7 @@ void Logic::getUsersLogic(char *input_data)
     clearTableKey();
     getTableKey("sp_manager");
     getTableKey("sp_role");
-    LOG_DEBUG("SQL=>%s", sql_string.c_str());
     int ret = mysql_query(mysql_, sql_string.c_str());
-
-    LOG_DEBUG("ret=>%d", ret);
     if (!ret) // 查询成功de
     {
         data["total"] = count;
@@ -425,6 +418,11 @@ void Logic::addUserLogic(char *input_data)
     }
 
     cpyJson2Buff(&ret_root);
+}
+
+// 通过id获取用户信息
+void Logic::getUserByIdLogic(char *id)
+{
 }
 
 // 获取表的所有键的名字
