@@ -397,6 +397,7 @@ http_conn::HTTP_CODE http_conn::process_read()
     return NO_REQUEST;
 }
 
+// ToDo 太多if else 考虑优化
 http_conn::HTTP_CODE http_conn::do_request()
 {
     // LOG_DEBUG("in do request");
@@ -456,6 +457,10 @@ http_conn::HTTP_CODE http_conn::do_request()
                 // 如果后面没有别的数字
                 if (p == nullptr)
                 {
+                    if (m_method == GET)
+                        logic_func->getUsersLogic(m_string);
+                    else if (m_method == POST)
+                        logic_func->addUserLogic(m_string);
                 }
             }
             else

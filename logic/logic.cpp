@@ -423,6 +423,40 @@ void Logic::addUserLogic(char *input_data)
 // 通过id获取用户信息
 void Logic::getUserByIdLogic(char *id)
 {
+    getTableKey("sp_manager");
+
+    std::string sql_string("SELECT * FROM sp_manager WHERE mg_id = '" + std::string(id) + "';");
+    Json::Value ret_root;
+    Json::Value data;
+    Json::Value meta;
+    int mg_id = -1;
+    // m_lock.lock();
+    if (mysql_ == NULL)
+        LOG_INFO("mysql is NULL!");
+    int ret = mysql_query(mysql_, sql_string.c_str());
+    // LOG_DEBUG("ret=>%d", ret);
+    if (!ret)
+    {
+        // 从表中检索完整的结果集
+        MYSQL_RES *result = mysql_store_result(mysql_);
+        MYSQL_ROW row = mysql_fetch_row(result);
+        data["id"] = id;
+        data["username"] = row[indexOf("username")];
+        data["role_id"] = row[indexOf("role_id")];
+        data["mobile"] = row[indexOf("mg_mobile")];
+        data["email"] = row[indexOf("mg_email")];
+        meta["msg"] = "查询成功";
+        meta["status"] = 200;
+        ret_root["data"] = data;
+        ret_root["meta"] = meta;
+    }
+    else
+    {
+        errorLogic(404, "用户查询失败");
+        return;
+    }
+
+    cpyJson2Buff(&ret_root);
 }
 
 // 获取表的所有键的名字
@@ -498,7 +532,7 @@ void Logic::cpyJson2Buff(Json::Value *ret_root)
     }
 }
 
-// 获取键名对应的索引值
+// 获取键名对应的索引值, 用之前要先调用getTableKey()
 int Logic::indexOf(string key_name)
 {
     for (int i = 0; i < key_vector_->size(); i++)
