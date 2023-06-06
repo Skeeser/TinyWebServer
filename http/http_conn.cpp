@@ -234,6 +234,15 @@ http_conn::HTTP_CODE http_conn::parse_request_line(char *text)
         m_method = POST;
         cgi = 1;
     }
+    else if (strcasecmp(method, "PUT") == 0)
+    {
+        m_method = PUT;
+        cgi = 1;
+    }
+    else if (strcasecmp(method, "DELETE") == 0)
+    {
+        m_method = DELETE;
+    }
     else if (strcasecmp(method, "OPTIONS") == 0)
     {
         m_method = OPTIONS;
@@ -452,15 +461,23 @@ http_conn::HTTP_CODE http_conn::do_request()
             // 如果是 /:id的情况
             if (*m_url != '\0')
             {
+                m_url++;
                 LOG_DEBUG("url1=>%s", m_url);
                 auto *p = strchr(m_url, '/');
                 // 如果后面没有别的数字
                 if (p == nullptr)
                 {
+
                     if (m_method == GET)
-                        logic_func->getUsersLogic(m_string);
-                    else if (m_method == POST)
-                        logic_func->addUserLogic(m_string);
+                        logic_func->getUserByIdLogic(m_url);
+                    else if (m_method == PUT)
+                        logic_func->putUserByIdLogic(m_url, m_string);
+                    else if (m_method == DELETE)
+                        logic_func->deleteUserByIdLogic(m_url); 
+                }
+                else
+                {
+                    LOG_DEBUG("is not nullptr");
                 }
             }
             else
@@ -474,7 +491,7 @@ http_conn::HTTP_CODE http_conn::do_request()
                     logic_func->addUserLogic(m_string);
             }
 
-            // LOG_DEBUG("ret_json, len=>%s, %d", temp_buf, len);
+            LOG_DEBUG("ret_json, len=>%s, %d", temp_buf, len);
         }
     }
     else

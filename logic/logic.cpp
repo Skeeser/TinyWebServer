@@ -423,6 +423,7 @@ void Logic::addUserLogic(char *input_data)
 // 通过id获取用户信息
 void Logic::getUserByIdLogic(char *id)
 {
+    LOG_DEBUG("id=>%s", id);
     getTableKey("sp_manager");
 
     std::string sql_string("SELECT * FROM sp_manager WHERE mg_id = '" + std::string(id) + "';");
@@ -441,7 +442,7 @@ void Logic::getUserByIdLogic(char *id)
         MYSQL_RES *result = mysql_store_result(mysql_);
         MYSQL_ROW row = mysql_fetch_row(result);
         data["id"] = id;
-        data["username"] = row[indexOf("username")];
+        data["username"] = row[indexOf("mg_name")];
         data["role_id"] = row[indexOf("role_id")];
         data["mobile"] = row[indexOf("mg_mobile")];
         data["email"] = row[indexOf("mg_email")];
@@ -453,6 +454,86 @@ void Logic::getUserByIdLogic(char *id)
     else
     {
         errorLogic(404, "用户查询失败");
+        return;
+    }
+
+    cpyJson2Buff(&ret_root);
+}
+
+// 修改用户信息
+void Logic::putUserByIdLogic(char *id, char *input_data)
+{
+    // 创建 JSON 对象
+    Json::Value root;
+    Json::Reader reader;
+    Json::StreamWriterBuilder writer;
+    std::string json_string(input_data);
+
+    if (!reader.parse(json_string, root))
+    {
+        LOG_INFO("sorry, json reader failed");
+    }
+
+    std::string role_id = findByKey("sp_manager", "role_id", "mg_id", id);
+
+    std::string sql_string("UPDATE sp_manager SET ");
+    sql_string += " mg_mobile = '" + root["mobile"].asString() + "', ";
+    sql_string += " mg_email = '" + root["email"].asString() + "'  ";
+    sql_string += " WHERE mg_id = '" + std::string(id) + "';";
+
+    Json::Value ret_root;
+    Json::Value data;
+    Json::Value meta;
+    int mg_id = -1;
+    // m_lock.lock();
+    if (mysql_ == NULL)
+        LOG_INFO("mysql is NULL!");
+
+    LOG_INFO("sql_string=>%s", sql_string.c_str());
+    int ret = mysql_query(mysql_, sql_string.c_str());
+
+    if (!ret)
+    {
+        root["id"] = id;
+        root["role_id"] = role_id;
+        root["mobile"] = root["mobile"];
+        root["email"] = root["email"];
+
+        meta["msg"] = "更新成功";
+        meta["status"] = 200;
+        ret_root["data"] = root;
+        ret_root["meta"] = meta;
+    }
+    else
+    {
+        errorLogic(500, "更新失败");
+        return;
+    }
+
+    cpyJson2Buff(&ret_root);
+}
+
+// 根据id删除该用户
+void Logic::deleteUserByIdLogic(char *id)
+{
+    Json::Value ret_root;
+    Json::Value meta;
+    std::string sql_string("DELETE * FROM sp_manager WHERE mg_id = '" + std::string(id) + "';");
+
+    if (mysql_ == NULL)
+        LOG_INFO("mysql is NULL!");
+
+    int ret = mysql_query(mysql_, sql_string.c_str());
+    if (!ret)
+    {
+        meta["msg"] = "删除成功";
+        meta["status"] = 204;
+        ret_root["data"] = "";
+        ret_root["meta"] = meta;
+    }
+    else
+    {
+        errorLogic(500, "删除失败");
         return;
     }
 

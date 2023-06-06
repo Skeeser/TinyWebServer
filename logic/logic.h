@@ -44,6 +44,8 @@ public:
     void getUsersLogic(char *input_data);
     void addUserLogic(char *input_data);
     void getUserByIdLogic(char *id);
+    void putUserByIdLogic(char *id, char *input_data);
+    void deleteUserByIdLogic(char *id);
 
 private:
     MYSQL *mysql_;
