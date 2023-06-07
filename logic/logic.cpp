@@ -518,7 +518,7 @@ void Logic::deleteUserByIdLogic(char *id)
 {
     Json::Value ret_root;
     Json::Value meta;
-    std::string sql_string("DELETE * FROM sp_manager WHERE mg_id = '" + std::string(id) + "';");
+    std::string sql_string("DELETE FROM sp_manager WHERE mg_id = '" + std::string(id) + "';");
 
     if (mysql_ == NULL)
         LOG_INFO("mysql is NULL!");
@@ -527,7 +527,7 @@ void Logic::deleteUserByIdLogic(char *id)
     if (!ret)
     {
         meta["msg"] = "删除成功";
-        meta["status"] = 204;
+        meta["status"] = 200;
         ret_root["data"] = "";
         ret_root["meta"] = meta;
     }
