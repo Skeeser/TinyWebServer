@@ -473,7 +473,7 @@ http_conn::HTTP_CODE http_conn::do_request()
                     else if (m_method == PUT)
                         logic_func->putUserByIdLogic(m_url, m_string);
                     else if (m_method == DELETE)
-                        logic_func->deleteUserByIdLogic(m_url); 
+                        logic_func->deleteUserByIdLogic(m_url);
                 }
                 else
                 {
@@ -674,7 +674,7 @@ bool http_conn::process_write(HTTP_CODE ret)
         // add_content("Content-Type: application/json;charset=utf-8\r\n");
         add_content("Access-Control-Allow-Headers: Content-Type,Content-Length, Authorization, Accept\r\n"); // ,X-Requested-With
         add_content("Access-Control-Allow-Methods: PUT,POST,GET,DELETE,OPTIONS\r\n");
-        add_content("Access-Control-Max-Age: 3600\r\n");
+        add_content("Access-Control-Max-Age: 86400\r\n");
         // add_content("X-Powered-By: 3.2.1\r\n");
         if (m_send_size != 0)
         {

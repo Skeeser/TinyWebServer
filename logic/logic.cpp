@@ -275,6 +275,7 @@ void Logic::getUsersLogic(char *input_data)
 {
     int page_num = -1;
     int page_size = -1;
+    std::string is_stu = "-1";
     std::string query = "";
     // 获取请求的数据
     auto ret_hash_ptr = parseGetData(input_data);
@@ -293,6 +294,7 @@ void Logic::getUsersLogic(char *input_data)
             return;
         }
         query = param_hash["query"];
+        is_stu = param_hash["isstu"];
     }
     else
         return;
@@ -312,9 +314,10 @@ void Logic::getUsersLogic(char *input_data)
     Json::Value data;
     Json::Value meta;
 
-    std::string sql_string = "SELECT * FROM sp_manager as mgr LEFT JOIN sp_role as role ON mgr.role_id = role.role_id";
-    sql_string += " WHERE mg_name LIKE '%" + query + "%' LIMIT " + std::to_string(offset) + "," + std::to_string(page_size) + " ;";
-
+    std::string sql_string = "SELECT * FROM sp_manager as mgr LEFT JOIN sp_role as role ON mgr.role_id = role.role_id LEFT JOIN sp_class as class ON mgr.class_id = class.class_id";
+    sql_string += " WHERE mg_isstu = " + is_stu;
+    sql_string += " AND mg_name LIKE '%" + query + "%' LIMIT " + std::to_string(offset) + "," + std::to_string(page_size) + ";";
+    LOG_DEBUG("SQL:\n%s", sql_string.c_str());
     if (mysql_ == NULL)
     {
         LOG_INFO("mysql is NULL!");
@@ -324,6 +327,8 @@ void Logic::getUsersLogic(char *input_data)
     clearTableKey();
     getTableKey("sp_manager");
     getTableKey("sp_role");
+    getTableKey("sp_class");
+
     int ret = mysql_query(mysql_, sql_string.c_str());
     if (!ret) // 查询成功de
     {
@@ -340,8 +345,11 @@ void Logic::getUsersLogic(char *input_data)
             temp["create_time"] = row[indexOf("mg_time")];
             temp["mobile"] = row[indexOf("mg_mobile")];
             temp["email"] = row[indexOf("mg_email")];
-            temp["mg_state"] = row[indexOf("mg_state")];
-
+            temp["isstu"] = row[indexOf("mg_isstu")];
+            temp["grade"] = row[indexOf("class_grade")];
+            temp["college"] = row[indexOf("mg_college")];
+            temp["class"] = row[indexOf("class_name")];
+            temp["stu_id"] = row[indexOf("mg_stuid")];
             data["users"].append(temp);
             temp.clear();
         }

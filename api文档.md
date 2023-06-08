@@ -204,7 +204,9 @@ type=tree
 | query    | 查询参数     | 可以为空 |
 | pagenum  | 当前页码     | 不能为空 |
 | pagesize | 每页显示条数 | 不能为空 |
-
+| isstu     | 是否是学生 | 不能为空 |
+| sortprop | 排序的参数 | 可以为空 |
+| sortorder | 排序的顺序 | 可以为空 |
 
 - 响应参数
 
@@ -251,8 +253,13 @@ type=tree
 | -------- | -------- | -------- |
 | username | 用户名称 | 不能为空 |
 | password | 用户密码 | 不能为空 |
-| email    | 邮箱     | 可以为空 |
-| mobile   | 手机号   | 可以为空 |
+| isstu    | 是否是学生 | 不能为空|
+| grade    | 年级       | 可以为空 |
+| college  | 学院       | 不能为空 |
+| stuid    | 学号       | 可以为空 |
+| class    | 班级       | 可以为空 |
+| email    | 邮箱       | 可以为空 |
+| mobile   | 手机号     | 可以为空 |
 
 - 响应参数
 
@@ -303,6 +310,10 @@ type=tree
 | role_id | 角色 ID  |      |
 | mobile  | 手机号   |      |
 | email   | 邮箱     |      |
+| grade   | 年级     |      |
+| college | 学院     |      |
+| stuid   | 学号     |      |
+| class   | 班级     |      |
 
 - 响应数据
 
@@ -333,6 +344,12 @@ type=tree
 | id     | 用户 id  | 不能为空 `参数是url参数:id` |
 | email  | 邮箱     | 可以为空                    |
 | mobile | 手机号   | 可以为空                    |
+| grade    | 年级       | 可以为空 |
+| college  | 学院       | 不能为空 |
+| stuid    | 学号       | 可以为空 |
+| class    | 班级       | 可以为空 |
+| email    | 邮箱       | 可以为空 |
+| mobile   | 手机号     | 可以为空 |
 
 - 响应参数
 
