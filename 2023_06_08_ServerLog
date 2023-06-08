@@ -9318,3 +9318,633 @@ SELECT * FROM sp_manager as mgr LEFT JOIN sp_role as role ON mgr.role_id = role.
 2023-06-08 22:48:50.162346 [info]: timer tick
 2023-06-08 22:48:55.162780 [info]: timer tick
 2023-06-08 22:49:00.163180 [info]: timer tick
+2023-06-08 23:29:20.421828 [info]: timer tick
+2023-06-08 23:29:25.422262 [info]: timer tick
+2023-06-08 23:29:30.422355 [info]: timer tick
+2023-06-08 23:29:35.422461 [info]: timer tick
+2023-06-08 23:29:40.422571 [info]: timer tick
+2023-06-08 23:29:45.422689 [info]: timer tick
+2023-06-08 23:29:50.422883 [info]: timer tick
+2023-06-08 23:29:55.423239 [info]: timer tick
+2023-06-08 23:30:00.423366 [info]: timer tick
+2023-06-08 23:30:01.771942 [info]: deal with the client(127.0.0.1)
+2023-06-08 23:30:01.772071 [info]: adjust timer once
+2023-06-08 23:30:01.772139 [info]: parse_test=>OPTIONS /api/login HTTP/1.1
+2023-06-08 23:30:01.772225 [info]: url=> /api/login
+2023-06-08 23:30:01.772251 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-06-08 23:30:01.772260 [info]: parse_test=>Connection: keep-alive
+2023-06-08 23:30:01.772268 [info]: parse_test=>Accept: */*
+2023-06-08 23:30:01.772275 [info]: oop!unknow header: Accept: */*
+2023-06-08 23:30:01.772282 [info]: parse_test=>Access-Control-Request-Method: POST
+2023-06-08 23:30:01.772289 [info]: oop!unknow header: Access-Control-Request-Method: POST
+2023-06-08 23:30:01.772296 [info]: parse_test=>Access-Control-Request-Headers: content-type
+2023-06-08 23:30:01.772306 [info]: oop!unknow header: Access-Control-Request-Headers: content-type
+2023-06-08 23:30:01.772313 [info]: parse_test=>Origin: http://localhost:8082
+2023-06-08 23:30:01.772319 [info]: oop!unknow header: Origin: http://localhost:8082
+2023-06-08 23:30:01.772327 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.41
+2023-06-08 23:30:01.772333 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.41
+2023-06-08 23:30:01.772343 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-06-08 23:30:01.772350 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-06-08 23:30:01.772356 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-06-08 23:30:01.772362 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-06-08 23:30:01.772369 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-06-08 23:30:01.772376 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-06-08 23:30:01.772413 [info]: parse_test=>Referer: http://localhost:8082/
+2023-06-08 23:30:01.772434 [info]: oop!unknow header: Referer: http://localhost:8082/
+2023-06-08 23:30:01.772442 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-06-08 23:30:01.772449 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-06-08 23:30:01.772488 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-06-08 23:30:01.772509 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-06-08 23:30:01.772517 [info]: parse_test=>
+2023-06-08 23:30:01.772689 [info]: send data to the client(127.0.0.1)
+2023-06-08 23:30:01.772761 [info]: adjust timer once
+2023-06-08 23:30:05.423564 [info]: timer tick
+2023-06-08 23:30:10.423687 [info]: timer tick
+2023-06-08 23:30:15.424027 [info]: timer tick
+2023-06-08 23:30:20.424220 [info]: timer tick
+2023-06-08 23:30:20.428507 [info]: deal with the client(127.0.0.1)
+2023-06-08 23:30:20.428581 [info]: adjust timer once
+2023-06-08 23:30:20.428623 [info]: parse_test=>POST /api/login HTTP/1.1
+2023-06-08 23:30:20.428656 [info]: url=> /api/login
+2023-06-08 23:30:20.428660 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-06-08 23:30:20.428664 [info]: parse_test=>Connection: keep-alive
+2023-06-08 23:30:20.428667 [info]: parse_test=>Content-Length: 40
+2023-06-08 23:30:20.428671 [info]: parse_test=>sec-ch-ua: "Not.A/Brand";v="8", "Chromium";v="114", "Microsoft Edge";v="114"
+2023-06-08 23:30:20.428674 [info]: oop!unknow header: sec-ch-ua: "Not.A/Brand";v="8", "Chromium";v="114", "Microsoft Edge";v="114"
+2023-06-08 23:30:20.428677 [info]: parse_test=>Accept: application/json, text/plain, */*
+2023-06-08 23:30:20.428680 [info]: oop!unknow header: Accept: application/json, text/plain, */*
+2023-06-08 23:30:20.428683 [info]: parse_test=>Content-Type: application/json
+2023-06-08 23:30:20.428693 [info]: oop!unknow header: Content-Type: application/json
+2023-06-08 23:30:20.428696 [info]: parse_test=>sec-ch-ua-mobile: ?0
+2023-06-08 23:30:20.428699 [info]: oop!unknow header: sec-ch-ua-mobile: ?0
+2023-06-08 23:30:20.428702 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.41
+2023-06-08 23:30:20.428705 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.41
+2023-06-08 23:30:20.428709 [info]: parse_test=>sec-ch-ua-platform: "Windows"
+2023-06-08 23:30:20.428711 [info]: oop!unknow header: sec-ch-ua-platform: "Windows"
+2023-06-08 23:30:20.428714 [info]: parse_test=>Origin: http://localhost:8082
+2023-06-08 23:30:20.428717 [info]: oop!unknow header: Origin: http://localhost:8082
+2023-06-08 23:30:20.428720 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-06-08 23:30:20.428723 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-06-08 23:30:20.428726 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-06-08 23:30:20.428729 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-06-08 23:30:20.428732 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-06-08 23:30:20.428734 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-06-08 23:30:20.428737 [info]: parse_test=>Referer: http://localhost:8082/
+2023-06-08 23:30:20.428740 [info]: oop!unknow header: Referer: http://localhost:8082/
+2023-06-08 23:30:20.428743 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-06-08 23:30:20.428746 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-06-08 23:30:20.428749 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-06-08 23:30:20.428752 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-06-08 23:30:20.428755 [info]: parse_test=>
+2023-06-08 23:30:20.428758 [info]: parse_test=>{"username":"admin","password":"123456"}
+2023-06-08 23:30:20.428761 [info]: POST_CONTENT=>{"username":"admin","password":"123456"}
+2023-06-08 23:30:20.428801 [info]: sql_string=>SELECT * FROM sp_manager WHERE mg_name = 'admin' AND mg_pwd = '123456';
+2023-06-08 23:30:20.493638 [info]: row=>500
+2023-06-08 23:30:20.493870 [info]: LEN: 240
+2023-06-08 23:30:20.494065 [info]: send data to the client(127.0.0.1)
+2023-06-08 23:30:20.494119 [info]: adjust timer once
+2023-06-08 23:30:20.742450 [info]: deal with the client(127.0.0.1)
+2023-06-08 23:30:20.742518 [info]: adjust timer once
+2023-06-08 23:30:20.742559 [info]: parse_test=>OPTIONS /api/menus HTTP/1.1
+2023-06-08 23:30:20.742568 [info]: url=> /api/menus
+2023-06-08 23:30:20.742571 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-06-08 23:30:20.742575 [info]: parse_test=>Connection: keep-alive
+2023-06-08 23:30:20.742580 [info]: parse_test=>Accept: */*
+2023-06-08 23:30:20.742583 [info]: oop!unknow header: Accept: */*
+2023-06-08 23:30:20.742586 [info]: parse_test=>Access-Control-Request-Method: GET
+2023-06-08 23:30:20.742589 [info]: oop!unknow header: Access-Control-Request-Method: GET
+2023-06-08 23:30:20.742592 [info]: parse_test=>Access-Control-Request-Headers: authorization
+2023-06-08 23:30:20.742596 [info]: oop!unknow header: Access-Control-Request-Headers: authorization
+2023-06-08 23:30:20.742599 [info]: parse_test=>Origin: http://localhost:8082
+2023-06-08 23:30:20.742602 [info]: oop!unknow header: Origin: http://localhost:8082
+2023-06-08 23:30:20.742605 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.41
+2023-06-08 23:30:20.742608 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.41
+2023-06-08 23:30:20.742611 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-06-08 23:30:20.742614 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-06-08 23:30:20.742627 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-06-08 23:30:20.742630 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-06-08 23:30:20.742633 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-06-08 23:30:20.742636 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-06-08 23:30:20.742638 [info]: parse_test=>Referer: http://localhost:8082/
+2023-06-08 23:30:20.742641 [info]: oop!unknow header: Referer: http://localhost:8082/
+2023-06-08 23:30:20.742644 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-06-08 23:30:20.742647 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-06-08 23:30:20.742650 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-06-08 23:30:20.742653 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-06-08 23:30:20.742657 [info]: parse_test=>
+2023-06-08 23:30:20.742734 [info]: send data to the client(127.0.0.1)
+2023-06-08 23:30:20.742764 [info]: adjust timer once
+2023-06-08 23:30:25.424348 [info]: timer tick
+2023-06-08 23:30:30.424610 [info]: timer tick
+2023-06-08 23:30:35.424727 [info]: timer tick
+2023-06-08 23:30:35.429806 [info]: deal with the client(127.0.0.1)
+2023-06-08 23:30:35.429882 [info]: adjust timer once
+2023-06-08 23:30:35.429921 [info]: parse_test=>GET /api/menus HTTP/1.1
+2023-06-08 23:30:35.429937 [info]: url=> /api/menus
+2023-06-08 23:30:35.429941 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-06-08 23:30:35.429944 [info]: parse_test=>Connection: keep-alive
+2023-06-08 23:30:35.429948 [info]: parse_test=>sec-ch-ua: "Not.A/Brand";v="8", "Chromium";v="114", "Microsoft Edge";v="114"
+2023-06-08 23:30:35.429951 [info]: oop!unknow header: sec-ch-ua: "Not.A/Brand";v="8", "Chromium";v="114", "Microsoft Edge";v="114"
+2023-06-08 23:30:35.429957 [info]: parse_test=>Accept: application/json, text/plain, */*
+2023-06-08 23:30:35.429960 [info]: oop!unknow header: Accept: application/json, text/plain, */*
+2023-06-08 23:30:35.429966 [info]: parse_test=>sec-ch-ua-mobile: ?0
+2023-06-08 23:30:35.429969 [info]: oop!unknow header: sec-ch-ua-mobile: ?0
+2023-06-08 23:30:35.429973 [info]: parse_test=>Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoMCIsIm1nX2lkIjoiNTAwIn0.jU5-XdosAAaPOBK7OBl8fIqswp81EreYSohhmqPl_-I
+2023-06-08 23:30:35.429977 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.41
+2023-06-08 23:30:35.429980 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.41
+2023-06-08 23:30:35.429983 [info]: parse_test=>sec-ch-ua-platform: "Windows"
+2023-06-08 23:30:35.429986 [info]: oop!unknow header: sec-ch-ua-platform: "Windows"
+2023-06-08 23:30:35.429989 [info]: parse_test=>Origin: http://localhost:8082
+2023-06-08 23:30:35.429992 [info]: oop!unknow header: Origin: http://localhost:8082
+2023-06-08 23:30:35.429995 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-06-08 23:30:35.430000 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-06-08 23:30:35.430003 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-06-08 23:30:35.430006 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-06-08 23:30:35.430010 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-06-08 23:30:35.430013 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-06-08 23:30:35.430016 [info]: parse_test=>Referer: http://localhost:8082/
+2023-06-08 23:30:35.430019 [info]: oop!unknow header: Referer: http://localhost:8082/
+2023-06-08 23:30:35.430022 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-06-08 23:30:35.430025 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-06-08 23:30:35.430028 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-06-08 23:30:35.430031 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-06-08 23:30:35.430034 [info]: parse_test=>
+2023-06-08 23:30:35.430050 [debug]: get_token=>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoMCIsIm1nX2lkIjoiNTAwIn0.jU5-XdosAAaPOBK7OBl8fIqswp81EreYSohhmqPl_-I
+2023-06-08 23:30:35.457135 [info]: LEN: 1417
+2023-06-08 23:30:35.457324 [info]: send data to the client(127.0.0.1)
+2023-06-08 23:30:35.457381 [info]: adjust timer once
+2023-06-08 23:30:40.424841 [info]: timer tick
+2023-06-08 23:30:45.424961 [info]: timer tick
+2023-06-08 23:30:50.425600 [info]: timer tick
+2023-06-08 23:30:55.425691 [info]: timer tick
+2023-06-08 23:31:00.425781 [info]: timer tick
+2023-06-08 23:31:05.425971 [info]: timer tick
+2023-06-08 23:31:10.426020 [info]: timer tick
+2023-06-08 23:31:15.426097 [info]: timer tick
+2023-06-08 23:31:17.288749 [info]: deal with the client(127.0.0.1)
+2023-06-08 23:31:17.288864 [info]: adjust timer once
+2023-06-08 23:31:17.288910 [info]: parse_test=>OPTIONS /api/users?query=&pagenum=1&pagesize=5&isstu=1&sortprop=&sortorder= HTTP/1.1
+2023-06-08 23:31:17.288930 [info]: url=> /api/users?query=&pagenum=1&pagesize=5&isstu=1&sortprop=&sortorder=
+2023-06-08 23:31:17.288934 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-06-08 23:31:17.288939 [info]: parse_test=>Connection: keep-alive
+2023-06-08 23:31:17.288943 [info]: parse_test=>Accept: */*
+2023-06-08 23:31:17.288947 [info]: oop!unknow header: Accept: */*
+2023-06-08 23:31:17.288951 [info]: parse_test=>Access-Control-Request-Method: GET
+2023-06-08 23:31:17.288955 [info]: oop!unknow header: Access-Control-Request-Method: GET
+2023-06-08 23:31:17.288959 [info]: parse_test=>Access-Control-Request-Headers: authorization
+2023-06-08 23:31:17.288963 [info]: oop!unknow header: Access-Control-Request-Headers: authorization
+2023-06-08 23:31:17.288966 [info]: parse_test=>Origin: http://localhost:8082
+2023-06-08 23:31:17.288970 [info]: oop!unknow header: Origin: http://localhost:8082
+2023-06-08 23:31:17.288974 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.41
+2023-06-08 23:31:17.288978 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.41
+2023-06-08 23:31:17.288982 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-06-08 23:31:17.288986 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-06-08 23:31:17.288990 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-06-08 23:31:17.288994 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-06-08 23:31:17.288998 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-06-08 23:31:17.289001 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-06-08 23:31:17.289006 [info]: parse_test=>Referer: http://localhost:8082/
+2023-06-08 23:31:17.289012 [info]: oop!unknow header: Referer: http://localhost:8082/
+2023-06-08 23:31:17.289016 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-06-08 23:31:17.289020 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-06-08 23:31:17.289024 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-06-08 23:31:17.289028 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-06-08 23:31:17.289032 [info]: parse_test=>
+2023-06-08 23:31:17.289207 [info]: send data to the client(127.0.0.1)
+2023-06-08 23:31:17.289244 [info]: adjust timer once
+2023-06-08 23:31:20.426209 [info]: timer tick
+2023-06-08 23:31:25.426479 [info]: timer tick
+2023-06-08 23:31:30.426962 [info]: timer tick
+2023-06-08 23:31:35.427432 [info]: timer tick
+2023-06-08 23:31:35.432401 [info]: deal with the client(127.0.0.1)
+2023-06-08 23:31:35.432480 [info]: adjust timer once
+2023-06-08 23:31:35.432516 [info]: parse_test=>GET /api/users?query=&pagenum=1&pagesize=5&isstu=1&sortprop=&sortorder= HTTP/1.1
+2023-06-08 23:31:35.432550 [info]: url=> /api/users?query=&pagenum=1&pagesize=5&isstu=1&sortprop=&sortorder=
+2023-06-08 23:31:35.432560 [info]: parse_test=>Host: 127.0.0.1:9006
+2023-06-08 23:31:35.432564 [info]: parse_test=>Connection: keep-alive
+2023-06-08 23:31:35.432575 [info]: parse_test=>sec-ch-ua: "Not.A/Brand";v="8", "Chromium";v="114", "Microsoft Edge";v="114"
+2023-06-08 23:31:35.432579 [info]: oop!unknow header: sec-ch-ua: "Not.A/Brand";v="8", "Chromium";v="114", "Microsoft Edge";v="114"
+2023-06-08 23:31:35.432582 [info]: parse_test=>Accept: application/json, text/plain, */*
+2023-06-08 23:31:35.432585 [info]: oop!unknow header: Accept: application/json, text/plain, */*
+2023-06-08 23:31:35.432589 [info]: parse_test=>sec-ch-ua-mobile: ?0
+2023-06-08 23:31:35.432592 [info]: oop!unknow header: sec-ch-ua-mobile: ?0
+2023-06-08 23:31:35.432595 [info]: parse_test=>Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoMCIsIm1nX2lkIjoiNTAwIn0.jU5-XdosAAaPOBK7OBl8fIqswp81EreYSohhmqPl_-I
+2023-06-08 23:31:35.432599 [info]: parse_test=>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.41
+2023-06-08 23:31:35.432602 [info]: oop!unknow header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.41
+2023-06-08 23:31:35.432605 [info]: parse_test=>sec-ch-ua-platform: "Windows"
+2023-06-08 23:31:35.432608 [info]: oop!unknow header: sec-ch-ua-platform: "Windows"
+2023-06-08 23:31:35.432611 [info]: parse_test=>Origin: http://localhost:8082
+2023-06-08 23:31:35.432614 [info]: oop!unknow header: Origin: http://localhost:8082
+2023-06-08 23:31:35.432617 [info]: parse_test=>Sec-Fetch-Site: cross-site
+2023-06-08 23:31:35.432620 [info]: oop!unknow header: Sec-Fetch-Site: cross-site
+2023-06-08 23:31:35.432623 [info]: parse_test=>Sec-Fetch-Mode: cors
+2023-06-08 23:31:35.432626 [info]: oop!unknow header: Sec-Fetch-Mode: cors
+2023-06-08 23:31:35.432629 [info]: parse_test=>Sec-Fetch-Dest: empty
+2023-06-08 23:31:35.432632 [info]: oop!unknow header: Sec-Fetch-Dest: empty
+2023-06-08 23:31:35.432635 [info]: parse_test=>Referer: http://localhost:8082/
+2023-06-08 23:31:35.432638 [info]: oop!unknow header: Referer: http://localhost:8082/
+2023-06-08 23:31:35.432641 [info]: parse_test=>Accept-Encoding: gzip, deflate, br
+2023-06-08 23:31:35.432644 [info]: oop!unknow header: Accept-Encoding: gzip, deflate, br
+2023-06-08 23:31:35.432647 [info]: parse_test=>Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-06-08 23:31:35.432650 [info]: oop!unknow header: Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+2023-06-08 23:31:35.432653 [info]: parse_test=>
+2023-06-08 23:31:35.432659 [debug]: get_token=>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJpc3MiOiJhdXRoMCIsIm1nX2lkIjoiNTAwIn0.jU5-XdosAAaPOBK7OBl8fIqswp81EreYSohhmqPl_-I
+2023-06-08 23:31:35.434336 [debug]: SQL:
+SELECT * FROM sp_manager as mgr LEFT JOIN sp_role as role ON mgr.role_id = role.role_id LEFT JOIN sp_class as class ON mgr.class_id = class.class_id WHERE mg_isstu = 1 AND mg_name LIKE '%%' LIMIT 0,5;
+2023-06-08 23:31:35.460137 [debug]: ret_json, len=>{
+	"data" : 
+	{
+		"pagenum" : 1,
+		"total" : 4,
+		"users" : 
+		[
+			{
+				"class" : "计科1班",
+				"college" : "软件学院",
+				"create_time" : "1486720211",
+				"email" : "114514f@qq.com",
+				"grade" : "21",
+				"id" : "502",
+				"isstu" : "1",
+				"mobile" : "1213213123",
+				"role_name" : "学生",
+				"stu_id" : "202130241241",
+				"username" : "linken"
+			},
+			{
+				"class" : "计科1班",
+				"college" : "计算机学院",
+				"create_time" : "2023-06-04 12:26:22",
+				"email" : "计科1班",
+				"grade" : "21",
+				"id" : "510",
+				"isstu" : "1",
+				"mobile" : "202130241241",
+				"role_name" : "学生",
+				"stu_id" : "202130241242",
+				"username" : "银灰"
+			},
+			{
+				"class" : "计科1班",
+				"college" : "软件学院",
+				"create_time" : "2023-06-07 16:01:37",
+				"email" : "fe",
+				"grade" : "21",
+				"id" : "513",
+				"isstu" : "1",
+				"mobile" : "234556",
+				"role_name" : "学生",
+				"stu_id" : "202130241241",
+				"username" : "sasj"
+			}
+		]
+	},
+	"meta" : 
+	{
+		"msg" : "查询用户列表成功",
+		"status" : 200
+	}
+}, 31
+2023-06-08 23:31:35.460230 [info]: LEN: 1070
+2023-06-08 23:31:35.460354 [info]: send data to the client(127.0.0.1)
+2023-06-08 23:31:35.460391 [info]: adjust timer once
+2023-06-08 23:31:40.427610 [info]: timer tick
+2023-06-08 23:31:45.427784 [info]: timer tick
+2023-06-08 23:31:50.428473 [info]: timer tick
+2023-06-08 23:31:55.428996 [info]: timer tick
+2023-06-08 23:32:00.429081 [info]: timer tick
+2023-06-08 23:32:05.429153 [info]: timer tick
+2023-06-08 23:32:10.429276 [info]: timer tick
+2023-06-08 23:32:15.429378 [info]: timer tick
+2023-06-08 23:32:20.429724 [info]: timer tick
+2023-06-08 23:32:25.429946 [info]: timer tick
+2023-06-08 23:32:30.430092 [info]: timer tick
+2023-06-08 23:32:35.430184 [info]: timer tick
+2023-06-08 23:32:40.430285 [info]: timer tick
+2023-06-08 23:32:45.430376 [info]: timer tick
+2023-06-08 23:32:50.430613 [info]: timer tick
+2023-06-08 23:32:55.430659 [info]: timer tick
+2023-06-08 23:33:00.430755 [info]: timer tick
+2023-06-08 23:33:05.430885 [info]: timer tick
+2023-06-08 23:33:10.431117 [info]: timer tick
+2023-06-08 23:33:15.431559 [info]: timer tick
+2023-06-08 23:33:20.431782 [info]: timer tick
+2023-06-08 23:33:25.432190 [info]: timer tick
+2023-06-08 23:33:30.432427 [info]: timer tick
+2023-06-08 23:33:35.432681 [info]: timer tick
+2023-06-08 23:33:40.432790 [info]: timer tick
+2023-06-08 23:33:45.433212 [info]: timer tick
+2023-06-08 23:33:50.433827 [info]: timer tick
+2023-06-08 23:33:55.433896 [info]: timer tick
+2023-06-08 23:34:00.434027 [info]: timer tick
+2023-06-08 23:34:05.434296 [info]: timer tick
+2023-06-08 23:34:10.434775 [info]: timer tick
+2023-06-08 23:34:15.434860 [info]: timer tick
+2023-06-08 23:34:20.435427 [info]: timer tick
+2023-06-08 23:34:25.435955 [info]: timer tick
+2023-06-08 23:34:30.436037 [info]: timer tick
+2023-06-08 23:34:35.436148 [info]: timer tick
+2023-06-08 23:34:40.436349 [info]: timer tick
+2023-06-08 23:34:45.437072 [info]: timer tick
+2023-06-08 23:34:50.437129 [info]: timer tick
+2023-06-08 23:34:55.437194 [info]: timer tick
+2023-06-08 23:35:00.437303 [info]: timer tick
+2023-06-08 23:35:05.437786 [info]: timer tick
+2023-06-08 23:35:10.437973 [info]: timer tick
+2023-06-08 23:35:15.438036 [info]: timer tick
+2023-06-08 23:35:20.438108 [info]: timer tick
+2023-06-08 23:35:25.438197 [info]: timer tick
+2023-06-08 23:35:30.438290 [info]: timer tick
+2023-06-08 23:35:35.438463 [info]: timer tick
+2023-06-08 23:35:40.438713 [info]: timer tick
+2023-06-08 23:35:45.438868 [info]: timer tick
+2023-06-08 23:35:50.439041 [info]: timer tick
+2023-06-08 23:35:55.439462 [info]: timer tick
+2023-06-08 23:36:00.439758 [info]: timer tick
+2023-06-08 23:36:05.439853 [info]: timer tick
+2023-06-08 23:36:10.439942 [info]: timer tick
+2023-06-08 23:36:15.440060 [info]: timer tick
+2023-06-08 23:36:20.440227 [info]: timer tick
+2023-06-08 23:36:25.440422 [info]: timer tick
+2023-06-08 23:36:30.440826 [info]: timer tick
+2023-06-08 23:36:35.441308 [info]: timer tick
+2023-06-08 23:36:40.441365 [info]: timer tick
+2023-06-08 23:36:45.441959 [info]: timer tick
+2023-06-08 23:36:50.442172 [info]: timer tick
+2023-06-08 23:36:55.442611 [info]: timer tick
+2023-06-08 23:37:00.442659 [info]: timer tick
+2023-06-08 23:37:05.442739 [info]: timer tick
+2023-06-08 23:37:10.442832 [info]: timer tick
+2023-06-08 23:37:15.442894 [info]: timer tick
+2023-06-08 23:37:20.443266 [info]: timer tick
+2023-06-08 23:37:25.443457 [info]: timer tick
+2023-06-08 23:37:30.443526 [info]: timer tick
+2023-06-08 23:37:35.443601 [info]: timer tick
+2023-06-08 23:37:40.443685 [info]: timer tick
+2023-06-08 23:37:45.444127 [info]: timer tick
+2023-06-08 23:37:50.444197 [info]: timer tick
+2023-06-08 23:37:55.444315 [info]: timer tick
+2023-06-08 23:38:00.444831 [info]: timer tick
+2023-06-08 23:38:05.444999 [info]: timer tick
+2023-06-08 23:38:10.445447 [info]: timer tick
+2023-06-08 23:38:15.445914 [info]: timer tick
+2023-06-08 23:38:20.446234 [info]: timer tick
+2023-06-08 23:38:25.446456 [info]: timer tick
+2023-06-08 23:38:30.446879 [info]: timer tick
+2023-06-08 23:38:35.447211 [info]: timer tick
+2023-06-08 23:38:40.447807 [info]: timer tick
+2023-06-08 23:38:45.448361 [info]: timer tick
+2023-06-08 23:38:50.448489 [info]: timer tick
+2023-06-08 23:38:55.448558 [info]: timer tick
+2023-06-08 23:39:00.448732 [info]: timer tick
+2023-06-08 23:39:05.448792 [info]: timer tick
+2023-06-08 23:39:10.449312 [info]: timer tick
+2023-06-08 23:39:15.449627 [info]: timer tick
+2023-06-08 23:39:20.449720 [info]: timer tick
+2023-06-08 23:39:25.450248 [info]: timer tick
+2023-06-08 23:39:30.450382 [info]: timer tick
+2023-06-08 23:39:35.450601 [info]: timer tick
+2023-06-08 23:39:40.450780 [info]: timer tick
+2023-06-08 23:39:45.451001 [info]: timer tick
+2023-06-08 23:39:50.451069 [info]: timer tick
+2023-06-08 23:39:55.451233 [info]: timer tick
+2023-06-08 23:40:00.451364 [info]: timer tick
+2023-06-08 23:40:05.451469 [info]: timer tick
+2023-06-08 23:40:10.451576 [info]: timer tick
+2023-06-08 23:40:15.451674 [info]: timer tick
+2023-06-08 23:40:20.451828 [info]: timer tick
+2023-06-08 23:40:25.451959 [info]: timer tick
+2023-06-08 23:40:30.452377 [info]: timer tick
+2023-06-08 23:40:35.452985 [info]: timer tick
+2023-06-08 23:40:40.453485 [info]: timer tick
+2023-06-08 23:40:45.454024 [info]: timer tick
+2023-06-08 23:40:50.454184 [info]: timer tick
+2023-06-08 23:40:55.454291 [info]: timer tick
+2023-06-08 23:41:00.454396 [info]: timer tick
+2023-06-08 23:41:05.454587 [info]: timer tick
+2023-06-08 23:41:10.454657 [info]: timer tick
+2023-06-08 23:41:15.454910 [info]: timer tick
+2023-06-08 23:41:20.454998 [info]: timer tick
+2023-06-08 23:41:25.455070 [info]: timer tick
+2023-06-08 23:41:30.455122 [info]: timer tick
+2023-06-08 23:41:35.455430 [info]: timer tick
+2023-06-08 23:41:40.455616 [info]: timer tick
+2023-06-08 23:41:45.455857 [info]: timer tick
+2023-06-08 23:41:50.455929 [info]: timer tick
+2023-06-08 23:41:55.456248 [info]: timer tick
+2023-06-08 23:42:00.456339 [info]: timer tick
+2023-06-08 23:42:05.456440 [info]: timer tick
+2023-06-08 23:42:10.456896 [info]: timer tick
+2023-06-08 23:42:15.457046 [info]: timer tick
+2023-06-08 23:42:20.457263 [info]: timer tick
+2023-06-08 23:42:25.457512 [info]: timer tick
+2023-06-08 23:42:30.457697 [info]: timer tick
+2023-06-08 23:42:35.457881 [info]: timer tick
+2023-06-08 23:42:40.458131 [info]: timer tick
+2023-06-08 23:42:45.458587 [info]: timer tick
+2023-06-08 23:42:50.459035 [info]: timer tick
+2023-06-08 23:42:55.459573 [info]: timer tick
+2023-06-08 23:43:00.459979 [info]: timer tick
+2023-06-08 23:43:05.460512 [info]: timer tick
+2023-06-08 23:43:10.460910 [info]: timer tick
+2023-06-08 23:43:15.461236 [info]: timer tick
+2023-06-08 23:43:20.461746 [info]: timer tick
+2023-06-08 23:43:25.462133 [info]: timer tick
+2023-06-08 23:43:30.462303 [info]: timer tick
+2023-06-08 23:43:35.462655 [info]: timer tick
+2023-06-08 23:43:40.463247 [info]: timer tick
+2023-06-08 23:43:45.463647 [info]: timer tick
+2023-06-08 23:43:50.464009 [info]: timer tick
+2023-06-08 23:43:55.464096 [info]: timer tick
+2023-06-08 23:44:00.464199 [info]: timer tick
+2023-06-08 23:44:05.464612 [info]: timer tick
+2023-06-08 23:44:10.464991 [info]: timer tick
+2023-06-08 23:44:15.465060 [info]: timer tick
+2023-06-08 23:44:20.465413 [info]: timer tick
+2023-06-08 23:44:25.465662 [info]: timer tick
+2023-06-08 23:44:30.465710 [info]: timer tick
+2023-06-08 23:44:35.465888 [info]: timer tick
+2023-06-08 23:44:40.466256 [info]: timer tick
+2023-06-08 23:44:45.466949 [info]: timer tick
+2023-06-08 23:44:50.490660 [info]: timer tick
+2023-06-08 23:44:55.490841 [info]: timer tick
+2023-06-08 23:45:00.491375 [info]: timer tick
+2023-06-08 23:45:05.491934 [info]: timer tick
+2023-06-08 23:45:10.492125 [info]: timer tick
+2023-06-08 23:45:15.492378 [info]: timer tick
+2023-06-08 23:45:20.492746 [info]: timer tick
+2023-06-08 23:45:25.493002 [info]: timer tick
+2023-06-08 23:45:30.493547 [info]: timer tick
+2023-06-08 23:45:35.493767 [info]: timer tick
+2023-06-08 23:45:40.494174 [info]: timer tick
+2023-06-08 23:45:45.494315 [info]: timer tick
+2023-06-08 23:45:50.494674 [info]: timer tick
+2023-06-08 23:45:55.495066 [info]: timer tick
+2023-06-08 23:46:00.495330 [info]: timer tick
+2023-06-08 23:46:05.495572 [info]: timer tick
+2023-06-08 23:46:10.495703 [info]: timer tick
+2023-06-08 23:46:15.496254 [info]: timer tick
+2023-06-08 23:46:20.496378 [info]: timer tick
+2023-06-08 23:46:25.496516 [info]: timer tick
+2023-06-08 23:46:30.496690 [info]: timer tick
+2023-06-08 23:46:35.497129 [info]: timer tick
+2023-06-08 23:46:40.497261 [info]: timer tick
+2023-06-08 23:46:45.497669 [info]: timer tick
+2023-06-08 23:46:50.498040 [info]: timer tick
+2023-06-08 23:46:55.498246 [info]: timer tick
+2023-06-08 23:47:00.498602 [info]: timer tick
+2023-06-08 23:47:05.499047 [info]: timer tick
+2023-06-08 23:47:10.499243 [info]: timer tick
+2023-06-08 23:47:15.499702 [info]: timer tick
+2023-06-08 23:47:20.499936 [info]: timer tick
+2023-06-08 23:47:25.500071 [info]: timer tick
+2023-06-08 23:47:30.500189 [info]: timer tick
+2023-06-08 23:47:35.500264 [info]: timer tick
+2023-06-08 23:47:40.500314 [info]: timer tick
+2023-06-08 23:47:45.500484 [info]: timer tick
+2023-06-08 23:47:50.500971 [info]: timer tick
+2023-06-08 23:47:55.501150 [info]: timer tick
+2023-06-08 23:48:00.501414 [info]: timer tick
+2023-06-08 23:48:05.501665 [info]: timer tick
+2023-06-08 23:48:10.502256 [info]: timer tick
+2023-06-08 23:48:15.502727 [info]: timer tick
+2023-06-08 23:48:20.502986 [info]: timer tick
+2023-06-08 23:48:25.503539 [info]: timer tick
+2023-06-08 23:48:30.503731 [info]: timer tick
+2023-06-08 23:48:35.504152 [info]: timer tick
+2023-06-08 23:48:40.504482 [info]: timer tick
+2023-06-08 23:48:45.504724 [info]: timer tick
+2023-06-08 23:48:50.504898 [info]: timer tick
+2023-06-08 23:48:55.505323 [info]: timer tick
+2023-06-08 23:49:00.505726 [info]: timer tick
+2023-06-08 23:49:05.506078 [info]: timer tick
+2023-06-08 23:49:10.506444 [info]: timer tick
+2023-06-08 23:49:15.506844 [info]: timer tick
+2023-06-08 23:49:20.506957 [info]: timer tick
+2023-06-08 23:49:25.507456 [info]: timer tick
+2023-06-08 23:49:30.507545 [info]: timer tick
+2023-06-08 23:49:35.507701 [info]: timer tick
+2023-06-08 23:49:40.507865 [info]: timer tick
+2023-06-08 23:49:45.507984 [info]: timer tick
+2023-06-08 23:49:50.508327 [info]: timer tick
+2023-06-08 23:49:55.508471 [info]: timer tick
+2023-06-08 23:50:00.508540 [info]: timer tick
+2023-06-08 23:50:05.508882 [info]: timer tick
+2023-06-08 23:50:10.509122 [info]: timer tick
+2023-06-08 23:50:15.509530 [info]: timer tick
+2023-06-08 23:50:20.509782 [info]: timer tick
+2023-06-08 23:50:25.510360 [info]: timer tick
+2023-06-08 23:50:30.510600 [info]: timer tick
+2023-06-08 23:50:35.510706 [info]: timer tick
+2023-06-08 23:50:40.510948 [info]: timer tick
+2023-06-08 23:50:45.511348 [info]: timer tick
+2023-06-08 23:50:50.511462 [info]: timer tick
+2023-06-08 23:50:55.511932 [info]: timer tick
+2023-06-08 23:51:00.512152 [info]: timer tick
+2023-06-08 23:51:05.512404 [info]: timer tick
+2023-06-08 23:51:10.512643 [info]: timer tick
+2023-06-08 23:51:15.513172 [info]: timer tick
+2023-06-08 23:51:20.513302 [info]: timer tick
+2023-06-08 23:51:25.513462 [info]: timer tick
+2023-06-08 23:51:30.513876 [info]: timer tick
+2023-06-08 23:51:35.514326 [info]: timer tick
+2023-06-08 23:51:40.514554 [info]: timer tick
+2023-06-08 23:51:45.515241 [info]: timer tick
+2023-06-08 23:51:50.515596 [info]: timer tick
+2023-06-08 23:51:55.516096 [info]: timer tick
+2023-06-08 23:52:00.516561 [info]: timer tick
+2023-06-08 23:52:05.516646 [info]: timer tick
+2023-06-08 23:52:10.517219 [info]: timer tick
+2023-06-08 23:52:15.517511 [info]: timer tick
+2023-06-08 23:52:20.517990 [info]: timer tick
+2023-06-08 23:52:25.518423 [info]: timer tick
+2023-06-08 23:52:30.518528 [info]: timer tick
+2023-06-08 23:52:35.518649 [info]: timer tick
+2023-06-08 23:52:40.519154 [info]: timer tick
+2023-06-08 23:52:45.519401 [info]: timer tick
+2023-06-08 23:52:50.519554 [info]: timer tick
+2023-06-08 23:52:55.519849 [info]: timer tick
+2023-06-08 23:53:00.520098 [info]: timer tick
+2023-06-08 23:53:05.520220 [info]: timer tick
+2023-06-08 23:53:10.520704 [info]: timer tick
+2023-06-08 23:53:15.521066 [info]: timer tick
+2023-06-08 23:53:20.521142 [info]: timer tick
+2023-06-08 23:53:25.521333 [info]: timer tick
+2023-06-08 23:53:30.521771 [info]: timer tick
+2023-06-08 23:53:35.521994 [info]: timer tick
+2023-06-08 23:53:40.522306 [info]: timer tick
+2023-06-08 23:53:45.522757 [info]: timer tick
+2023-06-08 23:53:50.523122 [info]: timer tick
+2023-06-08 23:53:55.523565 [info]: timer tick
+2023-06-08 23:54:00.524215 [info]: timer tick
+2023-06-08 23:54:05.524314 [info]: timer tick
+2023-06-08 23:54:10.524396 [info]: timer tick
+2023-06-08 23:54:15.524970 [info]: timer tick
+2023-06-08 23:54:20.525454 [info]: timer tick
+2023-06-08 23:54:25.525827 [info]: timer tick
+2023-06-08 23:54:30.525876 [info]: timer tick
+2023-06-08 23:54:35.526058 [info]: timer tick
+2023-06-08 23:54:40.526529 [info]: timer tick
+2023-06-08 23:54:45.526775 [info]: timer tick
+2023-06-08 23:54:50.526862 [info]: timer tick
+2023-06-08 23:54:55.527240 [info]: timer tick
+2023-06-08 23:55:00.527523 [info]: timer tick
+2023-06-08 23:55:05.527647 [info]: timer tick
+2023-06-08 23:55:10.528069 [info]: timer tick
+2023-06-08 23:55:15.528510 [info]: timer tick
+2023-06-08 23:55:20.529033 [info]: timer tick
+2023-06-08 23:55:25.529438 [info]: timer tick
+2023-06-08 23:55:30.529890 [info]: timer tick
+2023-06-08 23:55:35.530035 [info]: timer tick
+2023-06-08 23:55:40.530295 [info]: timer tick
+2023-06-08 23:55:45.530521 [info]: timer tick
+2023-06-08 23:55:50.530992 [info]: timer tick
+2023-06-08 23:55:55.531471 [info]: timer tick
+2023-06-08 23:56:00.531687 [info]: timer tick
+2023-06-08 23:56:05.531775 [info]: timer tick
+2023-06-08 23:56:10.532142 [info]: timer tick
+2023-06-08 23:56:15.532324 [info]: timer tick
+2023-06-08 23:56:20.532721 [info]: timer tick
+2023-06-08 23:56:25.532830 [info]: timer tick
+2023-06-08 23:56:30.533290 [info]: timer tick
+2023-06-08 23:56:35.533522 [info]: timer tick
+2023-06-08 23:56:40.533790 [info]: timer tick
+2023-06-08 23:56:45.534121 [info]: timer tick
+2023-06-08 23:56:50.534224 [info]: timer tick
+2023-06-08 23:56:55.534435 [info]: timer tick
+2023-06-08 23:57:00.534570 [info]: timer tick
+2023-06-08 23:57:05.534819 [info]: timer tick
+2023-06-08 23:57:10.535333 [info]: timer tick
+2023-06-08 23:57:15.535655 [info]: timer tick
+2023-06-08 23:57:20.535940 [info]: timer tick
+2023-06-08 23:57:25.536068 [info]: timer tick
+2023-06-08 23:57:30.536162 [info]: timer tick
+2023-06-08 23:57:35.536297 [info]: timer tick
+2023-06-08 23:57:40.536548 [info]: timer tick
+2023-06-08 23:57:45.536965 [info]: timer tick
+2023-06-08 23:57:50.537314 [info]: timer tick
+2023-06-08 23:57:55.537776 [info]: timer tick
+2023-06-08 23:58:00.538030 [info]: timer tick
+2023-06-08 23:58:05.538410 [info]: timer tick
+2023-06-08 23:58:10.538475 [info]: timer tick
+2023-06-08 23:58:15.539127 [info]: timer tick
+2023-06-08 23:58:20.539292 [info]: timer tick
+2023-06-08 23:58:25.539581 [info]: timer tick
+2023-06-08 23:58:30.539667 [info]: timer tick
+2023-06-08 23:58:35.539711 [info]: timer tick
+2023-06-08 23:58:40.539869 [info]: timer tick
+2023-06-08 23:58:45.540316 [info]: timer tick
+2023-06-08 23:58:50.540494 [info]: timer tick
+2023-06-08 23:58:55.540994 [info]: timer tick
+2023-06-08 23:59:00.541349 [info]: timer tick
+2023-06-08 23:59:05.541631 [info]: timer tick
+2023-06-08 23:59:10.542035 [info]: timer tick
+2023-06-08 23:59:15.542244 [info]: timer tick
+2023-06-08 23:59:20.542318 [info]: timer tick
+2023-06-08 23:59:25.542653 [info]: timer tick
+2023-06-08 23:59:30.542871 [info]: timer tick
+2023-06-08 23:59:35.542994 [info]: timer tick
+2023-06-08 23:59:40.543184 [info]: timer tick
+2023-06-08 23:59:45.543353 [info]: timer tick
+2023-06-08 23:59:50.543546 [info]: timer tick
+2023-06-08 23:59:55.543784 [info]: timer tick

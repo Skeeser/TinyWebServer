@@ -349,7 +349,7 @@ void Logic::getUsersLogic(char *input_data)
             temp["grade"] = row[indexOf("class_grade")];
             temp["college"] = row[indexOf("mg_college")];
             temp["class"] = row[indexOf("class_name")];
-            temp["stu_id"] = row[indexOf("mg_stuid")];
+            temp["stuid"] = row[indexOf("mg_stuid")];
             data["users"].append(temp);
             temp.clear();
         }
@@ -375,6 +375,8 @@ void Logic::addUserLogic(char *input_data)
     Json::Reader reader;
     Json::StreamWriterBuilder writer;
     std::string json_string(input_data);
+    std::string role_id = "-1";
+    std::string class_id = "-1";
     // 获取当前时间的时间戳
     std::time_t currentTime = std::time(nullptr);
     // 使用字符串流构建时间字符串
@@ -385,16 +387,37 @@ void Logic::addUserLogic(char *input_data)
     {
         LOG_INFO("sorry, json reader failed");
     }
-    std::string role_id = findByKey("sp_role", "role_id", "role_name", "学生");
+    if (root["isstu"].asString() == "1")
+        role_id = findByKey("sp_role", "role_id", "role_name", "学生");
+    else if (root["isstu"].asString() == "0")
+        role_id = findByKey("sp_role", "role_id", "role_name", "老师");
 
-    std::string sql_string("INSERT INTO sp_manager (mg_name, mg_pwd, mg_mobile, mg_email, mg_time, role_id)");
+    // 先插入班级表中
+    std::string sql_insert_class("INSERT INTO sp_class (class_name, class_grade) ");
+    sql_insert_class += " VALUES ('" + root["class"].asString();
+    sql_insert_class += "','" + root["grade"].asString() + "')";
+    sql_insert_class += " WHERE NOT EXIT ( SELECT class_id FROM sp_class WHERE class = '" + root["class"].asString() + "' AND class_grade = '" + root["grade"].asString() + "');";
+    int ret1 = mysql_query(mysql_, sql_insert_class.c_str());
+    int ret2 = mysql_query(mysql_, "SELECT LAST_INSERT_ID();");
+    if (!ret1 && !ret2)
+    {
+        // 从表中检索完整的结果集
+        MYSQL_RES *result = mysql_store_result(mysql_);
+        MYSQL_ROW row = mysql_fetch_row(result);
+        class_id = row[0];
+    }
+    LOG_DEBUG("insert class_id:%s", class_id);
+    LOG_INFO("sql_string=>%s", sql_insert_class.c_str());
+
+    std::string sql_string("INSERT INTO sp_manager (mg_name, mg_pwd, mg_mobile, mg_email, mg_time, role_id, mg_college, mg_stuid");
     sql_string += " VALUES ('" + root["username"].asString();
     sql_string += "','" + root["password"].asString();
     sql_string += "','" + root["mobile"].asString();
     sql_string += "','" + root["email"].asString();
     sql_string += "','" + ss.str();
-    // 默认为学生
     sql_string += "','" + role_id + "');";
+    sql_string += "','" + root["college"].asString();
+    sql_string += "','" + root["stuid"].asString();
 
     Json::Value ret_root;
     Json::Value data;

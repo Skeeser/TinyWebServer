@@ -225,14 +225,17 @@ type=tree
         "pagenum": 4,
         "users": [
             {
-                "id": 25,
-                "username": "tige117",
-                "mobile": "18616358651",
-                "type": 1,
-                "email": "tige112@163.com",
-                "create_time": "2017-11-09T20:36:26.000Z",
-                "mg_state": true, // 当前用户的状态
-                "role_name": "炒鸡管理员"
+                "class" : "计科1班",
+				"college" : "软件学院",
+				"create_time" : "1486720211",
+				"email" : "114514f@qq.com",
+				"grade" : "21",
+				"id" : "502",
+				"isstu" : "1",
+				"mobile" : "1213213123",
+				"role_name" : "学生",
+				"stu_id" : "202130241241",
+				"username" : "linken"
             }
         ]
     },
@@ -268,8 +271,13 @@ type=tree
 | id       | 用户 ID     |      |
 | rid      | 用户角色 ID |      |
 | username | 用户名      |      |
-| mobile   | 手机号      |      |
-| email    | 邮箱        |      |
+| isstu    | 是否是学生 |       |
+| grade    | 年级       |        |
+| college  | 学院       |        |
+| stuid    | 学号       |        |
+| class    | 班级       |        |
+| email    | 邮箱       |        |
+| mobile   | 手机号     |        |
 
 - 响应数据
 
